@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer utilities {
+    .font-century-gothic {
+        font-family: "Century Gothic", "CenturyGothic", "AppleGothic", sans-serif;
+    }
+
+    .font-samarkan {
+        font-family: "Samarkan";
+    }
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+    font-family: "Samarkan";
+    src: url("/fonts/samarkan/samarkan.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@layer utilities {
+    .font-marines {
+        font-family: "Marines", sans-serif;
+        /* Placeholder */
+    }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    .animate-spin-slow {
+        animation: spin 10s linear infinite;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
 }

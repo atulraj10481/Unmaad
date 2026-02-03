@@ -1,0 +1,92 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { Instagram, Facebook, Youtube } from "lucide-react";
+
+const Footer = () => {
+    return (
+        <footer className="bg-white border-t border-gray-100 dark:bg-white dark:border-gray-200 font-century-gothic">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-0">
+
+                    {/* Left Side: IIMB & Address */}
+                    <div className="flex flex-col md:flex-row items-center md:items-start gap-4 flex-1">
+                        <div className="relative w-24 h-24 shrink-0">
+                            <Image
+                                src="/unmaad assets/IIMB.svg"
+                                alt="IIM Bangalore"
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
+                        <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                            <h3 className="text-black font-semibold text-lg mb-2">
+                                Proudly hosted at IIM Bangalore
+                            </h3>
+                            <p className="text-gray-600 text-sm max-w-xs">
+                                Indian Institute of Management Bangalore, Bannerghatta Road, Bengaluru - 560 076, India
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Right Side: UnmaadV & Contact */}
+                    <div className="flex flex-row items-start gap-6 flex-1 justify-end">
+                        {/* Image on the left of text */}
+                        <div className="relative w-30 h-30 shrink-0">
+                            <Image
+                                src="/unmaad assets/UnmaadV.svg"
+                                alt="Unmaad"
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
+
+                        {/* Content on the right of image */}
+                        <div className="flex flex-col items-start text-left">
+                            <div className="flex flex-col mb-4 text-sm text-gray-700">
+                                <span className="font-semibold mb-1">Email:</span>
+                                
+                                <a
+                                    href="mailto:UnmaadIIMB.Cultural"
+                                    className="text-black hover:underline"
+                                >
+                                    UnmaadIIMB.Cultural
+                                </a>
+                                <a
+                                    href="mailto:CulturalFestival@iimb.ac.in"
+                                    className="text-black hover:underline"
+                                >
+                                Festival@iimb.ac.in
+                                </a>
+                                
+                            </div>
+
+                            {/* Social Icons */}
+                            <div className="flex gap-4">
+                                <Link href="#" className="text-gray-500 hover:text-[#FF00A8] transition-colors">
+                                    <Instagram size={24} />
+                                </Link>
+                                <Link href="#" className="text-gray-500 hover:text-blue-600 transition-colors">
+                                    <Facebook size={24} />
+                                </Link>
+                                <Link href="#" className="text-gray-500 hover:text-red-600 transition-colors">
+                                    <Youtube size={24} />
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom Copyright */}
+                <div className="mt-12 pt-8 border-t border-gray-300">
+                    <p className="text-center text-sm text-gray-500">
+                        © 2026 Unmaad. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;
