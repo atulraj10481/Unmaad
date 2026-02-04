@@ -12,14 +12,16 @@ const baiJamjuree = Bai_Jamjuree({
 
 const UnmaadJunction = () => {
     const [currentImage, setCurrentImage] = useState(1);
+    const [prevImage, setPrevImage] = useState(1);
 
     useEffect(() => {
         const interval = setInterval(() => {
+            setPrevImage(currentImage);
             setCurrentImage((prev) => (prev % 10) + 1);
         }, 4000); // 40s rotation / 10 images = 4s per image (36 degrees)
 
         return () => clearInterval(interval);
-    }, []);
+    }, [currentImage]);
 
     return (
         <section id="unmaad-junction" className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden py-10 md:py-20">
@@ -72,15 +74,24 @@ const UnmaadJunction = () => {
                             className="object-contain"
                         />
                     </div>
-                    {/* Center Image (Stationary) */}
+                    {/* Center Images (Stationary) */}
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div className="relative w-[66%] h-[66%] rounded-full overflow-hidden border-2 border-white/50 shadow-lg transition-all duration-500">
+                        <div className="relative w-[66%] h-[66%] rounded-full overflow-hidden border-2 border-white/50 shadow-lg transition-all duration-100">
+                            {/* Previous Image (Background) - Always Visible */}
+                            <Image
+                                src={`/unmaad assets/junction images/image${prevImage}.jpg`}
+                                alt={`Memory ${prevImage}`}
+                                fill
+                                className="object-cover"
+                                key={`prev-${prevImage}`}
+                            />
+                            {/* Current Image (Foreground) - Wipes In over Previous */}
                             <Image
                                 src={`/unmaad assets/junction images/image${currentImage}.jpg`}
                                 alt={`Memory ${currentImage}`}
                                 fill
                                 className="object-cover animate-clock"
-                                key={currentImage} // Force re-render for animation
+                                key={`curr-${currentImage}`} // Force re-render for animation
                             />
                         </div>
                     </div>

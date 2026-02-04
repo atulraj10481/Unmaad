@@ -38,7 +38,7 @@
     }
 
     .animate-clock {
-        animation: clock-wipe 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+        animation: clock-wipe 4s linear both;
     }
 
     @keyframes clock-wipe {
