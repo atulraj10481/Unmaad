@@ -17,14 +17,14 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="sticky top-0 z-50 border-b border-white/20 bg-[#001D4A] backdrop-blur-md">
+        <nav className="sticky top-0 z-[100] border-b border-white/20 bg-[#001D4A]/60 backdrop-blur-md">
             {/* Background Image */}
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <Image
                     src="/unmaad assets/royal-blue.png"
                     alt="Navbar Background"
                     fill
-                    className="object-cover opacity-80"
+                    className="object-cover opacity-40"
                     priority
                 />
             </div>
@@ -39,13 +39,13 @@ const Navbar = () => {
                                 alt="Unmaad Logo"
                                 width={150}
                                 height={50}
-                                className="h-5 md:h-7 w-auto object-contain"
+                                className="h-5 lg:h-7 w-auto object-contain"
                             />
                         </Link>
                     </div>
 
                     {/* Center: Desktop Menu */}
-                    <div className="hidden md:flex flex-1 justify-center">
+                    <div className="hidden lg:flex flex-1 justify-center">
                         <div className="flex items-baseline space-x-6">
                             {navLinks.map((link) => (
                                 <Link
@@ -60,7 +60,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Right: Ticket Button */}
-                    <div className="hidden md:block shrink-0">
+                    <div className="hidden lg:block shrink-0">
                         <Link href="#tickets">
                             <Image
                                 src="/unmaad assets/tic-button.svg"
@@ -73,7 +73,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="-mr-2 flex md:hidden">
+                    <div className="-mr-2 flex lg:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             type="button"
@@ -122,7 +122,7 @@ const Navbar = () => {
 
             {/* Mobile Menu - Sliding Overlay */}
             <div
-                className={`md:hidden absolute top-full left-0 w-full overflow-hidden transition-all duration-500 ease-in-out bg-white ${isOpen ? 'max-h-[500px] opacity-100 shadow-xl' : 'max-h-0 opacity-0 pointer-events-none'
+                className={`lg:hidden absolute top-full left-0 w-full overflow-hidden transition-all duration-500 ease-in-out bg-white ${isOpen ? 'max-h-[500px] opacity-100 shadow-xl' : 'max-h-0 opacity-0 pointer-events-none'
                     }`}
                 id="mobile-menu"
             >

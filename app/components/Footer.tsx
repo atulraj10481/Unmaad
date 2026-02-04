@@ -7,12 +7,12 @@ import { Instagram, Facebook, Youtube } from "lucide-react";
 const Footer = () => {
     return (
         <footer className="bg-white border-t border-gray-100 dark:bg-white dark:border-gray-200 font-century-gothic">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-0">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-0">
 
                     {/* Left Side: IIMB & Address */}
                     <div className="flex flex-col md:flex-row items-center md:items-start gap-4 flex-1">
-                        <div className="relative w-24 h-24 shrink-0">
+                        <div className="relative w-20 h-20 md:w-24 md:h-24 shrink-0 transition-all">
                             <Image
                                 src="/unmaad assets/IIMB.svg"
                                 alt="IIM Bangalore"
@@ -31,9 +31,9 @@ const Footer = () => {
                     </div>
 
                     {/* Right Side: UnmaadV & Contact */}
-                    <div className="flex flex-row items-start gap-6 flex-1 justify-end">
-                        {/* Image on the left of text */}
-                        <div className="relative w-30 h-30 shrink-0">
+                    <div className="flex flex-col md:flex-row items-center md:items-start gap-6 flex-1 justify-center md:justify-end">
+                        {/* Image on the left of text (on desktop) / Top of text (on mobile) */}
+                        <div className="relative w-24 h-24 md:w-30 md:h-30 shrink-0 transition-all">
                             <Image
                                 src="/unmaad assets/UnmaadV.svg"
                                 alt="Unmaad"
@@ -43,10 +43,10 @@ const Footer = () => {
                         </div>
 
                         {/* Content on the right of image */}
-                        <div className="flex flex-col items-start text-left">
-                            <div className="flex flex-col mb-4 text-sm text-gray-700">
+                        <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                            <div className="flex flex-col mb-4 text-sm text-gray-700 items-center md:items-start">
                                 <span className="font-semibold mb-1">Email:</span>
-                                
+
                                 <a
                                     href="mailto:UnmaadIIMB.Cultural"
                                     className="text-black hover:underline"
@@ -57,9 +57,9 @@ const Footer = () => {
                                     href="mailto:CulturalFestival@iimb.ac.in"
                                     className="text-black hover:underline"
                                 >
-                                Festival@iimb.ac.in
+                                    Festival@iimb.ac.in
                                 </a>
-                                
+
                             </div>
 
                             {/* Social Icons */}
@@ -79,7 +79,7 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Copyright */}
-                <div className="mt-12 pt-8 border-t border-gray-300">
+                <div className="mt-6 pt-4 border-t border-gray-300">
                     <p className="text-center text-sm text-gray-500">
                         © 2026 Unmaad. All rights reserved.
                     </p>

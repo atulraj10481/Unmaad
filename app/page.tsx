@@ -10,17 +10,6 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col font-sans text-white">
-      {/* Background Image */}
-      <div className="fixed inset-0 -z-10">
-        <Image
-          src="/unmaad assets/blue-bg.png"
-          alt="Main Background"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-      </div>
-
       <Navbar />
       <HeroSection />
       <EventsStreet />
