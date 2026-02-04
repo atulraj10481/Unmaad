@@ -54,8 +54,8 @@ const ShutterCard = () => {
 const EventsStreet = () => {
     return (
         <section id="event" className="relative w-full h-screen flex flex-col overflow-hidden">
-            {/* Background Image: Orange (70%) */}
-            <div className="relative w-full h-[85%]">
+            {/* Background Image: Orange (Top 70%) */}
+            <div className="absolute top-0 w-full h-[80%] z-0">
                 <Image
                     src="/unmaad assets/orange-bg.png"
                     alt="Orange Background"
@@ -64,8 +64,8 @@ const EventsStreet = () => {
                 />
             </div>
 
-            {/* Background Image: Grey (30%) */}
-            <div className="absolute w-full h-[30%]">
+            {/* Background Image: Grey (Bottom 30%) */}
+            <div className="absolute bottom-0 w-full h-[25%] z-0">
                 <Image
                     src="/unmaad assets/grey-bg.png"
                     alt="Grey Background"

@@ -10,24 +10,24 @@ const baiJamjuree = Bai_Jamjuree({
 const HeroSection = () => {
     return (
         <section className="relative flex flex-col items-center justify-center min-h-150 pt-20 pb-16 text-center overflow-hidden">
-
-            {/* Background Images */}
-            <div className="absolute inset-0 z-[-20]">
+            {/* Background Layer - Royal Blue */}
+            <div className="absolute inset-0 z-0">
                 <Image
                     src="/unmaad assets/royal-blue.png"
-                    alt="Royal Blue Background"
+                    alt="Background"
                     fill
                     className="object-cover"
                     priority
                 />
             </div>
-            <div className="absolute inset-0 z-[-10]">
+
+            {/* Pattern Overlay */}
+            <div className="absolute inset-0 z-1">
                 <Image
                     src="/unmaad assets/pattern.svg"
-                    alt="Pattern Overlay"
+                    alt="Pattern"
                     fill
-                    className="object-cover opacity-100"
-                    priority
+                    className="object-cover opacity-50"
                 />
             </div>
 
