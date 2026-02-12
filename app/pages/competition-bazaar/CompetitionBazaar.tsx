@@ -11,50 +11,50 @@ const baiJamjuree = Bai_Jamjuree({
 });
 
 const danceTitles = [
-    { title: "Foottloose", link: "https://unstop.com/events/footloose-group-dance-competition-unmaad-2026-iim-bangalore-1625340", image: "/unmaad assets/competition bazaar/comps/Footloose.jpg" },
-    { title: "Echoes of Heritage", link: "https://unstop.com/events/echoes-of-heritage-group-classical-folk-dance-unmaad-2026-iim-bangalore-1625333", image: "/unmaad assets/competition bazaar/comps/Echoes of heritage.JPG" },
-    { title: "Soul N Sync", link: "https://unstop.com/events/soul-nsync-solo-duet-dance-unmaad-2026-iim-bangalore-1625318", image: "/unmaad assets/competition bazaar/comps/SoulnSync.jpg" },
-    { title: "Street Unleashed", link: "https://unstop.com/events/street-unleashed-dance-battle-face-off-unmaad-2026-iim-bangalore-1625341", image: "/unmaad assets/competition bazaar/comps/Street Unleashed.jpg" }
+    { title: "Footloose", link: "https://unstop.com/events/footloose-group-dance-competition-unmaad-2026-iim-bangalore-1625340", image: "/unmaad assets/competition bazaar/comps/Footloose1.jpg" },
+    { title: "Echoes of Heritage", link: "https://unstop.com/events/echoes-of-heritage-group-classical-folk-dance-unmaad-2026-iim-bangalore-1625333", image: "/unmaad assets/competition bazaar/comps/Echoes of heritage1.jpg" },
+    { title: "Soul N Sync", link: "https://unstop.com/events/soul-nsync-solo-duet-dance-unmaad-2026-iim-bangalore-1625318", image: "/unmaad assets/competition bazaar/comps/SoulNSync1.jpg" },
+    { title: "Street Unleashed", link: "https://unstop.com/events/street-unleashed-dance-battle-face-off-unmaad-2026-iim-bangalore-1625341", image: "/unmaad assets/competition bazaar/comps/Street Unleashed1.jpg" }
 ];
 
 const musicTitles = [
-    { title: "Voice of Unmaad", link: "https://unstop.com/events/voice-of-unmaad-solo-singing-unmaad-2026-iim-bangalore-1625461", image: "/unmaad assets/competition bazaar/comps/voiceofunmaad.JPG" },
-    { title: "Gully Rap", link: "https://unstop.com/events/rap-sody-solo-rap-event-unmaad-2026-iim-bangalore-1625508", image: "/unmaad assets/competition bazaar/comps/gullyrap.jpg" },
-    { title: "Battle of Bands", link: "https://unstop.com/events/b-school-of-rock-battle-of-bands-unmaad-2026-iim-bangalore-1625518", image: "/unmaad assets/competition bazaar/comps/battleofbands.jpg" }
+    { title: "Voice of Unmaad", link: "https://unstop.com/events/voice-of-unmaad-solo-singing-unmaad-2026-iim-bangalore-1625461", image: "/unmaad assets/competition bazaar/comps/voiceofunmaad1.jpg" },
+    { title: "Gully Rap", link: "https://unstop.com/events/rap-sody-solo-rap-event-unmaad-2026-iim-bangalore-1625508", image: "/unmaad assets/competition bazaar/comps/gullyrap1.jpg" },
+    { title: "Battle of Bands", link: "https://unstop.com/events/b-school-of-rock-battle-of-bands-unmaad-2026-iim-bangalore-1625518", image: "/unmaad assets/competition bazaar/comps/battleofbands1.jpg" }
 ];
 
 const dramaTitles = [
-    { title: "Aahwan", link: "https://unstop.com/events/aahwan-the-street-play-unmaad-2026-iim-bangalore-1625715", image: "/unmaad assets/competition bazaar/comps/aahwan.jpg" },
-    { title: "Drishya", link: "https://unstop.com/events/drishya-short-film-competition-unmaad-2026-iim-bangalore-1625781", image: "/unmaad assets/competition bazaar/comps/drishya.jpg" },
-    { title: "Spotlight", link: "https://unstop.com/events/spotlight-mono-acting-competition-unmaad-2026-iim-bangalore-1625812", image: "/unmaad assets/competition bazaar/comps/spotlight.jpg" },
-    { title: "Curtain Call", link: "https://unstop.com/events/curtain-call-stage-play-event-unmaad-2026-iim-bangalore-1625713", image: "/unmaad assets/competition bazaar/comps/curtaincall.jpg" }
+    { title: "Aahwan", link: "https://unstop.com/events/aahwan-the-street-play-unmaad-2026-iim-bangalore-1625715", image: "/unmaad assets/competition bazaar/comps/aahwan1.jpg" },
+    { title: "Drishya", link: "https://unstop.com/events/drishya-short-film-competition-unmaad-2026-iim-bangalore-1625781", image: "/unmaad assets/competition bazaar/comps/drishya1.jpg" },
+    { title: "Spotlight", link: "https://unstop.com/events/spotlight-mono-acting-competition-unmaad-2026-iim-bangalore-1625812", image: "/unmaad assets/competition bazaar/comps/spotlight1.jpg" },
+    { title: "Curtain Call", link: "https://unstop.com/events/curtain-call-stage-play-event-unmaad-2026-iim-bangalore-1625713", image: "/unmaad assets/competition bazaar/comps/curtaincall1.jpg" }
 ];
 
 const informalsTitles = [
-    { title: "Food Wars", link: "https://unstop.com/events/food-wars-khao-toh-jaane-unmaad-2026-iim-bangalore-1625483", image: "/unmaad assets/competition bazaar/comps/foodwars.jpg" },
-    { title: "Treasure Hunt", link: "https://unstop.com/events/treasure-hunt-kho-gaye-hum-kahan-unmaad-2026-iim-bangalore-1625251", image: "/unmaad assets/competition bazaar/comps/treasurehunt.jpg" },
-    { title: "Mr. & Ms. Unmaad", link: "https://unstop.com/events/mr-ms-unmaad-unmaad-2026-iim-bangalore-1625492", image: "/unmaad assets/competition bazaar/comps/mrandmsunmaad.jpg" },
-    { title: "Mic Drop", link: "https://unstop.com/events/mic-drop-humor-us-we-dare-you-unmaad-2026-iim-bangalore-1625449", image: "/unmaad assets/competition bazaar/comps/micdrop.jpg" }
+    { title: "Food Wars", link: "https://unstop.com/events/food-wars-khao-toh-jaane-unmaad-2026-iim-bangalore-1625483", image: "/unmaad assets/competition bazaar/comps/foodwars1.jpg" },
+    { title: "Treasure Hunt", link: "https://unstop.com/events/treasure-hunt-kho-gaye-hum-kahan-unmaad-2026-iim-bangalore-1625251", image: "/unmaad assets/competition bazaar/comps/treasurehunt1.jpg" },
+    { title: "Mr. & Ms. Unmaad", link: "https://unstop.com/events/mr-ms-unmaad-unmaad-2026-iim-bangalore-1625492", image: "/unmaad assets/competition bazaar/comps/mrandmsunmaad1.jpg" },
+    { title: "Mic Drop", link: "https://unstop.com/events/mic-drop-humor-us-we-dare-you-unmaad-2026-iim-bangalore-1625449", image: "/unmaad assets/competition bazaar/comps/micdrop1.jpg" }
 ];
 
 const fashionTitles = [
-    { title: "Haute Couture", link: "https://unstop.com/events/haute-couture-indias-biggest-b-school-fashion-show-unmaad-2026-iim-bangalore-1624726", image: "/unmaad assets/competition bazaar/comps/hautecouture.jpg" },
-    { title: "Cosplay", link: "https://unstop.com/events/metamorph-a-cosplay-event-unmaad-2026-iim-bangalore-1625008", image: "/unmaad assets/competition bazaar/comps/cosplay.jpg" },
-    { title: "Group Canvas", link: "https://unstop.com/events/canvas-collective-group-painting-event-unmaad-2026-iim-bangalore-1624991", image: "/unmaad assets/competition bazaar/comps/groupcanvas.jpg" },
-    { title: "Photography", link: "https://unstop.com/events/frames-of-streets-photography-event-unmaad-2026-iim-bangalore-1624994", image: "/unmaad assets/competition bazaar/comps/photography.jpg" },
-    { title: "Junk art", link: "https://unstop.com/events/beauty-in-the-broken-a-junk-art-event-unmaad-2026-iim-bangalore-1625030", image: "/unmaad assets/competition bazaar/comps/junkart.jpg" }
+    { title: "Haute Couture", link: "https://unstop.com/events/haute-couture-indias-biggest-b-school-fashion-show-unmaad-2026-iim-bangalore-1624726", image: "/unmaad assets/competition bazaar/comps/hautecouture1.jpg" },
+    { title: "Cosplay", link: "https://unstop.com/events/metamorph-a-cosplay-event-unmaad-2026-iim-bangalore-1625008", image: "/unmaad assets/competition bazaar/comps/cosplay1.jpg" },
+    { title: "Group Canvas", link: "https://unstop.com/events/canvas-collective-group-painting-event-unmaad-2026-iim-bangalore-1624991", image: "/unmaad assets/competition bazaar/comps/groupcanvas1.jpg" },
+    { title: "Photography", link: "https://unstop.com/events/frames-of-streets-photography-event-unmaad-2026-iim-bangalore-1624994", image: "/unmaad assets/competition bazaar/comps/photography1.jpg" },
+    { title: "Junk art", link: "https://unstop.com/events/beauty-in-the-broken-a-junk-art-event-unmaad-2026-iim-bangalore-1625030", image: "/unmaad assets/competition bazaar/comps/junkart1.jpg" }
 ];
 
 const litsTitles = [
-    { title: "Shabdsaga", link: "https://unstop.com/events/shabd-saga-a-hindi-and-urdu-poetry-competition-unmaad-2026-iim-bangalore-1625309", image: "/unmaad assets/competition bazaar/comps/shabdsaga.jpg" },
-    { title: "Just a Minute (JAM)", link: "https://unstop.com/p/just-a-minute-60-second-spotlight-unmaad-2026-iim-bangalore-1625265", image: "/unmaad assets/competition bazaar/comps/Jam.jpg" },
-    { title: "Unmaad Quiz", link: "https://unstop.com/events/the-unmaad-quiz-general-open-quiz-unmaad-2026-iim-bangalore-1625490", image: "/unmaad assets/competition bazaar/comps/unmaadquiz.jpg" },
-    { title: "Pop Culture Quiz", link: "https://unstop.com/events/once-upon-a-time-in-pop-culture-entertainment-quiz-unmaad-2026-iim-bangalore-1625503", image: "/unmaad assets/competition bazaar/comps/popculture.jpg" }
+    { title: "Shabdsaga", link: "https://unstop.com/events/shabd-saga-a-hindi-and-urdu-poetry-competition-unmaad-2026-iim-bangalore-1625309", image: "/unmaad assets/competition bazaar/comps/shabdsaga1.jpg" },
+    { title: "Just a Minute (JAM)", link: "https://unstop.com/p/just-a-minute-60-second-spotlight-unmaad-2026-iim-bangalore-1625265", image: "/unmaad assets/competition bazaar/comps/Jam1.jpg" },
+    { title: "Unmaad Quiz", link: "https://unstop.com/events/the-unmaad-quiz-general-open-quiz-unmaad-2026-iim-bangalore-1625490", image: "/unmaad assets/competition bazaar/comps/unmaadquiz1.jpg" },
+    { title: "Pop Culture Quiz", link: "https://unstop.com/events/once-upon-a-time-in-pop-culture-entertainment-quiz-unmaad-2026-iim-bangalore-1625503", image: "/unmaad assets/competition bazaar/comps/popculture1.jpg" }
 ];
 
 const onlineTitles = [
-    { title: "Virtual Expedition", link: "https://unstop.com/events/virtual-expedition-unmaad-2026-iim-bangalore-1625394", image: "/unmaad assets/competition bazaar/comps/virtualexpedition.jpg" },
-    { title: "Street Anthem Challenge", link: "https://unstop.com/events/street-anthem-challenge-unmaad-2026-iim-bangalore-1625186", image: "/unmaad assets/competition bazaar/comps/streetanthem.jpg" }
+    { title: "Virtual Expedition", link: "https://unstop.com/events/virtual-expedition-unmaad-2026-iim-bangalore-1625394", image: "/unmaad assets/competition bazaar/comps/virtualexpedition1.jpg" },
+    { title: "Street Anthem Challenge", link: "https://unstop.com/events/street-anthem-challenge-unmaad-2026-iim-bangalore-1625186", image: "/unmaad assets/competition bazaar/comps/streetanthem1.jpg" }
 ];
 
 interface CardFrameProps {
