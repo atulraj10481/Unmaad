@@ -79,10 +79,27 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Copyright */}
-                <div className="mt-6 pt-4 border-t border-gray-300">
+                <div className="mt-6 pt-4 border-t border-gray-300 flex flex-col md:flex-row justify-center items-center gap-4">
                     <p className="text-center text-sm text-gray-500">
                         © 2026 Unmaad. All rights reserved.
                     </p>
+
+                    {/* Center: Powered by Wictronix */}
+                    <div className="flex justify-center">
+                        <a
+                            href="https://www.wictronix.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-gray-400 hover:text-blue-600 transition-colors text-xs"
+                        >
+                            <span>Powered by</span>
+                            <img
+                                src="/wxlogo.png"
+                                alt="Wictronix"
+                                className="h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                            />
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>
