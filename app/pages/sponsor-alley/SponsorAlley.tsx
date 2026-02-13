@@ -17,7 +17,7 @@ const SponsorAlley = () => {
             <div className="relative w-full h-[40vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/unmaad assets/royal-blue.png"
+                        src="/unmaad-assets/royal-blue.png"
                         alt="Royal Blue Background"
                         fill
                         className="object-cover"
@@ -26,7 +26,7 @@ const SponsorAlley = () => {
                 </div>
                 <div className="absolute inset-0 z-10 opacity-50 pointer-events-none">
                     <Image
-                        src="/unmaad assets/pattern.svg"
+                        src="/unmaad-assets/pattern.svg"
                         alt="Pattern Overlay"
                         fill
                         className="object-cover"
@@ -34,7 +34,7 @@ const SponsorAlley = () => {
                 </div>
                 <div className="relative z-20 text-center">
                     <h1 className="text-5xl md:text-7xl text-white font-samarkan">
-                        Sponsor Alley
+                        sponsor-alley
                     </h1>
                 </div>
             </div>
@@ -45,7 +45,7 @@ const SponsorAlley = () => {
                 {/* Top Strip */}
                 <div className="relative z-30 w-full transform rotate-180 bg-[#E6E6FA]">
                     <Image
-                        src="/unmaad assets/sponsor alley/sponsor-strip.svg"
+                        src="/unmaad-assets/sponsor-alley/sponsor-strip.svg"
                         alt="Sponsor Strip Top"
                         width={1920}
                         height={100}
@@ -60,7 +60,7 @@ const SponsorAlley = () => {
                         <div
                             className="absolute inset-0 z-0 opacity-100"
                             style={{
-                                backgroundImage: "url('/unmaad assets/sponsor alley/lavender-bg.svg')",
+                                backgroundImage: "url('/unmaad-assets/sponsor-alley/lavender-bg.svg')",
                                 backgroundRepeat: "repeat",
                                 backgroundSize: "100% auto",
                             }}
@@ -68,7 +68,7 @@ const SponsorAlley = () => {
                         <div
                             className="absolute inset-0 z-10 opacity-50 pointer-events-none"
                             style={{
-                                backgroundImage: "url('/unmaad assets/pattern.svg')",
+                                backgroundImage: "url('/unmaad-assets/pattern.svg')",
                                 backgroundRepeat: "repeat",
                                 backgroundSize: "auto"
                             }}
@@ -84,7 +84,7 @@ const SponsorAlley = () => {
                             {[1, 2, 3].map((cardId) => (
                                 <div key={cardId} className="relative w-72 h-72 md:w-80 md:h-80 flex items-center justify-center">
                                     <Image
-                                        src="/unmaad assets/sponsor alley/green-frame.svg"
+                                        src="/unmaad-assets/sponsor-alley/green-frame.svg"
                                         alt="Sponsor Frame"
                                         fill
                                         className="object-contain"
@@ -105,7 +105,7 @@ const SponsorAlley = () => {
                         <div
                             className="absolute inset-0 z-0 opacity-100"
                             style={{
-                                backgroundImage: "url('/unmaad assets/sponsor alley/lavender-bg.svg')",
+                                backgroundImage: "url('/unmaad-assets/sponsor-alley/lavender-bg.svg')",
                                 backgroundRepeat: "repeat",
                                 backgroundSize: "100% auto",
                             }}
@@ -113,7 +113,7 @@ const SponsorAlley = () => {
                         <div
                             className="absolute inset-0 z-10 opacity-50 pointer-events-none"
                             style={{
-                                backgroundImage: "url('/unmaad assets/pattern.svg')",
+                                backgroundImage: "url('/unmaad-assets/pattern.svg')",
                                 backgroundRepeat: "repeat",
                                 backgroundSize: "auto"
                             }}
@@ -129,7 +129,7 @@ const SponsorAlley = () => {
                             {[1, 2, 3].map((cardId) => (
                                 <div key={cardId} className="relative w-72 h-72 md:w-80 md:h-80 flex items-center justify-center">
                                     <Image
-                                        src="/unmaad assets/sponsor alley/green-frame.svg"
+                                        src="/unmaad-assets/sponsor-alley/green-frame.svg"
                                         alt="Sponsor Frame"
                                         fill
                                         className="object-contain"
@@ -155,7 +155,7 @@ const SponsorAlley = () => {
                 {/* Bottom Strip */}
                 <div className="relative z-30 w-full bg-[#E6E6FA]">
                     <Image
-                        src="/unmaad assets/sponsor alley/sponsor-strip.svg"
+                        src="/unmaad-assets/sponsor-alley/sponsor-strip.svg"
                         alt="Sponsor Strip Bottom"
                         width={1920}
                         height={100}

@@ -29,7 +29,7 @@ const UnmaadJunction = () => {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/unmaad assets/hero page/light-blue.png"
+                    src="/unmaad-assets/hero-page/light-blue.png"
                     alt="Background"
                     fill
                     className="object-cover"
@@ -39,7 +39,7 @@ const UnmaadJunction = () => {
             {/* Pattern Overlay */}
             <div className="absolute inset-0 z-10 pointer-events-none opacity-50">
                 <Image
-                    src="/unmaad assets/pattern.svg"
+                    src="/unmaad-assets/pattern.svg"
                     alt="Pattern Overlay"
                     fill
                     className="object-cover"
@@ -69,7 +69,7 @@ const UnmaadJunction = () => {
                     {/* Rotating Mandala */}
                     <div className="absolute inset-0 animate-spin-slow">
                         <Image
-                            src="/unmaad assets/hero page/mandala.svg"
+                            src="/unmaad-assets/hero-page/mandala.svg"
                             alt="Mandala"
                             fill
                             className="object-contain"
@@ -80,7 +80,7 @@ const UnmaadJunction = () => {
                         <div className="relative w-[66%] h-[66%] rounded-full overflow-hidden border-2 border-white/50 shadow-lg transition-all duration-100">
                             {/* Previous Image (Background) - Always Visible */}
                             <Image
-                                src={`/unmaad assets/hero page/junction images/image${prevImage}.jpg`}
+                                src={`/unmaad-assets/hero-page/junction-images/image${prevImage}.jpg`}
                                 alt={`Memory ${prevImage}`}
                                 fill
                                 className="object-cover"
@@ -88,7 +88,7 @@ const UnmaadJunction = () => {
                             />
                             {/* Current Image (Foreground) - Wipes In over Previous */}
                             <Image
-                                src={`/unmaad assets/hero page/junction images/image${currentImage}.jpg`}
+                                src={`/unmaad-assets/hero-page/junction-images/image${currentImage}.jpg`}
                                 alt={`Memory ${currentImage}`}
                                 fill
                                 className="object-cover animate-clock"

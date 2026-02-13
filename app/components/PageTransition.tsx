@@ -7,8 +7,8 @@ import { useRef, useEffect } from "react";
 // Define the order of pages for directional logic
 const pageOrder = [
     "/",                        // Home: Index 0
-    "/pages/events-street",     // Events Street: Index 1
-    "/pages/competition-bazaar" // Competition Bazaar: Index 2
+    "/pages/events-street",     // events-street: Index 1
+    "/pages/competition-bazaar" // competition-bazaar: Index 2
 ];
 
 const PageTransition = ({ children }: { children: React.ReactNode }) => {

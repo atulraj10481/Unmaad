@@ -10,9 +10,9 @@ interface ShutterCardProps {
 }
 
 const ShutterCard = ({
-    coverImage = "/unmaad assets/hero page/shutter.svg",
-    contentImage = "/unmaad assets/hero page/shutter1.svg",
-    posterImage = "/unmaad assets/hero page/poster1.png",
+    coverImage = "/unmaad-assets/hero-page/shutter.svg",
+    contentImage = "/unmaad-assets/hero-page/shutter1.svg",
+    posterImage = "/unmaad-assets/hero-page/poster1.png",
     altText = "Event details"
 }: ShutterCardProps & { posterImage?: string }) => {
     const [isOpen, setIsOpen] = useState(false);

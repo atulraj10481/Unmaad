@@ -10,7 +10,7 @@ const Navbar = () => {
 
     const navLinks = [
         { name: "Unmaad Junction", href: "/#unmaad-junction" },
-        { name: "Competition Bazaar", href: "/pages/competition-bazaar" },
+        { name: "competition-bazaar", href: "/pages/competition-bazaar" },
     ];
 
     return (
@@ -22,7 +22,7 @@ const Navbar = () => {
                     <div className="shrink-0 flex items-center">
                         <Link href="/">
                             <Image
-                                src="/unmaad assets/unm.svg"
+                                src="/unmaad-assets/unm.svg"
                                 alt="Unmaad Logo"
                                 width={150}
                                 height={50}
@@ -50,7 +50,7 @@ const Navbar = () => {
                     <div className="hidden lg:block shrink-0">
                         <HomeButton
                             href="https://www.skillboxes.com/events/seedhe-maut-unmaad-iim-s-annual-cultural-fest"
-                            imageSrc="/unmaad assets/tic-button.svg"
+                            imageSrc="/unmaad-assets/tic-button.svg"
                             imgClassName="h-8 w-auto"
                             imgWidth={120}
                             imgHeight={40}
@@ -125,7 +125,7 @@ const Navbar = () => {
                     <div className="mt-6 px-3 flex justify-center">
                         <HomeButton
                             href="https://www.skillboxes.com/events/seedhe-maut-unmaad-iim-s-annual-cultural-fest"
-                            imageSrc="/unmaad assets/tic-button.svg"
+                            imageSrc="/unmaad-assets/tic-button.svg"
                             imgClassName="h-8 w-auto"
                             imgWidth={120}
                             imgHeight={40}

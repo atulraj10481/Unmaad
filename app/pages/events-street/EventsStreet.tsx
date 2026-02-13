@@ -18,7 +18,7 @@ const EventsStreet = () => {
                 {/* ... existing code ... */}
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/unmaad assets/royal-blue.png"
+                        src="/unmaad-assets/royal-blue.png"
                         alt="Royal Blue Background"
                         fill
                         className="object-cover"
@@ -28,7 +28,7 @@ const EventsStreet = () => {
                 {/* ... existing code ... */}
                 <div className="absolute inset-0 z-10 opacity-50 pointer-events-none">
                     <Image
-                        src="/unmaad assets/pattern.svg"
+                        src="/unmaad-assets/pattern.svg"
                         alt="Pattern Overlay"
                         fill
                         className="object-cover"
@@ -37,7 +37,7 @@ const EventsStreet = () => {
                 {/* ... existing code ... */}
                 <div className="relative z-20 text-center">
                     <h1 className="text-5xl md:text-7xl text-white font-samarkan">
-                        Events Street
+                        events-street
                     </h1>
                 </div>
             </div>
@@ -47,7 +47,7 @@ const EventsStreet = () => {
                 {/* Background Layer */}
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/unmaad assets/events street/pink-bg.png"
+                        src="/unmaad-assets/events-street/pink-bg.png"
                         alt="Pink Background"
                         fill
                         className="object-cover"
@@ -55,7 +55,7 @@ const EventsStreet = () => {
                     {/* Pattern Overlay */}
                     <div className="absolute inset-0 z-10 opacity-50 pointer-events-none">
                         <Image
-                            src="/unmaad assets/pattern.svg"
+                            src="/unmaad-assets/pattern.svg"
                             alt="Pattern Overlay"
                             fill
                             className="object-cover"
@@ -67,7 +67,7 @@ const EventsStreet = () => {
                 <div className="relative z-30 w-full transform rotate-180">
                     <div className="relative w-full z-20">
                         <Image
-                            src="/unmaad assets/events street/mandala-strip.svg"
+                            src="/unmaad-assets/events-street/mandala-strip.svg"
                             alt="Mandala Strip Top"
                             width={1920}
                             height={100}
@@ -98,8 +98,8 @@ const EventsStreet = () => {
                                     <div className="animate-float-rotate" style={{ animationDelay: `${index * 0.5}s` }}>
                                         <Image
                                             src={index % 2 === 0
-                                                ? "/unmaad assets/events street/branch1.svg"
-                                                : "/unmaad assets/events street/branch2.svg"
+                                                ? "/unmaad-assets/events-street/branch1.svg"
+                                                : "/unmaad-assets/events-street/branch2.svg"
                                             }
                                             alt="Branch"
                                             width={105}
@@ -122,7 +122,7 @@ const EventsStreet = () => {
                                         className="absolute -z-10 -right-16 top-12 animate-leaf-fall hidden lg:block" style={{ animationDelay: '0.4s' }}>
                                         <div className="animate-float-rotate" style={{ animationDelay: '1.2s' }}>
                                             <Image
-                                                src="/unmaad assets/events street/branch2.svg"
+                                                src="/unmaad-assets/events-street/branch2.svg"
                                                 alt="Branch"
                                                 width={105}
                                                 height={105}
@@ -139,7 +139,7 @@ const EventsStreet = () => {
                                         className="absolute -z-10 -top-16 -left-[75px] animate-leaf-fall hidden lg:block" style={{ animationDelay: '0.5s' }}>
                                         <div className="animate-float-rotate" style={{ animationDelay: '0.8s' }}>
                                             <Image
-                                                src="/unmaad assets/events street/branch1.svg"
+                                                src="/unmaad-assets/events-street/branch1.svg"
                                                 alt="Branch"
                                                 width={105}
                                                 height={105}
@@ -157,7 +157,7 @@ const EventsStreet = () => {
                                             className="absolute -z-10 -bottom-10 -left-20 animate-leaf-fall hidden lg:block" style={{ animationDelay: '0.6s' }}>
                                             <div className="animate-float-rotate" style={{ animationDelay: '2.5s' }}>
                                                 <Image
-                                                    src="/unmaad assets/events street/branch2.svg"
+                                                    src="/unmaad-assets/events-street/branch2.svg"
                                                     alt="Branch"
                                                     width={105}
                                                     height={105}
@@ -172,7 +172,7 @@ const EventsStreet = () => {
                                             className="absolute -z-10 -left-[79px] -top-12 animate-leaf-fall hidden lg:block" style={{ animationDelay: '0.7s' }}>
                                             <div className="animate-float-rotate" style={{ animationDelay: '1.8s' }}>
                                                 <Image
-                                                    src="/unmaad assets/events street/branch1.svg"
+                                                    src="/unmaad-assets/events-street/branch1.svg"
                                                     alt="Branch"
                                                     width={105}
                                                     height={105}
@@ -185,7 +185,7 @@ const EventsStreet = () => {
 
                                 <HomeButton
                                     text={text}
-                                    imageSrc="/unmaad assets/events street/purple-button.svg"
+                                    imageSrc="/unmaad-assets/events-street/purple-button.svg"
                                     imgWidth={250}
                                     imgHeight={90}
                                     imgClassName="w-64 sm:w-60 md:w-60 lg:w-80 h-auto"
@@ -201,7 +201,7 @@ const EventsStreet = () => {
                         {[1, 2, 3].map((item) => (
                             <div key={item} className="relative group cursor-pointer hover:scale-105 transition-transform">
                                 <Image
-                                    src="/unmaad assets/events street/window.svg"
+                                    src="/unmaad-assets/events-street/window.svg"
                                     alt={`Window Card ${item}`}
                                     width={300}
                                     height={400}
@@ -214,7 +214,7 @@ const EventsStreet = () => {
                                         transition={{ delay: 3, duration: 0.5 }}
                                         className="absolute -bottom-8 -right-8 z-10 animate-float-rotate hidden md:block">
                                         <Image
-                                            src="/unmaad assets/events street/branch1.svg"
+                                            src="/unmaad-assets/events-street/branch1.svg"
                                             alt="Branch Decoration"
                                             width={105}
                                             height={105}
@@ -255,7 +255,7 @@ const EventsStreet = () => {
                     {/* Left Plant */}
                     <div className="absolute -bottom-[60px] left-[8%] md:left-[22%] z-10 animate-float-rotate">
                         <Image
-                            src="/unmaad assets/events street/plant.svg"
+                            src="/unmaad-assets/events-street/plant.svg"
                             alt="Plant Decoration Left"
                             width={130}
                             height={155}
@@ -266,7 +266,7 @@ const EventsStreet = () => {
                     {/* Right Plant */}
                     <div className="absolute -bottom-[60px] right-[8%] md:right-[22%] z-10 animate-float-rotate" style={{ animationDelay: '1s' }}>
                         <Image
-                            src="/unmaad assets/events street/plant.svg"
+                            src="/unmaad-assets/events-street/plant.svg"
                             alt="Plant Decoration Right"
                             width={130}
                             height={155}
@@ -276,7 +276,7 @@ const EventsStreet = () => {
 
                     <div className="relative z-20">
                         <Image
-                            src="/unmaad assets/events street/mandala-strip.svg"
+                            src="/unmaad-assets/events-street/mandala-strip.svg"
                             alt="Mandala Strip Bottom"
                             width={1920}
                             height={100}
@@ -288,12 +288,12 @@ const EventsStreet = () => {
                 {/* Mobile Only Scattered Branches (Background) */}
                 <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none md:hidden">
                     {[
-                        { src: "/unmaad assets/events street/branch1.svg", top: "5%", left: "-5%", rotate: "160deg", size: 95 },
-                        { src: "/unmaad assets/events street/branch2.svg", top: "15%", right: "-8%", rotate: "-25deg", size: 105 },
-                        { src: "/unmaad assets/events street/branch2.svg", top: "32%", left: "2%", rotate: "40deg", size: 85 },
-                        { src: "/unmaad assets/events street/branch1.svg", top: "48%", right: "5%", rotate: "-15deg", size: 100 },
-                        { src: "/unmaad assets/events street/branch1.svg", top: "62%", left: "-8%", rotate: "80deg", size: 90 },
-                        { src: "/unmaad assets/events street/branch2.svg", top: "70%", right: "-5%", rotate: "130deg", size: 95 },
+                        { src: "/unmaad-assets/events-street/branch1.svg", top: "5%", left: "-5%", rotate: "160deg", size: 95 },
+                        { src: "/unmaad-assets/events-street/branch2.svg", top: "15%", right: "-8%", rotate: "-25deg", size: 105 },
+                        { src: "/unmaad-assets/events-street/branch2.svg", top: "32%", left: "2%", rotate: "40deg", size: 85 },
+                        { src: "/unmaad-assets/events-street/branch1.svg", top: "48%", right: "5%", rotate: "-15deg", size: 100 },
+                        { src: "/unmaad-assets/events-street/branch1.svg", top: "62%", left: "-8%", rotate: "80deg", size: 90 },
+                        { src: "/unmaad-assets/events-street/branch2.svg", top: "70%", right: "-5%", rotate: "130deg", size: 95 },
                     ].map((branch, i) => (
                         <div
                             key={i}
@@ -329,18 +329,18 @@ const EventsStreet = () => {
                 {/* Tablet Only Scattered Branches (12 Random) */}
                 <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none hidden md:block lg:hidden">
                     {[
-                        { src: "/unmaad assets/events street/branch1.svg", top: "5%", left: "5%", rotate: "45deg", size: 110 },
-                        { src: "/unmaad assets/events street/branch2.svg", top: "15%", right: "8%", rotate: "-30deg", size: 120 },
-                        { src: "/unmaad assets/events street/branch1.svg", top: "45%", left: "10%", rotate: "135deg", size: 100 },
-                        { src: "/unmaad assets/events street/branch2.svg", top: "35%", right: "15%", rotate: "90deg", size: 115 },
-                        { src: "/unmaad assets/events street/branch1.svg", top: "75%", left: "35%", rotate: "-15deg", size: 105 },
-                        { src: "/unmaad assets/events street/branch2.svg", top: "85%", right: "25%", rotate: "60deg", size: 110 },
-                        { src: "/unmaad assets/events street/branch2.svg", top: "25%", left: "25%", rotate: "180deg", size: 90 },
-                        { src: "/unmaad assets/events street/branch1.svg", top: "8%", left: "45%", rotate: "-60deg", size: 95 },
-                        { src: "/unmaad assets/events street/branch2.svg", top: "60%", right: "5%", rotate: "20deg", size: 100 },
-                        { src: "/unmaad assets/events street/branch1.svg", top: "55%", left: "-2%", rotate: "75deg", size: 120 },
-                        { src: "/unmaad assets/events street/branch2.svg", top: "90%", left: "10%", rotate: "-45deg", size: 85 },
-                        { src: "/unmaad assets/events street/branch1.svg", top: "2%", right: "30%", rotate: "110deg", size: 115 },
+                        { src: "/unmaad-assets/events-street/branch1.svg", top: "5%", left: "5%", rotate: "45deg", size: 110 },
+                        { src: "/unmaad-assets/events-street/branch2.svg", top: "15%", right: "8%", rotate: "-30deg", size: 120 },
+                        { src: "/unmaad-assets/events-street/branch1.svg", top: "45%", left: "10%", rotate: "135deg", size: 100 },
+                        { src: "/unmaad-assets/events-street/branch2.svg", top: "35%", right: "15%", rotate: "90deg", size: 115 },
+                        { src: "/unmaad-assets/events-street/branch1.svg", top: "75%", left: "35%", rotate: "-15deg", size: 105 },
+                        { src: "/unmaad-assets/events-street/branch2.svg", top: "85%", right: "25%", rotate: "60deg", size: 110 },
+                        { src: "/unmaad-assets/events-street/branch2.svg", top: "25%", left: "25%", rotate: "180deg", size: 90 },
+                        { src: "/unmaad-assets/events-street/branch1.svg", top: "8%", left: "45%", rotate: "-60deg", size: 95 },
+                        { src: "/unmaad-assets/events-street/branch2.svg", top: "60%", right: "5%", rotate: "20deg", size: 100 },
+                        { src: "/unmaad-assets/events-street/branch1.svg", top: "55%", left: "-2%", rotate: "75deg", size: 120 },
+                        { src: "/unmaad-assets/events-street/branch2.svg", top: "90%", left: "10%", rotate: "-45deg", size: 85 },
+                        { src: "/unmaad-assets/events-street/branch1.svg", top: "2%", right: "30%", rotate: "110deg", size: 115 },
                     ].map((branch, i) => (
                         <div
                             key={i}

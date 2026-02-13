@@ -18,7 +18,7 @@ const MerchStore = () => {
                 {/* Background Layer */}
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/unmaad assets/royal-blue.png"
+                        src="/unmaad-assets/royal-blue.png"
                         alt="Royal Blue Background"
                         fill
                         className="object-cover"
@@ -29,7 +29,7 @@ const MerchStore = () => {
                 {/* Pattern Overlay */}
                 <div className="absolute inset-0 z-10 opacity-50 pointer-events-none">
                     <Image
-                        src="/unmaad assets/pattern.svg"
+                        src="/unmaad-assets/pattern.svg"
                         alt="Pattern Overlay"
                         fill
                         className="object-cover"
@@ -39,7 +39,7 @@ const MerchStore = () => {
                 {/* Title Content */}
                 <div className="relative z-20 text-center">
                     <h1 className="text-5xl md:text-7xl text-white font-samarkan">
-                        Merch Store
+                        merch-store
                     </h1>
                 </div>
             </div>
@@ -52,7 +52,7 @@ const MerchStore = () => {
                     <div
                         className="absolute inset-0 z-0 opacity-100"
                         style={{
-                            backgroundImage: "url('/unmaad assets/merch store/merch-bg.svg')",
+                            backgroundImage: "url('/unmaad-assets/merch-store/merch-bg.svg')",
                             backgroundRepeat: "repeat",
                             backgroundSize: "60px", // Adjust size as needed for the pattern
                         }}
@@ -60,7 +60,7 @@ const MerchStore = () => {
                     {/* Pattern Overlay */}
                     <div className="absolute inset-0 z-10 opacity-50 pointer-events-none">
                         <Image
-                            src="/unmaad assets/pattern.svg"
+                            src="/unmaad-assets/pattern.svg"
                             alt="Pattern Overlay"
                             fill
                             className="object-cover"
@@ -71,7 +71,7 @@ const MerchStore = () => {
                 {/* Top Strip */}
                 <div className="relative z-30 w-full transform rotate-180">
                     <Image
-                        src="/unmaad assets/merch store/blue-strip.svg"
+                        src="/unmaad-assets/merch-store/blue-strip.svg"
                         alt="Blue Strip Top"
                         width={1920}
                         height={100}
@@ -88,7 +88,7 @@ const MerchStore = () => {
                                 {/* Layer 1 (Back) */}
                                 <div className="absolute bottom-2 left-2 w-full h-full z-0">
                                     <Image
-                                        src="/unmaad assets/merch store/hanger.svg"
+                                        src="/unmaad-assets/merch-store/hanger.svg"
                                         alt="Merch Hanger 1"
                                         fill
                                         className="object-contain opacity-100"
@@ -97,7 +97,7 @@ const MerchStore = () => {
                                 {/* Layer 2 (Middle) */}
                                 <div className="absolute bottom-1 left-1 w-full h-full z-10">
                                     <Image
-                                        src="/unmaad assets/merch store/hanger.svg"
+                                        src="/unmaad-assets/merch-store/hanger.svg"
                                         alt="Merch Hanger 2"
                                         fill
                                         className="object-contain opacity-100"
@@ -106,7 +106,7 @@ const MerchStore = () => {
                                 {/* Layer 3 (Front) */}
                                 <div className="absolute inset-0 w-full h-full z-20">
                                     <Image
-                                        src="/unmaad assets/merch store/hanger.svg"
+                                        src="/unmaad-assets/merch-store/hanger.svg"
                                         alt="Merch Hanger 3"
                                         fill
                                         className="object-contain drop-shadow-xl"
@@ -129,7 +129,7 @@ const MerchStore = () => {
                 {/* Bottom Strip */}
                 <div className="relative z-30 w-full">
                     <Image
-                        src="/unmaad assets/merch store/blue-strip.svg"
+                        src="/unmaad-assets/merch-store/blue-strip.svg"
                         alt="Blue Strip Bottom"
                         width={1920}
                         height={100}

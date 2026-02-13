@@ -11,50 +11,50 @@ const baiJamjuree = Bai_Jamjuree({
 });
 
 const danceTitles = [
-    { title: "Footloose", link: "https://unstop.com/events/footloose-group-dance-competition-unmaad-2026-iim-bangalore-1625340", image: "/unmaad assets/competition bazaar/comps/Footloose1.jpg" },
-    { title: "Echoes of Heritage", link: "https://unstop.com/events/echoes-of-heritage-group-classical-folk-dance-unmaad-2026-iim-bangalore-1625333", image: "/unmaad assets/competition bazaar/comps/Echoes of heritage1.jpg" },
-    { title: "Soul N Sync", link: "https://unstop.com/events/soul-nsync-solo-duet-dance-unmaad-2026-iim-bangalore-1625318", image: "/unmaad assets/competition bazaar/comps/SoulNSync1.jpg" },
-    { title: "Street Unleashed", link: "https://unstop.com/events/street-unleashed-dance-battle-face-off-unmaad-2026-iim-bangalore-1625341", image: "/unmaad assets/competition bazaar/comps/Street Unleashed1.jpg" }
+    { title: "Footloose", link: "https://unstop.com/events/footloose-group-dance-competition-unmaad-2026-iim-bangalore-1625340", image: "/unmaad-assets/competition-bazaar/comps/Footloose1.jpg" },
+    { title: "Echoes of Heritage", link: "https://unstop.com/events/echoes-of-heritage-group-classical-folk-dance-unmaad-2026-iim-bangalore-1625333", image: "/unmaad-assets/competition-bazaar/comps/Echoes of heritage1.jpg" },
+    { title: "Soul N Sync", link: "https://unstop.com/events/soul-nsync-solo-duet-dance-unmaad-2026-iim-bangalore-1625318", image: "/unmaad-assets/competition-bazaar/comps/SoulNSync1.jpg" },
+    { title: "Street Unleashed", link: "https://unstop.com/events/street-unleashed-dance-battle-face-off-unmaad-2026-iim-bangalore-1625341", image: "/unmaad-assets/competition-bazaar/comps/Street Unleashed1.jpg" }
 ];
 
 const musicTitles = [
-    { title: "Voice of Unmaad", link: "https://unstop.com/events/voice-of-unmaad-solo-singing-unmaad-2026-iim-bangalore-1625461", image: "/unmaad assets/competition bazaar/comps/voiceofunmaad1.jpg" },
-    { title: "Gully Rap", link: "https://unstop.com/events/rap-sody-solo-rap-event-unmaad-2026-iim-bangalore-1625508", image: "/unmaad assets/competition bazaar/comps/gullyrap1.jpg" },
-    { title: "Battle of Bands", link: "https://unstop.com/events/b-school-of-rock-battle-of-bands-unmaad-2026-iim-bangalore-1625518", image: "/unmaad assets/competition bazaar/comps/battleofbands1.jpg" }
+    { title: "Voice of Unmaad", link: "https://unstop.com/events/voice-of-unmaad-solo-singing-unmaad-2026-iim-bangalore-1625461", image: "/unmaad-assets/competition-bazaar/comps/voiceofunmaad1.jpg" },
+    { title: "Gully Rap", link: "https://unstop.com/events/rap-sody-solo-rap-event-unmaad-2026-iim-bangalore-1625508", image: "/unmaad-assets/competition-bazaar/comps/gullyrap1.jpg" },
+    { title: "Battle of Bands", link: "https://unstop.com/events/b-school-of-rock-battle-of-bands-unmaad-2026-iim-bangalore-1625518", image: "/unmaad-assets/competition-bazaar/comps/battleofbands1.jpg" }
 ];
 
 const dramaTitles = [
-    { title: "Aahwan", link: "https://unstop.com/events/aahwan-the-street-play-unmaad-2026-iim-bangalore-1625715", image: "/unmaad assets/competition bazaar/comps/aahwan1.jpg" },
-    { title: "Drishya", link: "https://unstop.com/events/drishya-short-film-competition-unmaad-2026-iim-bangalore-1625781", image: "/unmaad assets/competition bazaar/comps/drishya1.jpg" },
-    { title: "Spotlight", link: "https://unstop.com/events/spotlight-mono-acting-competition-unmaad-2026-iim-bangalore-1625812", image: "/unmaad assets/competition bazaar/comps/spotlight1.jpg" },
-    { title: "Curtain Call", link: "https://unstop.com/events/curtain-call-stage-play-event-unmaad-2026-iim-bangalore-1625713", image: "/unmaad assets/competition bazaar/comps/curtaincall1.jpg" }
+    { title: "Aahwan", link: "https://unstop.com/events/aahwan-the-street-play-unmaad-2026-iim-bangalore-1625715", image: "/unmaad-assets/competition-bazaar/comps/aahwan1.jpg" },
+    { title: "Drishya", link: "https://unstop.com/events/drishya-short-film-competition-unmaad-2026-iim-bangalore-1625781", image: "/unmaad-assets/competition-bazaar/comps/drishya1.jpg" },
+    { title: "Spotlight", link: "https://unstop.com/events/spotlight-mono-acting-competition-unmaad-2026-iim-bangalore-1625812", image: "/unmaad-assets/competition-bazaar/comps/spotlight1.jpg" },
+    { title: "Curtain Call", link: "https://unstop.com/events/curtain-call-stage-play-event-unmaad-2026-iim-bangalore-1625713", image: "/unmaad-assets/competition-bazaar/comps/curtaincall1.jpg" }
 ];
 
 const informalsTitles = [
-    { title: "Food Wars", link: "https://unstop.com/events/food-wars-khao-toh-jaane-unmaad-2026-iim-bangalore-1625483", image: "/unmaad assets/competition bazaar/comps/foodwars1.jpg" },
-    { title: "Treasure Hunt", link: "https://unstop.com/events/treasure-hunt-kho-gaye-hum-kahan-unmaad-2026-iim-bangalore-1625251", image: "/unmaad assets/competition bazaar/comps/treasurehunt1.jpg" },
-    { title: "Mr. & Ms. Unmaad", link: "https://unstop.com/events/mr-ms-unmaad-unmaad-2026-iim-bangalore-1625492", image: "/unmaad assets/competition bazaar/comps/mrandmsunmaad1.jpg" },
-    { title: "Mic Drop", link: "https://unstop.com/events/mic-drop-humor-us-we-dare-you-unmaad-2026-iim-bangalore-1625449", image: "/unmaad assets/competition bazaar/comps/micdrop1.jpg" }
+    { title: "Food Wars", link: "https://unstop.com/events/food-wars-khao-toh-jaane-unmaad-2026-iim-bangalore-1625483", image: "/unmaad-assets/competition-bazaar/comps/foodwars1.jpg" },
+    { title: "Treasure Hunt", link: "https://unstop.com/events/treasure-hunt-kho-gaye-hum-kahan-unmaad-2026-iim-bangalore-1625251", image: "/unmaad-assets/competition-bazaar/comps/treasurehunt1.jpg" },
+    { title: "Mr. & Ms. Unmaad", link: "https://unstop.com/events/mr-ms-unmaad-unmaad-2026-iim-bangalore-1625492", image: "/unmaad-assets/competition-bazaar/comps/mrandmsunmaad1.jpg" },
+    { title: "Mic Drop", link: "https://unstop.com/events/mic-drop-humor-us-we-dare-you-unmaad-2026-iim-bangalore-1625449", image: "/unmaad-assets/competition-bazaar/comps/micdrop1.jpg" }
 ];
 
 const fashionTitles = [
-    { title: "Haute Couture", link: "https://unstop.com/events/haute-couture-indias-biggest-b-school-fashion-show-unmaad-2026-iim-bangalore-1624726", image: "/unmaad assets/competition bazaar/comps/hautecouture1.jpg" },
-    { title: "Cosplay", link: "https://unstop.com/events/metamorph-a-cosplay-event-unmaad-2026-iim-bangalore-1625008", image: "/unmaad assets/competition bazaar/comps/cosplay1.jpg" },
-    { title: "Group Canvas", link: "https://unstop.com/events/canvas-collective-group-painting-event-unmaad-2026-iim-bangalore-1624991", image: "/unmaad assets/competition bazaar/comps/groupcanvas1.jpg" },
-    { title: "Photography", link: "https://unstop.com/events/frames-of-streets-photography-event-unmaad-2026-iim-bangalore-1624994", image: "/unmaad assets/competition bazaar/comps/photography1.jpg" },
-    { title: "Junk art", link: "https://unstop.com/events/beauty-in-the-broken-a-junk-art-event-unmaad-2026-iim-bangalore-1625030", image: "/unmaad assets/competition bazaar/comps/junkart1.jpg" }
+    { title: "Haute Couture", link: "https://unstop.com/events/haute-couture-indias-biggest-b-school-fashion-show-unmaad-2026-iim-bangalore-1624726", image: "/unmaad-assets/competition-bazaar/comps/hautecouture1.jpg" },
+    { title: "Cosplay", link: "https://unstop.com/events/metamorph-a-cosplay-event-unmaad-2026-iim-bangalore-1625008", image: "/unmaad-assets/competition-bazaar/comps/cosplay1.jpg" },
+    { title: "Group Canvas", link: "https://unstop.com/events/canvas-collective-group-painting-event-unmaad-2026-iim-bangalore-1624991", image: "/unmaad-assets/competition-bazaar/comps/groupcanvas1.jpg" },
+    { title: "Photography", link: "https://unstop.com/events/frames-of-streets-photography-event-unmaad-2026-iim-bangalore-1624994", image: "/unmaad-assets/competition-bazaar/comps/photography1.jpg" },
+    { title: "Junk art", link: "https://unstop.com/events/beauty-in-the-broken-a-junk-art-event-unmaad-2026-iim-bangalore-1625030", image: "/unmaad-assets/competition-bazaar/comps/junkart1.jpg" }
 ];
 
 const litsTitles = [
-    { title: "Shabdsaga", link: "https://unstop.com/events/shabd-saga-a-hindi-and-urdu-poetry-competition-unmaad-2026-iim-bangalore-1625309", image: "/unmaad assets/competition bazaar/comps/shabdsaga1.jpg" },
-    { title: "Just a Minute (JAM)", link: "https://unstop.com/p/just-a-minute-60-second-spotlight-unmaad-2026-iim-bangalore-1625265", image: "/unmaad assets/competition bazaar/comps/Jam1.jpg" },
-    { title: "Unmaad Quiz", link: "https://unstop.com/events/the-unmaad-quiz-general-open-quiz-unmaad-2026-iim-bangalore-1625490", image: "/unmaad assets/competition bazaar/comps/unmaadquiz1.jpg" },
-    { title: "Pop Culture Quiz", link: "https://unstop.com/events/once-upon-a-time-in-pop-culture-entertainment-quiz-unmaad-2026-iim-bangalore-1625503", image: "/unmaad assets/competition bazaar/comps/popculture1.jpg" }
+    { title: "Shabdsaga", link: "https://unstop.com/events/shabd-saga-a-hindi-and-urdu-poetry-competition-unmaad-2026-iim-bangalore-1625309", image: "/unmaad-assets/competition-bazaar/comps/shabdsaga1.jpg" },
+    { title: "Just a Minute (JAM)", link: "https://unstop.com/p/just-a-minute-60-second-spotlight-unmaad-2026-iim-bangalore-1625265", image: "/unmaad-assets/competition-bazaar/comps/Jam1.jpg" },
+    { title: "Unmaad Quiz", link: "https://unstop.com/events/the-unmaad-quiz-general-open-quiz-unmaad-2026-iim-bangalore-1625490", image: "/unmaad-assets/competition-bazaar/comps/unmaadquiz1.jpg" },
+    { title: "Pop Culture Quiz", link: "https://unstop.com/events/once-upon-a-time-in-pop-culture-entertainment-quiz-unmaad-2026-iim-bangalore-1625503", image: "/unmaad-assets/competition-bazaar/comps/popculture1.jpg" }
 ];
 
 const onlineTitles = [
-    { title: "Virtual Expedition", link: "https://unstop.com/events/virtual-expedition-unmaad-2026-iim-bangalore-1625394", image: "/unmaad assets/competition bazaar/comps/virtualexpedition1.jpg" },
-    { title: "Street Anthem Challenge", link: "https://unstop.com/events/street-anthem-challenge-unmaad-2026-iim-bangalore-1625186", image: "/unmaad assets/competition bazaar/comps/streetanthem1.jpg" }
+    { title: "Virtual Expedition", link: "https://unstop.com/events/virtual-expedition-unmaad-2026-iim-bangalore-1625394", image: "/unmaad-assets/competition-bazaar/comps/virtualexpedition1.jpg" },
+    { title: "Street Anthem Challenge", link: "https://unstop.com/events/street-anthem-challenge-unmaad-2026-iim-bangalore-1625186", image: "/unmaad-assets/competition-bazaar/comps/streetanthem1.jpg" }
 ];
 
 interface CardFrameProps {
@@ -81,7 +81,7 @@ const CardFrame = ({ className, style, title, link, image, decoration, flipDecor
             style={style}
         >
             <Image
-                src="/unmaad assets/competition bazaar/wind.svg"
+                src="/unmaad-assets/competition-bazaar/wind.svg"
                 alt="Frame"
                 width={210}
                 height={210}
@@ -110,7 +110,7 @@ const CardFrame = ({ className, style, title, link, image, decoration, flipDecor
             )}
             {decoration === 'deco1' && (
                 <Image
-                    src="/unmaad assets/competition bazaar/frame-deco1.svg"
+                    src="/unmaad-assets/competition-bazaar/frame-deco1.svg"
                     alt="Frame Decoration"
                     width={150}
                     height={70}
@@ -126,7 +126,7 @@ const CardFrame = ({ className, style, title, link, image, decoration, flipDecor
             )}
             {decoration === 'deco2' && (
                 <Image
-                    src="/unmaad assets/competition bazaar/frame-deco2.svg"
+                    src="/unmaad-assets/competition-bazaar/frame-deco2.svg"
                     alt="Frame Decoration 2"
                     width={150}
                     height={70}
@@ -186,7 +186,7 @@ const CompetitionBazaar = () => {
                 {/* Background Layer */}
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/unmaad assets/royal-blue.png"
+                        src="/unmaad-assets/royal-blue.png"
                         alt="Royal Blue Background"
                         fill
                         className="object-cover"
@@ -197,7 +197,7 @@ const CompetitionBazaar = () => {
                 {/* Pattern Overlay */}
                 <div className="absolute inset-0 z-10 opacity-50 pointer-events-none">
                     <Image
-                        src="/unmaad assets/pattern.svg"
+                        src="/unmaad-assets/pattern.svg"
                         alt="Pattern Overlay"
                         fill
                         className="object-cover"
@@ -207,7 +207,7 @@ const CompetitionBazaar = () => {
                 {/* Title Content */}
                 <div className="relative z-20 text-center">
                     <h1 className="text-5xl md:text-7xl text-white font-samarkan">
-                        Competition Bazaar
+                        competition-bazaar
                     </h1>
                 </div>
             </div>
@@ -218,7 +218,7 @@ const CompetitionBazaar = () => {
                 <div
                     className="absolute inset-0 z-0 bg-[#E5AA38]"
                     style={{
-                        backgroundImage: "url('/unmaad assets/competition bazaar/yellow-bg.png')",
+                        backgroundImage: "url('/unmaad-assets/competition-bazaar/yellow-bg.png')",
                         backgroundRepeat: "repeat",
                         backgroundSize: "auto",
                         backgroundPosition: "top center"
@@ -228,7 +228,7 @@ const CompetitionBazaar = () => {
                     <div
                         className="absolute inset-0 z-10 opacity-50 pointer-events-none"
                         style={{
-                            backgroundImage: "url('/unmaad assets/pattern.svg')",
+                            backgroundImage: "url('/unmaad-assets/pattern.svg')",
                             backgroundRepeat: "repeat",
                             backgroundSize: "auto",
                             backgroundPosition: "top center"
@@ -239,7 +239,7 @@ const CompetitionBazaar = () => {
                 {/* Top Strip */}
                 <div className="relative z-30 w-full transform rotate-180">
                     <Image
-                        src="/unmaad assets/competition bazaar/yellow-strip.svg"
+                        src="/unmaad-assets/competition-bazaar/yellow-strip.svg"
                         alt="Yellow Strip Top"
                         width={1920}
                         height={100}
@@ -258,8 +258,8 @@ const CompetitionBazaar = () => {
                                 <HomeButton
                                     text={text}
                                     imageSrc={activeTab === text
-                                        ? "/unmaad assets/competition bazaar/yellow-button.svg"
-                                        : "/unmaad assets/events street/purple-button.svg"
+                                        ? "/unmaad-assets/competition-bazaar/yellow-button.svg"
+                                        : "/unmaad-assets/events-street/purple-button.svg"
                                     }
                                     imgWidth={250}
                                     imgHeight={90}
@@ -293,7 +293,7 @@ const CompetitionBazaar = () => {
                             {[1, 2].map((i) => (
                                 <div key={`row1-${i}`} className="relative flex justify-center">
                                     <Image
-                                        src="/unmaad assets/competition bazaar/building.svg"
+                                        src="/unmaad-assets/competition-bazaar/building.svg"
                                         alt="Building"
                                         width={400}
                                         height={400}
@@ -324,7 +324,7 @@ const CompetitionBazaar = () => {
                                 style={{ transform: `translateX(calc(-50px + ${scrollOffset * -0.1}px))` }}
                             >
                                 <Image
-                                    src="/unmaad assets/hero page/cart.svg"
+                                    src="/unmaad-assets/hero-page/cart.svg"
                                     alt="Cart"
                                     width={150}
                                     height={120}
@@ -338,7 +338,7 @@ const CompetitionBazaar = () => {
                                 style={{ transform: `translateX(calc(50px + ${scrollOffset * 0.1}px))` }}
                             >
                                 <Image
-                                    src="/unmaad assets/competition bazaar/blue-cart.svg"
+                                    src="/unmaad-assets/competition-bazaar/blue-cart.svg"
                                     alt="Blue Cart"
                                     width={150}
                                     height={120}
@@ -365,7 +365,7 @@ const CompetitionBazaar = () => {
                             {[1, 2].map((i) => (
                                 <div key={`row2-${i}`} className="relative flex justify-center">
                                     <Image
-                                        src="/unmaad assets/competition bazaar/building.svg"
+                                        src="/unmaad-assets/competition-bazaar/building.svg"
                                         alt="Building"
                                         width={400}
                                         height={400}
@@ -383,7 +383,7 @@ const CompetitionBazaar = () => {
                                             style={{ animationDelay: i === 1 ? '0.3s' : '0.5s' }}
                                         />
                                         <Image
-                                            src="/unmaad assets/competition bazaar/frame-deco1.svg"
+                                            src="/unmaad-assets/competition-bazaar/frame-deco1.svg"
                                             alt="Frame Decoration"
                                             width={150}
                                             height={70}
@@ -399,7 +399,7 @@ const CompetitionBazaar = () => {
                                 style={{ transform: `translateX(calc(-50px + ${scrollOffset * 0.075}px))` }}
                             >
                                 <Image
-                                    src="/unmaad assets/competition bazaar/blue-cart.svg"
+                                    src="/unmaad-assets/competition-bazaar/blue-cart.svg"
                                     alt="Blue Cart"
                                     width={150}
                                     height={120}
@@ -415,7 +415,7 @@ const CompetitionBazaar = () => {
                             {/* Frame 1 (With Building) */}
                             <div className="relative flex justify-center items-end">
                                 <Image
-                                    src="/unmaad assets/competition bazaar/building.svg"
+                                    src="/unmaad-assets/competition-bazaar/building.svg"
                                     alt="Building"
                                     width={400}
                                     height={400}
@@ -451,7 +451,7 @@ const CompetitionBazaar = () => {
                                         style={{ transform: `translateX(calc(0px + ${scrollOffset * -0.075}px))` }}
                                     >
                                         <Image
-                                            src="/unmaad assets/hero page/cart.svg"
+                                            src="/unmaad-assets/hero-page/cart.svg"
                                             alt="Cart"
                                             width={150}
                                             height={120}
@@ -480,7 +480,7 @@ const CompetitionBazaar = () => {
                                         style={{ transform: `translateX(calc(0px + ${scrollOffset * 0.075}px))` }}
                                     >
                                         <Image
-                                            src="/unmaad assets/competition bazaar/blue-cart.svg"
+                                            src="/unmaad-assets/competition-bazaar/blue-cart.svg"
                                             alt="Blue Cart"
                                             width={150}
                                             height={120}
@@ -493,7 +493,7 @@ const CompetitionBazaar = () => {
                             {/* Frame 4 (With Building) */}
                             <div className={`relative flex justify-center items-end ${activeTab === 'Music' ? 'hidden' : ''}`}>
                                 <Image
-                                    src="/unmaad assets/competition bazaar/building.svg"
+                                    src="/unmaad-assets/competition-bazaar/building.svg"
                                     alt="Building"
                                     width={400}
                                     height={400}
@@ -543,7 +543,7 @@ const CompetitionBazaar = () => {
                 {/* Bottom Strip */}
                 <div className="relative z-30 w-full">
                     <Image
-                        src="/unmaad assets/competition bazaar/yellow-strip.svg"
+                        src="/unmaad-assets/competition-bazaar/yellow-strip.svg"
                         alt="Yellow Strip Bottom"
                         width={1920}
                         height={100}

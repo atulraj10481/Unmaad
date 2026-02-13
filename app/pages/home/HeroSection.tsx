@@ -14,7 +14,7 @@ const HeroSection = () => {
             {/* Background Layer - Royal Blue */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/unmaad assets/royal-blue.png"
+                    src="/unmaad-assets/royal-blue.png"
                     alt="Background"
                     fill
                     className="object-cover"
@@ -25,7 +25,7 @@ const HeroSection = () => {
             {/* Pattern Overlay */}
             <div className="absolute inset-0 z-1">
                 <Image
-                    src="/unmaad assets/pattern.svg"
+                    src="/unmaad-assets/pattern.svg"
                     alt="Pattern"
                     fill
                     className="object-cover opacity-50"
@@ -38,7 +38,7 @@ const HeroSection = () => {
                 {/* Mobile Layout: Flower 1 at top */}
                 <div className="md:hidden mb-2">
                     <Image
-                        src="/unmaad assets/hero page/pink1.svg"
+                        src="/unmaad-assets/hero-page/pink1.svg"
                         alt="Flower 1"
                         width={120}
                         height={120}
@@ -55,7 +55,7 @@ const HeroSection = () => {
                 {/* Evil Eye */}
                 <div className="mb-2 md:-mb-30">
                     <Image
-                        src="/unmaad assets/hero page/evileye.svg"
+                        src="/unmaad-assets/hero-page/evileye.svg"
                         alt="Evil Eye"
                         width={40}
                         height={40}
@@ -69,14 +69,14 @@ const HeroSection = () => {
                     {/* Left Flowers (Stacked to the left edge of logo) */}
                     <div className="flex flex-col gap-0 z-0">
                         <Image
-                            src="/unmaad assets/hero page/pink1.svg"
+                            src="/unmaad-assets/hero-page/pink1.svg"
                             alt="Flower 1"
                             width={200}
                             height={200}
                             className="w-50 h-50 object-contain"
                         />
                         <Image
-                            src="/unmaad assets/hero page/pink3.svg"
+                            src="/unmaad-assets/hero-page/pink3.svg"
                             alt="Flower 3"
                             width={200}
                             height={200}
@@ -87,7 +87,7 @@ const HeroSection = () => {
                     {/* Center Logo */}
                     <div className="z-10 -mt-10">
                         <Image
-                            src="/unmaad assets/unm.svg"
+                            src="/unmaad-assets/unm.svg"
                             alt="Unmaad Logo"
                             width={500}
                             height={500}
@@ -99,14 +99,14 @@ const HeroSection = () => {
                     {/* Right Flowers (Stacked to the right edge of logo) */}
                     <div className="flex flex-col gap-0 z-0">
                         <Image
-                            src="/unmaad assets/hero page/pink2.svg"
+                            src="/unmaad-assets/hero-page/pink2.svg"
                             alt="Flower 2"
                             width={200}
                             height={200}
                             className="w-50 h-50 object-contain"
                         />
                         <Image
-                            src="/unmaad assets/hero page/pink4.svg"
+                            src="/unmaad-assets/hero-page/pink4.svg"
                             alt="Flower 4"
                             width={200}
                             height={200}
@@ -118,7 +118,7 @@ const HeroSection = () => {
                 {/* Mobile Layout: Logo only */}
                 <div className="md:hidden mb-2">
                     <Image
-                        src="/unmaad assets/unm.svg"
+                        src="/unmaad-assets/unm.svg"
                         alt="Unmaad Logo"
                         width={400}
                         height={400}
@@ -130,7 +130,7 @@ const HeroSection = () => {
                 {/* Tagline */}
                 <div className="mb-2 md:-mt-40 md:mb-2 relative z-20">
                     <Image
-                        src="/unmaad assets/hero page/tag.svg"
+                        src="/unmaad-assets/hero-page/tag.svg"
                         alt="Tagline"
                         width={400}
                         height={500}
@@ -141,7 +141,7 @@ const HeroSection = () => {
                 {/* Mobile Layout: Flower 4 after tagline */}
                 <div className="md:hidden mb-4">
                     <Image
-                        src="/unmaad assets/hero page/pink4.svg"
+                        src="/unmaad-assets/hero-page/pink4.svg"
                         alt="Flower 4"
                         width={120}
                         height={120}

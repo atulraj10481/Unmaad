@@ -14,7 +14,7 @@ const Footer = () => {
                     <div className="flex flex-col md:flex-row items-center md:items-start gap-4 flex-1">
                         <div className="relative w-20 h-20 md:w-24 md:h-24 shrink-0 transition-all">
                             <Image
-                                src="/unmaad assets/IIMB.svg"
+                                src="/unmaad-assets/IIMB.svg"
                                 alt="IIM Bangalore"
                                 fill
                                 className="object-contain"
@@ -35,7 +35,7 @@ const Footer = () => {
                         {/* Image on the left of text (on desktop) / Top of text (on mobile) */}
                         <div className="relative w-24 h-24 md:w-30 md:h-30 shrink-0 transition-all">
                             <Image
-                                src="/unmaad assets/UnmaadV.svg"
+                                src="/unmaad-assets/UnmaadV.svg"
                                 alt="Unmaad"
                                 fill
                                 className="object-contain"

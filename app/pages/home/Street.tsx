@@ -61,7 +61,7 @@ const Street = () => {
                     <div
                         className="absolute inset-0 z-0"
                         style={{
-                            backgroundImage: "url('/unmaad assets/hero page/orange-bg.svg')",
+                            backgroundImage: "url('/unmaad-assets/hero-page/orange-bg.svg')",
                             backgroundRepeat: "repeat",
                             backgroundSize: "100% auto", // Fills width, maintains ratio, repeats vertically
                             backgroundPosition: "top center"
@@ -71,7 +71,7 @@ const Street = () => {
                     <div
                         className="absolute inset-0 z-10 opacity-50 pointer-events-none"
                         style={{
-                            backgroundImage: "url('/unmaad assets/pattern.svg')",
+                            backgroundImage: "url('/unmaad-assets/pattern.svg')",
                             backgroundRepeat: "repeat",
                             backgroundSize: "auto"
                         }}
@@ -83,7 +83,7 @@ const Street = () => {
                     {/* Title */}
                     <div className="flex justify-center mt-[5px] md:mt-0 mb-4 md:mb-6">
                         <h2 className="text-5xl md:text-6xl text-white font-samarkan">
-                            Events Street
+                            events-street
                         </h2>
                     </div>
 
@@ -99,13 +99,13 @@ const Street = () => {
                     {/* Shutters (Base rests on the bottom of this container) */}
                     <div className="flex flex-col md:grid md:grid-cols-2 md:place-items-center lg:flex lg:flex-row items-end justify-center gap-10 md:gap-y-10 md:gap-x-4 lg:gap-15 z-30 transition-all -mb-3">
                         <div className="md:order-2 lg:order-none">
-                            <ShutterCard posterImage="/unmaad assets/hero page/post1.svg" />
+                            <ShutterCard posterImage="/unmaad-assets/hero-page/post1.svg" />
                         </div>
                         <div className="md:order-1 lg:order-none md:col-span-2 md:mb-0 lg:mb-0 z-10">
-                            <ShutterCard posterImage="/unmaad assets/hero page/post2.svg" />
+                            <ShutterCard posterImage="/unmaad-assets/hero-page/post2.svg" />
                         </div>
                         <div className="md:order-3 lg:order-none">
-                            <ShutterCard posterImage="/unmaad assets/hero page/post3.svg" />
+                            <ShutterCard posterImage="/unmaad-assets/hero-page/post3.svg" />
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@ const Street = () => {
                 {/* Background Image: Grey */}
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/unmaad assets/hero page/grey-bg.png"
+                        src="/unmaad-assets/hero-page/grey-bg.png"
                         alt="Grey Background"
                         fill
                         className="object-cover"
@@ -124,7 +124,7 @@ const Street = () => {
                     {/* Pattern Overlay */}
                     <div className="absolute inset-0 z-10 opacity-50 pointer-events-none">
                         <Image
-                            src="/unmaad assets/pattern.svg"
+                            src="/unmaad-assets/pattern.svg"
                             alt="Pattern Overlay"
                             fill
                             className="object-cover"
@@ -143,7 +143,7 @@ const Street = () => {
                         style={{ transform: `translateX(${scrollOffset * 0.4}px)` }}
                     >
                         <Image
-                            src="/unmaad assets/hero page/auto.svg"
+                            src="/unmaad-assets/hero-page/auto.svg"
                             alt="Auto"
                             fill
                             className="object-contain"
@@ -155,7 +155,7 @@ const Street = () => {
                         style={{ transform: `translateX(calc(-50% - ${scrollOffset * 0.14}px))` }}
                     >
                         <Image
-                            src="/unmaad assets/hero page/cycle.svg"
+                            src="/unmaad-assets/hero-page/cycle.svg"
                             alt="Cycle"
                             fill
                             className="object-contain"
@@ -167,7 +167,7 @@ const Street = () => {
                         style={{ transform: `translateX(calc(50% - ${scrollOffset * 0.18}px))` }}
                     >
                         <Image
-                            src="/unmaad assets/hero page/cart.svg"
+                            src="/unmaad-assets/hero-page/cart.svg"
                             alt="Cart"
                             fill
                             className="object-contain"
@@ -179,7 +179,7 @@ const Street = () => {
                         style={{ transform: `translateX(${scrollOffset * (isMobile ? 0.15 : 0.1)}px)` }}
                     >
                         <Image
-                            src="/unmaad assets/hero page/auto.svg"
+                            src="/unmaad-assets/hero-page/auto.svg"
                             alt="Auto"
                             fill
                             className="object-contain"
@@ -199,7 +199,7 @@ const Street = () => {
                             }}
                         >
                             <Image
-                                src={`/unmaad assets/hero page/grass${(i % 2) + 1}.svg`}
+                                src={`/unmaad-assets/hero-page/grass${(i % 2) + 1}.svg`}
                                 alt="Grass"
                                 fill
                                 className="object-contain"
@@ -214,7 +214,7 @@ const Street = () => {
                 {/* Grass 1 - Left */}
                 <div className="absolute bottom-0 left-0 w-32 h-32 z-50">
                     <Image
-                        src="/unmaad assets/hero page/grass1.svg"
+                        src="/unmaad-assets/hero-page/grass1.svg"
                         alt="Grass"
                         fill
                         className="object-contain"
@@ -223,7 +223,7 @@ const Street = () => {
                 {/* Grass 2 - Right */}
                 <div className="absolute bottom-0 right-0 w-32 h-32 z-50">
                     <Image
-                        src="/unmaad assets/hero page/grass2.svg"
+                        src="/unmaad-assets/hero-page/grass2.svg"
                         alt="Grass"
                         fill
                         className="object-contain"
