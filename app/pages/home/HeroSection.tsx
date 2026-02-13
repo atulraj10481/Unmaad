@@ -47,7 +47,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Header Text */}
-                <div className="mb-2 md:-mt-20 md:mb-2 text-center text-white font-['Century_Gothic']">
+                <div className="mb-2 md:-mt-20 md:mb-2 text-center text-white font-century-gothic">
                     <p className="text-sm md:text-lg lg:text-xl tracking-wider">Annual Cultural Fest | IIM Bangalore</p>
                     <p className="text-base md:text-lg lg:text-xl font-bold">27 Feb - 1 Mar 2026</p>
                 </div>

@@ -102,7 +102,7 @@ const UnmaadJunction = () => {
                 <HomeButton
                     href="https://www.youtube.com/watch?v=PfOL_uqhW1o&t=4s"
                     text="Watch Aftermovie"
-                    textClassName="font-century-gothic"
+                    textClassName={baiJamjuree.className}
                     target="_blank"
                     rel="noopener noreferrer"
                 />

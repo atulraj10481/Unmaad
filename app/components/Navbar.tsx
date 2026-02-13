@@ -17,7 +17,7 @@ const Navbar = () => {
         <nav className="fixed top-0 w-full z-[100] bg-white/10 backdrop-blur-md transition-all duration-300">
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16 lg:h-20">
+                <div className="flex items-center justify-between h-16 lg:h-20 relative">
                     {/* Left: Logo */}
                     <div className="shrink-0 flex items-center">
                         <Link href="/">
@@ -32,7 +32,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Center: Desktop Menu */}
-                    <div className="hidden lg:flex flex-1 justify-center">
+                    <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2">
                         <div className="flex items-baseline space-x-6">
                             {navLinks.map((link) => (
                                 <Link
