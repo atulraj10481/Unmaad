@@ -145,7 +145,7 @@ const SponsorAlley = () => {
                         <div className="mt-8 mb-8">
                             <HomeButton
                                 href="/pages/events-street"
-                                text="Enter the street"
+                                text="Enter the Street"
                                 textClassName={baiJamjuree.className}
                             />
                         </div>

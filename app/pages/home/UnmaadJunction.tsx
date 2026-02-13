@@ -19,7 +19,7 @@ const UnmaadJunction = () => {
         const interval = setInterval(() => {
             setPrevImage(currentImage);
             setCurrentImage((prev) => (prev % 10) + 1);
-        }, 4000); // 40s rotation / 10 images = 4s per image (36 degrees)
+        }, 2000); // 2s per image (36 degrees)
 
         return () => clearInterval(interval);
     }, [currentImage]);
@@ -55,12 +55,12 @@ const UnmaadJunction = () => {
                 </h2>
 
                 {/* Stats */}
-                <p className="text-base md:text-xl text-white mb-2 md:mb-4 font-century-gothic tracking-wider">
+                <p className="text-base md:text-xl text-white mb-2 md:mb-4 font-marines tracking-wider">
                     5000+ attendees | 50+ events | Since 1999
                 </p>
 
                 {/* Description */}
-                <p className="text-xs md:text-sm text-white max-w-2xl mb-6 md:mb-16 font-century-gothic opacity-90">
+                <p className="text-sm md:text-lg text-white max-w-2xl mb-6 md:mb-16 font-century-gothic opacity-90">
                     Where art escapes the walls, culture takes the streets, and every beat tells a story.
                 </p>
 

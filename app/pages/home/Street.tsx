@@ -91,14 +91,14 @@ const Street = () => {
                     <div className="flex justify-center mb-12 md:mb-16">
                         <HomeButton
                             href="/pages/competition-bazaar"
-                            text="Explore all event"
+                            text="Explore All Events"
                             textClassName={baiJamjuree.className}
                         />
                     </div>
 
                     {/* Shutters (Base rests on the bottom of this container) */}
                     <div className="flex flex-col md:grid md:grid-cols-2 md:place-items-center lg:flex lg:flex-row items-end justify-center gap-10 md:gap-y-10 md:gap-x-4 lg:gap-15 z-30 transition-all -mb-3">
-                        <div className="md:order-2 lg:order-none">
+                        <div className="md:order-2 lg:order-none hidden">
                             <ShutterCard posterImage="/unmaad-assets/hero-page/post1.svg" />
                         </div>
                         <div className="md:order-1 lg:order-none md:col-span-2 md:mb-0 lg:mb-0 z-10">

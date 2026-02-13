@@ -101,9 +101,9 @@ const CardFrame = ({ className, style, title, link, image, decoration, flipDecor
             )}
             {title && (
                 <div
-                    className={`absolute top-[calc(12%-5px)] left-1/2 -translate-x-1/2 w-[70%] text-center z-40 pointer-events-none ${className?.includes('invisible') ? 'hidden' : ''}`}
+                    className={`absolute top-[calc(12%-5px)] md:top-[calc(12%-10px)] left-1/2 -translate-x-1/2 w-[70%] text-center z-40 pointer-events-none ${className?.includes('invisible') ? 'hidden' : ''}`}
                 >
-                    <span className={`${baiJamjuree.className} text-black font-bold uppercase leading-tight block`} style={{ fontSize: 'clamp(8px, 1.2vw, 14px)' }}>
+                    <span className={`${baiJamjuree.className} text-black font-bold leading-tight block`} style={{ fontSize: 'clamp(8px, 1.2vw, 14px)' }}>
                         {title}
                     </span>
                 </div>
@@ -207,7 +207,7 @@ const CompetitionBazaar = () => {
                 {/* Title Content */}
                 <div className="relative z-20 text-center">
                     <h1 className="text-5xl md:text-7xl text-white font-samarkan">
-                        competition-bazaar
+                        Competition Bazaar
                     </h1>
                 </div>
             </div>
@@ -462,7 +462,7 @@ const CompetitionBazaar = () => {
                             </div>
 
                             {/* Frame 3 (+ Deco 1) */}
-                            <div className="relative flex justify-center items-end pb-[20px] md:pb-[40px]">
+                            <div className={`relative flex justify-center items-end pb-[20px] md:pb-[40px] ${activeTab === 'Online' ? 'hidden' : ''}`}>
                                 <div className="relative z-20 translate-y-[15%] group">
                                     <CardFrame
                                         key={activeTab}
@@ -491,7 +491,7 @@ const CompetitionBazaar = () => {
                             </div>
 
                             {/* Frame 4 (With Building) */}
-                            <div className={`relative flex justify-center items-end ${activeTab === 'Music' ? 'hidden' : ''}`}>
+                            <div className={`relative flex justify-center items-end ${activeTab === 'Music' || activeTab === 'Online' ? 'hidden' : ''}`}>
                                 <Image
                                     src="/unmaad-assets/competition-bazaar/building.svg"
                                     alt="Building"
@@ -533,7 +533,7 @@ const CompetitionBazaar = () => {
                     {/* Enter the Street Button */}
                     <HomeButton
                         className="mt-4 md:mt-8 lg:mt-12 drop-shadow-xl"
-                        text="Enter the street"
+                        text="Enter the Street"
                         textClassName={baiJamjuree.className}
                         shadowColor="black"
                         onClick={() => { }} // Optional: handle click if needed

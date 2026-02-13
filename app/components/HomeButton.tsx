@@ -56,7 +56,7 @@ const HomeButton = ({
                 />
                 {text && (
                     <span
-                        className={`absolute inset-0 flex items-center justify-center text-[#FF00A8] pointer-events-none text-[10px] md:text-base lg:text-xl font-bold uppercase ${textClassName}`}
+                        className={`absolute inset-0 flex items-center justify-center text-[#FF00A8] pointer-events-none text-[10px] md:text-base lg:text-xl font-bold ${textClassName}`}
                     >
                         {text}
                     </span>

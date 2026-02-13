@@ -120,7 +120,7 @@ const MerchStore = () => {
                     <div className="mt-16">
                         <HomeButton
                             href="/pages/events-street"
-                            text="Enter the street"
+                            text="Enter the Street"
                             textClassName={baiJamjuree.className}
                         />
                     </div>

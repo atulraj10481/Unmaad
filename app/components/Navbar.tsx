@@ -10,7 +10,7 @@ const Navbar = () => {
 
     const navLinks = [
         { name: "Unmaad Junction", href: "/#unmaad-junction" },
-        { name: "competition-bazaar", href: "/pages/competition-bazaar" },
+        { name: "Competition Bazaar", href: "/pages/competition-bazaar" },
     ];
 
     return (
@@ -38,7 +38,7 @@ const Navbar = () => {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 font-century-gothic"
+                                    className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-base font-normal transition-colors duration-200 font-century-gothic"
                                 >
                                     {link.name}
                                 </Link>
@@ -116,7 +116,7 @@ const Navbar = () => {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-indigo-900 hover:text-amber-400 block px-3 py-3 rounded-md text-base font-medium font-century-gothic transition-colors border-b border-gray-300"
+                            className="text-indigo-900 hover:text-amber-400 block px-3 py-3 rounded-md text-base font-normal font-century-gothic transition-colors border-b border-gray-300"
                             onClick={() => setIsOpen(false)}
                         >
                             {link.name}

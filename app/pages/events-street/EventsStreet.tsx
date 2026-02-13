@@ -189,7 +189,7 @@ const EventsStreet = () => {
                                     imgWidth={250}
                                     imgHeight={90}
                                     imgClassName="w-64 sm:w-60 md:w-60 lg:w-80 h-auto"
-                                    textClassName={`text-xs md:text-xl font-bold text-center px-4 uppercase ${baiJamjuree.className} text-white`}
+                                    textClassName={`text-xs md:text-xl font-bold text-center px-4 ${baiJamjuree.className} text-white`}
                                     shadowColor="white"
                                 />
                             </div>
@@ -242,9 +242,9 @@ const EventsStreet = () => {
                             // I'll use href="#" and maybe onClick if needed (none was there).
                             // Actually, line 232 says `cursor-pointer block`. It likely was intended to be a button or link but missing href.
                             // I'll set href="#" to maintain behavior of "clickable-like". 
-                            text="Book your spot"
+                            text="Book your Spot"
                             imgClassName="w-40 md:w-60 h-auto"
-                            textClassName={`text-xs md:text-lg font-bold text-center px-4 uppercase ${baiJamjuree.className}`}
+                            textClassName={`text-xs md:text-lg font-bold text-center px-4 ${baiJamjuree.className}`}
                         />
                     </div>
 

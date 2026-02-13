@@ -39,10 +39,16 @@ html {
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Marines";
+    src: url("/fonts/marines/marines.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 @layer utilities {
     .font-marines {
         font-family: "Marines", sans-serif;
-        /* Placeholder */
     }
 
     .animate-spin-slow {
