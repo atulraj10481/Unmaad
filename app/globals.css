@@ -1,11 +1,5 @@
 @import "tailwindcss";
 
-@property --wipe-angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
-}
-
 html {
     scroll-behavior: smooth;
 }
