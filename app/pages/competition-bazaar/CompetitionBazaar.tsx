@@ -11,9 +11,9 @@ const baiJamjuree = Bai_Jamjuree({
 });
 
 const danceTitles = [
-    { title: "Footloose", link: "https://unstop.com/events/footloose-group-dance-competition-unmaad-2026-iim-bangalore-1625340", image: "/unmaad-assets/competition-bazaar/comps/footloose1.jpg" },
+    { title: "Footloose", link: "https://unstop.com/events/footloose-group-dance-competition-unmaad-2026-iim-bangalore-1625340", image: "/unmaad-assets/competition-bazaar/comps/footloose-event.jpg" },
     { title: "Echoes of Heritage", link: "https://unstop.com/events/echoes-of-heritage-group-classical-folk-dance-unmaad-2026-iim-bangalore-1625333", image: "/unmaad-assets/competition-bazaar/comps/echoes-of-heritage1.jpg" },
-    { title: "Soul N Sync", link: "https://unstop.com/events/soul-nsync-solo-duet-dance-unmaad-2026-iim-bangalore-1625318", image: "/unmaad-assets/competition-bazaar/comps/soulnsync1.jpg" },
+    { title: "Soul N Sync", link: "https://unstop.com/events/soul-nsync-solo-duet-dance-unmaad-2026-iim-bangalore-1625318", image: "/unmaad-assets/competition-bazaar/comps/soulnsync-event.jpg" },
     { title: "Street Unleashed", link: "https://unstop.com/events/street-unleashed-dance-battle-face-off-unmaad-2026-iim-bangalore-1625341", image: "/unmaad-assets/competition-bazaar/comps/street-unleashed1.jpg" }
 ];
 
