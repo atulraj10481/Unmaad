@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@property --wipe-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -65,11 +71,7 @@ html {
         }
     }
 
-    @property --wipe-angle {
-        syntax: '<angle>';
-        initial-value: 0deg;
-        inherits: false;
-    }
+
 
     .animate-clock {
         animation: clock-wipe 1s linear forwards;
