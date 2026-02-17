@@ -186,10 +186,7 @@ const EventsStreet = () => {
                                 <HomeButton
                                     text={text}
                                     imageSrc="/unmaad-assets/events-street/purple-button.svg"
-                                    imgWidth={250}
-                                    imgHeight={90}
-                                    imgClassName="w-64 sm:w-60 md:w-60 lg:w-80 h-auto"
-                                    textClassName={`text-xs md:text-xl font-bold text-center px-4 ${baiJamjuree.className} text-white`}
+                                    textClassName={`uppercase ${baiJamjuree.className} text-white -translate-x-[3px] -translate-y-[3px]`}
                                     shadowColor="white"
                                 />
                             </div>
@@ -198,16 +195,20 @@ const EventsStreet = () => {
 
                     {/* Window Cards Row */}
                     <div className="flex items-center justify-center gap-8 md:gap-16 flex-wrap">
-                        {[1, 2, 3].map((item) => (
-                            <div key={item} className="relative group cursor-pointer hover:scale-105 transition-transform">
+                        {[
+                            { id: 1, src: "/unmaad-assets/events-street/window.svg", alt: "Window Card 1" },
+                            { id: 2, src: "/unmaad-assets/events-street/window2.svg", alt: "Window Card 2" },
+                            { id: 3, src: "/unmaad-assets/events-street/coming-soon.svg", alt: "Coming Soon" }
+                        ].map((item) => (
+                            <div key={item.id} className="relative group transition-transform">
                                 <Image
-                                    src="/unmaad-assets/events-street/window.svg"
-                                    alt={`Window Card ${item}`}
+                                    src={item.src}
+                                    alt={item.alt}
                                     width={300}
                                     height={400}
                                     className="w-[246px] md:w-80 h-auto object-contain"
                                 />
-                                {item === 2 && (
+                                {item.id === 2 && (
                                     <motion.div
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
@@ -229,22 +230,12 @@ const EventsStreet = () => {
                     {/* Book Your Spot Button */}
                     <div className="mt-8">
                         <HomeButton
-                            href="#" // Was not specified in original code, it was just a div wrapper around Image, but HomeButton uses Link. The original code was a div with NO Link around it? 
-                            // Wait, let me check the original code in EventsStreet.tsx again.
-                            // Lines 232: <div className="relative group cursor-pointer block ...">
-                            // It was NOT a Link. It was a div.
-                            // My HomeButton uses Link.
-                            // I should probably pass '#' if it's just visual or check if I need to support onClick/div.
-                            // The original had `active:scale-95` so it was interactive.
-                            // But no href.
-                            // I will use href="#" for now or should I allow "as='div'"?
-                            // HomeButton is strictly Link.
-                            // I'll use href="#" and maybe onClick if needed (none was there).
-                            // Actually, line 232 says `cursor-pointer block`. It likely was intended to be a button or link but missing href.
-                            // I'll set href="#" to maintain behavior of "clickable-like". 
+                            href="https://www.skillboxes.com/events/seedhe-maut-unmaad-iim-s-annual-cultural-fest"
                             text="Book your Spot"
                             imgClassName="w-40 md:w-60 h-auto"
                             textClassName={`text-xs md:text-lg font-bold text-center px-4 ${baiJamjuree.className}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
                         />
                     </div>
 

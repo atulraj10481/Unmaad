@@ -90,7 +90,7 @@ const Street = () => {
                     {/* Button */}
                     <div className="flex justify-center mb-12 md:mb-16">
                         <HomeButton
-                            href="/pages/competition-bazaar"
+                            href="/pages/events-street"
                             text="Explore All Events"
                             textClassName={baiJamjuree.className}
                         />

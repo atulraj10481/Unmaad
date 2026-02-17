@@ -1,4 +1,5 @@
 "use client";
+import Script from "next/script";
 import type { Metadata } from "next"; // Ensure this is at the top if using useEffect
 import { useEffect } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -10,7 +11,7 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
-  
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -35,7 +36,7 @@ export default function RootLayout({
           inherits: false,
           initialValue: "0deg",
         });
-      } catch (e) {}
+      } catch (e) { }
     }
   }, []);
 
@@ -50,6 +51,21 @@ export default function RootLayout({
             {children}
           </PageTransition>
         </div>
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-7NWN813T9Y"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-7NWN813T9Y');
+          `}
+        </Script>
       </body>
     </html>
   );
