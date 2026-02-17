@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { Bai_Jamjuree } from 'next/font/google';
 import { motion } from "framer-motion";
 import HomeButton from "../../components/HomeButton";
@@ -11,6 +12,7 @@ const baiJamjuree = Bai_Jamjuree({
 });
 
 const EventsStreet = () => {
+    const [activeTab, setActiveTab] = useState("Proshows");
     return (
         <section className="w-full bg-[#001D4A]">
             {/* ... existing code ... */}
@@ -79,6 +81,7 @@ const EventsStreet = () => {
                 {/* Content Area - Buttons & Cards */}
                 <div className="relative z-20 flex-grow flex flex-col items-center justify-center py-10 gap-10 px-4">
 
+                    {/* Buttons Row - Overlapping Top Strip */}
                     {/* Buttons Row - Overlapping Top Strip */}
                     <div className="flex flex-col sm:flex-row sm:flex-wrap md:grid md:grid-cols-2 md:place-items-center lg:flex lg:flex-nowrap items-center justify-center gap-4 md:gap-y-12 md:gap-x-24 relative z-10 w-full max-w-6xl mx-auto mb-[38px] md:mb-16">
                         {["Proshows", "Workshops", "Jam nights"].map((text, index) => (
@@ -183,19 +186,26 @@ const EventsStreet = () => {
                                     </>
                                 )}
 
-                                <HomeButton
-                                    text={text}
-                                    imageSrc="/unmaad-assets/events-street/purple-button.svg"
-                                    textClassName={`uppercase ${baiJamjuree.className} text-white -translate-x-[3px] -translate-y-[3px]`}
-                                    shadowColor="white"
-                                />
+                                {text !== "Workshops" && (
+                                    <HomeButton
+                                        text={text}
+                                        imageSrc={activeTab === text
+                                            ? "/unmaad-assets/competition-bazaar/yellow-button.svg"
+                                            : "/unmaad-assets/events-street/purple-button.svg"
+                                        }
+                                        textClassName={`uppercase ${baiJamjuree.className} ${activeTab === text ? 'text-black' : 'text-white -translate-x-[3px] -translate-y-[3px]'}`}
+                                        shadowColor={activeTab === text ? "black" : "white"}
+                                        shadowClassName={activeTab === text ? "hidden" : undefined}
+                                        onClick={() => setActiveTab(text)}
+                                    />
+                                )}
                             </div>
                         ))}
                     </div>
 
                     {/* Window Cards Row */}
                     <div className="flex items-center justify-center gap-8 md:gap-16 flex-wrap">
-                        {[
+                        {activeTab === "Proshows" && [
                             { id: 1, src: "/unmaad-assets/events-street/window.svg", alt: "Window Card 1" },
                             { id: 2, src: "/unmaad-assets/events-street/window2.svg", alt: "Window Card 2" },
                             { id: 3, src: "/unmaad-assets/events-street/coming-soon.svg", alt: "Coming Soon" }
@@ -225,6 +235,18 @@ const EventsStreet = () => {
                                 )}
                             </div>
                         ))}
+
+                        {activeTab === "Jam nights" && (
+                            <div className="relative group transition-transform">
+                                <Image
+                                    src="/unmaad-assets/events-street/coming-soon.svg"
+                                    alt="Coming Soon"
+                                    width={300}
+                                    height={400}
+                                    className="w-[246px] md:w-80 h-auto object-contain"
+                                />
+                            </div>
+                        )}
                     </div>
 
                     {/* Book Your Spot Button */}
