@@ -121,7 +121,9 @@ const MerchStore = () => {
                     <div>
                         <HomeButton
                             text="Buy Merch"
-                            href="#"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSdLMuDSjOa-GWkFb7JpmlB0hM3sLOVf5Emi1R6H6X1lHs823g/viewform"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             imageSrc="/unmaad-assets/events-street/purple-button.svg"
                             textClassName={`uppercase ${baiJamjuree.className} text-white -translate-x-[3px] -translate-y-[3px]`}
                             shadowColor="white"
@@ -262,7 +264,7 @@ const MerchStore = () => {
                         {/* Content Container */}
                         <div className="relative z-10 w-full h-full p-8 md:p-12 flex items-center justify-center">
                             <iframe
-                                src="/unmaad-assets/merch-store/unmaad-merch.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                                src="/unmaad-assets/merch-store/unmaad-merch-drop.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
                                 className="w-full h-full rounded bg-transparent"
                                 title="View Merch"
                             />
