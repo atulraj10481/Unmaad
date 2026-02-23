@@ -206,11 +206,17 @@ const EventsStreet = () => {
                     {/* Window Cards Row */}
                     <div className="flex items-center justify-center gap-8 md:gap-16 flex-wrap">
                         {activeTab === "Proshows" && [
-                            { id: 1, src: "/unmaad-assets/events-street/window.svg", alt: "Window Card 1" },
-                            { id: 2, src: "/unmaad-assets/events-street/window2.svg", alt: "Window Card 2" },
-                            { id: 3, src: "/unmaad-assets/events-street/coming-soon.svg", alt: "Coming Soon" }
+                            { id: 1, src: "/unmaad-assets/events-street/window.svg", alt: "Window Card 1", link: "https://www.skillboxes.com/events/seedhe-maut-unmaad-iim-s-annual-cultural-fest" },
+                            { id: 2, src: "/unmaad-assets/events-street/window2.svg", alt: "Window Card 2", link: "https://www.skillboxes.com/events/seedhe-maut-unmaad-iim-s-annual-cultural-fest" },
+                            { id: 3, src: "/unmaad-assets/events-street/window3.svg", alt: "Window Card 3", link: "https://forms.gle/d3B3C25SsQ5hDWWz7" }
                         ].map((item) => (
-                            <div key={item.id} className="relative group transition-transform">
+                            <a
+                                key={item.id}
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="relative group transition-transform hover:scale-[1.02] cursor-pointer"
+                            >
                                 <Image
                                     src={item.src}
                                     alt={item.alt}
@@ -223,7 +229,8 @@ const EventsStreet = () => {
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         transition={{ delay: 3, duration: 0.5 }}
-                                        className="absolute -bottom-8 -right-8 z-10 animate-float-rotate hidden md:block">
+                                        className="absolute -bottom-8 -right-8 z-10 animate-float-rotate hidden md:block"
+                                    >
                                         <Image
                                             src="/unmaad-assets/events-street/branch1.svg"
                                             alt="Branch Decoration"
@@ -233,7 +240,7 @@ const EventsStreet = () => {
                                         />
                                     </motion.div>
                                 )}
-                            </div>
+                            </a>
                         ))}
 
                         {activeTab === "Jam nights" && (

@@ -148,4 +148,8 @@ html {
             opacity: 1;
         }
     }
+
+    .crop-top-20 {
+        clip-path: inset(20px 0 0 0);
+    }
 }
