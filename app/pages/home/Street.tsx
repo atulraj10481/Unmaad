@@ -101,8 +101,9 @@ const Street = () => {
                     <div className="flex flex-col md:grid md:grid-cols-2 md:place-items-center lg:flex lg:flex-row items-end justify-center gap-10 md:gap-y-10 md:gap-x-4 lg:gap-15 z-30 transition-all -mb-3">
                         <div className="md:order-2 lg:order-none">
                             <ShutterCard
-                                posterImage="/unmaad-assets/hero-page/post1.svg"
-                                redirectUrl="https://www.skillboxes.com/events/seedhe-maut-unmaad-iim-s-annual-cultural-fest"
+                                posterImage="/unmaad-assets/hero-page/show4.svg"
+                                contentImage="/unmaad-assets/hero-page/shutter2.svg"
+                                redirectUrl="https://forms.gle/d3B3C25SsQ5hDWWz7"
                             />
                         </div>
                         <div className="md:order-1 lg:order-none md:col-span-2 md:mb-0 lg:mb-0 z-10">
@@ -113,9 +114,8 @@ const Street = () => {
                         </div>
                         <div className="md:order-3 lg:order-none">
                             <ShutterCard
-                                posterImage="/unmaad-assets/hero-page/show4.svg"
-                                contentImage="/unmaad-assets/hero-page/shutter2.svg"
-                                redirectUrl="https://forms.gle/d3B3C25SsQ5hDWWz7"
+                                posterImage="/unmaad-assets/hero-page/post1.svg"
+                                redirectUrl="https://www.skillboxes.com/events/seedhe-maut-unmaad-iim-s-annual-cultural-fest"
                             />
                         </div>
                     </div>
