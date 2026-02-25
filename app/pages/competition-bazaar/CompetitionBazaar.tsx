@@ -53,7 +53,6 @@ const litsTitles = [
 ];
 
 const onlineTitles = [
-    { title: "Virtual Expedition", link: "https://unstop.com/events/virtual-expedition-unmaad-2026-iim-bangalore-1625394", image: "/unmaad-assets/competition-bazaar/comps/virtualexpedition1.jpg" },
     { title: "Street Anthem Challenge", link: "https://unstop.com/events/street-anthem-challenge-unmaad-2026-iim-bangalore-1625186", image: "/unmaad-assets/competition-bazaar/comps/streetanthem1.jpg" }
 ];
 
