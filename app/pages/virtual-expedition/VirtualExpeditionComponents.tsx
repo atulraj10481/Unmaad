@@ -6,25 +6,51 @@ import { Compass, UserPlus, Trophy, Timer, Globe, Medal, CheckCircle2, ChevronRi
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 
 const howToPlay = [
-    "The game will show a set of 10 pictures.",
-    "Guess and answer in the provided space (small case, no spaces/special characters).",
-    "A timer will count the time taken by each participant.",
-    "The leaderboard will be based on scores and time taken to complete all 10 questions.",
-    "The competition will be live for 24 hours starting 26th Feb around 12:01 PM."
+    "The event will be hosted exclusively on unmaad.co.in.",
+    "Questions will be presented in image format: enter answers in lowercase, no spaces/special characters, and no titles for personalities.",
+    "Participants can move to the next question only after answering the current one correctly.",
+    "The first to complete all 40 questions wins, and the second is the runner-up."
 ];
 
 const unmaadGuidelines = [
-    "Open to all ages; register on unmaad.co.in with unique Email & Mobile.",
-    "Provide accurate registration info; inaccurate data leads to disqualification.",
-    "Answers must be entered in small case, without spaces or special characters.",
-    "Timely submission is your responsibility; points vary by difficulty.",
-    "Winners are determined by maximum points across all 10 questions.",
-    "Tied scores will be resolved based on the fastest completion time.",
-    "Final results and prize details will be hosted on the event website.",
-    "Unmaad is not responsible for technical, server, or connectivity issues.",
-    "Unmaad reserves the right to modify rules or any aspect of the event.",
-    "Participation implies full agreement; Unmaad is not liable for damages."
+    "Participants must provide accurate and complete information during registration.",
+    "Each participant can register only once.",
+    "The organizer's decision on scoring and winners is final and binding.",
+    "Prize distribution details will be communicated to the winners later on.",
+    "Unmaad is not responsible for any technical issues (connectivity, server, platform).",
+    "Unmaad reserves the right to modify event rules, format, or any other aspect as needed.",
+    "Unmaad reserves the right to disqualify anyone for misconduct or rule violation.",
+    "Unmaad is not liable for any loss, injury, or damages during the event.",
+    "Participating implies agreement to abide by these terms and conditions."
 ];
+
+const TypingText = ({ text }: { text: string }) => {
+    const [displayedText, setDisplayedText] = useState("");
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        if (index < text.length) {
+            const timeout = setTimeout(() => {
+                setDisplayedText((prev) => prev + text[index]);
+                setIndex((prev) => prev + 1);
+            }, 150);
+            return () => clearTimeout(timeout);
+        } else {
+            const timeout = setTimeout(() => {
+                setDisplayedText("");
+                setIndex(0);
+            }, 2000);
+            return () => clearTimeout(timeout);
+        }
+    }, [index, text]);
+
+    return (
+        <span className="text-amber-800 font-black border-r-2 border-amber-800 animate-pulse px-1">
+            {displayedText}
+        </span>
+    );
+};
+
 
 const ScrollHandle = ({ isBottom = false }: { isBottom?: boolean }) => (
     <div className={`absolute left-0 right-0 h-12 z-50 flex items-center justify-center ${isBottom ? 'bottom-[-12px]' : 'top-[-12px]'}`}>
@@ -105,6 +131,23 @@ export const RulesSection = () => {
                                     </div>
                                 ))}
                             </div>
+
+                            {/* Example Section */}
+                            <div className="mt-8 p-4 bg-white/30 rounded-xl border-2 border-amber-900/10 max-w-md mx-auto">
+                                <p className="text-[10px] font-black uppercase tracking-widest text-amber-900/40 mb-3 text-center">Example Stage:</p>
+                                <div className="relative aspect-video w-full rounded-lg overflow-hidden border-2 border-amber-900/20 shadow-lg mb-4">
+                                    <Image
+                                        src="/unmaad-assets/Example.png"
+                                        alt="Example Question"
+                                        fill
+                                        className="object-contain"
+                                    />
+                                </div>
+                                <div className="flex items-center justify-center gap-2 font-century-gothic font-black text-sm text-[#1b110b]">
+                                    <span className="uppercase tracking-tighter">Answer:</span>
+                                    <TypingText text="alexeinavalny" />
+                                </div>
+                            </div>
                         </div>
 
                         <div>
@@ -135,13 +178,45 @@ export const RulesSection = () => {
     );
 };
 
-export const AuthSection = ({ onAuth }: { onAuth: (data: { email: string, phone: string }) => void }) => {
+export const AuthSection = ({ onAuth }: { onAuth: (data: { name: string, email: string, phone: string, otp: string }) => void }) => {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+    const [otp, setOtp] = useState("");
+    const [isOtpSent, setIsOtpSent] = useState(false);
+    const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
+    const [isLive, setIsLive] = useState(false);
+
+    const launchDate = new Date("2026-02-26T12:00:00+05:30").getTime();
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            if (distance < 0) {
+                setIsLive(true);
+                clearInterval(timer);
+            } else {
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                setTimeLeft({ hours, minutes, seconds });
+            }
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, [launchDate]);
+
+    const handleVerify = () => {
+        if (phone.length >= 10) {
+            setIsOtpSent(true);
+        }
+    };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (email && phone) onAuth({ email, phone });
+        if (name && email && phone && otp && isOtpSent && isLive) onAuth({ name, email, phone, otp });
     };
 
     return (
@@ -156,42 +231,95 @@ export const AuthSection = ({ onAuth }: { onAuth: (data: { email: string, phone:
                 <p className="text-amber-200/30 text-center font-century-gothic text-xs tracking-widest uppercase">register and play</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                    <label className="block text-amber-200/60 font-bold ml-1 text-[10px] uppercase tracking-[0.3em]">Email ID / Verification</label>
+            <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-1.5">
+                    <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">Full Name</label>
+                    <input
+                        type="text"
+                        required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/5 text-sm"
+                        placeholder="John Doe"
+                    />
+                </div>
+                <div className="space-y-1.5">
+                    <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">Email ID</label>
                     <input
                         type="email"
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/5"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/5 text-sm"
                         placeholder="explorer@unmaad.com"
                     />
                 </div>
-                <div className="space-y-2">
-                    <label className="block text-amber-200/60 font-bold ml-1 text-[10px] uppercase tracking-[0.3em]">Phone Number</label>
-                    <input
-                        type="tel"
-                        required
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/5"
-                        placeholder="+91 XXXXX XXXXX"
-                    />
+                <div className="space-y-1.5">
+                    <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">Phone Number</label>
+                    <div className="relative flex items-center">
+                        <input
+                            type="tel"
+                            required
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 pr-20 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/5 text-sm"
+                            placeholder="+91 XXXXX XXXXX"
+                        />
+                        {!isOtpSent && (
+                            <button
+                                type="button"
+                                onClick={handleVerify}
+                                disabled={phone.length < 10}
+                                className="absolute right-1 px-3 py-1 bg-amber-600/20 hover:bg-amber-600/40 text-amber-500 text-[10px] font-bold uppercase rounded-lg border border-amber-600/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                Verify
+                            </button>
+                        )}
+                        {isOtpSent && (
+                            <div className="absolute right-3 text-green-500">
+                                <CheckCircle2 className="w-4 h-4" />
+                            </div>
+                        )}
+                    </div>
                 </div>
-                <div className="flex justify-center pt-6">
+                {isOtpSent && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="space-y-1.5"
+                    >
+                        <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">OTP</label>
+                        <input
+                            type="text"
+                            required
+                            value={otp}
+                            onChange={(e) => setOtp(e.target.value)}
+                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/5 text-sm"
+                            placeholder="XXXXXX"
+                        />
+                    </motion.div>
+                )}
+                <div className="flex flex-col items-center pt-6 gap-3">
                     <div className="relative group">
                         {/* Physical Shadow */}
                         <div className="absolute w-full h-full top-1 left-1 bg-black/50 rounded-none" />
 
                         <button
                             type="submit"
-                            className="relative z-10 inline-flex items-center justify-center px-8 py-3 font-bold text-white bg-amber-600 rounded-none text-[10px] tracking-[0.3em] uppercase transition-transform active:translate-x-1 active:translate-y-1"
+                            disabled={!isLive}
+                            className="relative z-10 inline-flex items-center justify-center px-8 py-3 font-bold text-white bg-amber-600 rounded-none text-[10px] tracking-[0.3em] uppercase transition-transform active:translate-x-1 active:translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:active:translate-x-0 disabled:active:translate-y-0"
                         >
-                            <span className="relative z-20">Start Expedition</span>
+                            <span className="relative z-20">
+                                {isLive ? "Start Expedition" : `Starts in ${timeLeft.hours.toString().padStart(2, '0')}:${timeLeft.minutes.toString().padStart(2, '0')}:${timeLeft.seconds.toString().padStart(2, '0')}`}
+                            </span>
                             <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-yellow-500 opacity-0 group-hover:opacity-10 transition-opacity rounded-none" />
                         </button>
                     </div>
+                    {!isLive && (
+                        <p className="text-amber-200/40 text-[9px] font-bold uppercase tracking-widest text-center mt-2">
+                            Expedition goes live on February 26th, 12:00 PM
+                        </p>
+                    )}
                 </div>
             </form>
         </div>
@@ -227,7 +355,7 @@ export const GameSection = () => {
     const nextQuestion = () => {
         if (answer) {
             setScore((prev: number) => prev + 10);
-            if (currentQ < 10) {
+            if (currentQ < 40) {
                 setCurrentQ((prev: number) => prev + 1);
                 setAnswer("");
             } else {
@@ -277,7 +405,7 @@ export const GameSection = () => {
                                 className="p-4 md:p-6 bg-white/20 rounded-2xl border-2 border-[#8c603e]/10 backdrop-blur-sm"
                             >
                                 <MapIcon className="w-6 h-6 md:w-8 md:h-8 text-[#8c603e] mx-auto mb-2 md:mb-3" />
-                                <div className="text-2xl md:text-3xl font-bold text-[#8c603e]">10 / 10</div>
+                                <div className="text-2xl md:text-3xl font-bold text-[#8c603e]">{currentQ} / 40</div>
                                 <div className="text-[9px] md:text-[10px] text-[#8c603e]/40 uppercase tracking-widest font-black">Accuracy</div>
                             </motion.div>
 
@@ -314,13 +442,13 @@ export const GameSection = () => {
                             <span className="text-[#8c603e]/60 text-[7px] lg:text-[8px] font-bold uppercase tracking-[0.4em] block">Stage</span>
                         </div>
                         <div className="text-lg sm:text-2xl md:text-3xl font-bold text-[#8c603e] tracking-tighter flex items-baseline">
-                            {currentQ}<span className="text-[#8c603e]/20 text-xs sm:text-lg ml-0.5">/10</span>
+                            {currentQ}<span className="text-[#8c603e]/20 text-xs sm:text-lg ml-0.5">/40</span>
                         </div>
                         <div className="hidden lg:block w-full h-[6px] bg-[#8c603e]/10 mt-6 relative rounded-full overflow-hidden border border-[#8c603e]/20">
                             <motion.div
                                 className="h-full bg-[#8c603e]"
                                 initial={{ width: 0 }}
-                                animate={{ width: `${(currentQ / 10) * 100}%` }}
+                                animate={{ width: `${(currentQ / 40) * 100}%` }}
                             />
                         </div>
                     </div>
@@ -404,11 +532,9 @@ export const LeaderboardSection = () => {
     const [showContent, setShowContent] = useState(true);
 
     const dummyData = [
-        { rank: 1, name: "Arjun Sharma", score: 580, time: "42:15", status: "Gold" },
-        { rank: 2, name: "Sneha Mehra", score: 575, time: "45:30", status: "Silver" },
-        { rank: 3, name: "Rahul Kapoor", score: 550, time: "38:20", status: "Bronze" },
-        { rank: 4, name: "Priya Verma", score: 540, time: "50:10", status: "Explorer" },
-        { rank: 5, name: "Ishan Patel", score: 520, time: "44:05", status: "Explorer" },
+        { rank: 1, name: "-", status: "-" },
+        { rank: 2, name: "-", status: "-" },
+        { rank: 3, name: "-", status: "-" },
     ];
 
     if (!showContent) return (
@@ -463,8 +589,8 @@ export const LeaderboardSection = () => {
                                     <tr className="bg-amber-500/[0.03] border-b border-amber-500/10">
                                         <th className="py-3 pl-4 pr-1 md:py-6 md:px-8 text-left text-amber-200/20 uppercase text-[9px] sm:text-[10px] tracking-[0.4em] font-black">Rank</th>
                                         <th className="py-3 px-1 md:py-6 md:px-8 text-left text-amber-200/20 uppercase text-[9px] sm:text-[10px] tracking-[0.4em] font-black">Explorer</th>
-                                        <th className="py-3 px-1 md:py-6 md:px-8 text-center text-amber-200/20 uppercase text-[9px] sm:text-[10px] tracking-[0.4em] font-black">Score</th>
-                                        <th className="py-3 px-1 md:py-6 md:px-8 text-center text-amber-200/20 uppercase text-[9px] sm:text-[10px] tracking-[0.4em] font-black">Time</th>
+                                        <th className="py-3 px-1 md:py-6 md:px-8 text-center text-amber-200/20 uppercase text-[9px] sm:text-[10px] tracking-[0.4em] font-black">Stage</th>
+                                        <th className="py-3 px-1 md:py-6 md:px-8 text-center text-amber-200/20 uppercase text-[9px] sm:text-[10px] tracking-[0.4em] font-black">Timestamp</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-white/[0.03]">
@@ -490,12 +616,12 @@ export const LeaderboardSection = () => {
                                             </td>
                                             <td className="py-3 px-1 md:py-6 md:px-8 text-center">
                                                 <div className="inline-flex items-center justify-center px-1.5 py-1 md:px-3 md:py-1.5 rounded-full bg-amber-500/5 border border-amber-500/10 group-hover:border-amber-500/30 transition-all">
-                                                    <span className="text-[10px] sm:text-sm md:text-lg font-black text-amber-500/90 tabular-nums font-century-gothic">{player.score}</span>
+                                                    <span className="text-[10px] sm:text-sm md:text-lg font-black text-amber-500/90 tabular-nums font-century-gothic">--</span>
                                                 </div>
                                             </td>
                                             <td className="py-3 px-1 md:py-6 md:px-8 text-center">
                                                 <div className="flex items-center justify-center text-white/40 font-bold font-century-gothic text-xs tracking-widest tabular-nums">
-                                                    {player.time}
+                                                    --
                                                 </div>
                                             </td>
                                         </tr>

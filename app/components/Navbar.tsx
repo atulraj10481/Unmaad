@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import HomeButton from "./HomeButton";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,7 @@ const Navbar = () => {
         { name: "Unmaad Junction", href: "/#unmaad-junction" },
         { name: "Events Street", href: "/pages/events-street" },
         { name: "Competition Bazaar", href: "/pages/competition-bazaar" },
+        { name: "Virtual Expedition", href: "/pages/virtual-expedition" },
         { name: "Merch Store", href: "/pages/merch-store" },
         { name: "Contact Us", href: "/#contact-us" },
     ];
@@ -35,16 +37,34 @@ const Navbar = () => {
                     </div>
 
                     {/* Center: Desktop Menu */}
-                    <div className="hidden lg:flex ml-auto mr-24">
+                    <div className="hidden lg:flex ml-auto mr-12">
                         <div className="flex items-baseline space-x-6">
                             {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    href={link.href}
-                                    className="text-white hover:text-yellow-300 px-2 py-2 rounded-md text-sm font-normal transition-colors duration-200 font-century-gothic whitespace-nowrap"
-                                >
-                                    {link.name}
-                                </Link>
+                                <div key={link.name} className="relative group">
+                                    {link.name === "Virtual Expedition" && (
+                                        <motion.div
+                                            className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-1.5 py-0.5 bg-amber-500/20 border border-amber-500/30 rounded-full pointer-events-none"
+                                            animate={{
+                                                opacity: [0.7, 1, 0.7],
+                                            }}
+                                            transition={{
+                                                duration: 2,
+                                                repeat: Infinity,
+                                                ease: "easeInOut",
+                                            }}
+                                        >
+                                            <span className="text-[7px] font-black text-amber-500 uppercase tracking-tighter whitespace-nowrap leading-none block">
+                                                live soon
+                                            </span>
+                                        </motion.div>
+                                    )}
+                                    <Link
+                                        href={link.href}
+                                        className="text-white hover:text-yellow-300 px-2 py-2 rounded-md text-sm font-normal transition-colors duration-200 font-century-gothic whitespace-nowrap"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </div>
                             ))}
                         </div>
                     </div>

@@ -13,34 +13,14 @@ const baiJamjuree = Bai_Jamjuree({
 
 const VirtualExpedition = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [scrollOffset, setScrollOffset] = useState(0);
-    const sectionRef = useRef<HTMLElement>(null);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (sectionRef.current) {
-                const sectionTop = sectionRef.current.offsetTop;
-                const scrollY = window.scrollY;
-                const windowHeight = window.innerHeight;
-                const relativeScroll = scrollY + windowHeight - sectionTop;
-
-                if (relativeScroll > 0) {
-                    setScrollOffset(relativeScroll);
-                }
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    const handleAuth = (data: { email: string, phone: string }) => {
+    const handleAuth = (data: { name: string, email: string, phone: string, otp: string }) => {
         console.log("Auth Data:", data);
         setIsAuthenticated(true);
     };
 
     return (
-        <section ref={sectionRef} className="w-full bg-[#001D4A] min-h-screen flex flex-col">
+        <section className="w-full bg-[#001D4A] min-h-screen flex flex-col">
             {/* Section 1: Hero Section (Blue) */}
             <div className="relative w-full h-[40vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
@@ -96,14 +76,6 @@ const VirtualExpedition = () => {
                     <div className="mt-12">
                         <LeaderboardSection />
                     </div>
-                </div>
-
-                {/* Parallax Branch (Right) */}
-                <div
-                    className="absolute bottom-40 -right-20 w-60 h-60 z-10 transition-transform duration-300 ease-out opacity-40"
-                    style={{ transform: `translateY(${-(scrollOffset * 0.15)}px) rotate(${-(15 + scrollOffset * 0.01)}deg)` }}
-                >
-                    <Image src="/unmaad-assets/events-street/branch2.svg" alt="" fill className="object-contain" />
                 </div>
             </div>
 

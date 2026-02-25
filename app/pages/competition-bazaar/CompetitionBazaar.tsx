@@ -53,6 +53,7 @@ const litsTitles = [
 ];
 
 const onlineTitles = [
+    { title: "Virtual Expedition", link: "/pages/virtual-expedition", image: "/unmaad-assets/competition-bazaar/comps/virtualexpedition1.jpg" },
     { title: "Street Anthem Challenge", link: "https://unstop.com/events/street-anthem-challenge-unmaad-2026-iim-bangalore-1625186", image: "/unmaad-assets/competition-bazaar/comps/streetanthem1.jpg" }
 ];
 
@@ -69,7 +70,11 @@ interface CardFrameProps {
 const CardFrame = ({ className, style, title, link, image, decoration, flipDecoration }: CardFrameProps) => {
     const handleClick = () => {
         if (link) {
-            window.open(link, '_blank');
+            if (link.startsWith('/')) {
+                window.location.href = link;
+            } else {
+                window.open(link, '_blank');
+            }
         }
     };
 
