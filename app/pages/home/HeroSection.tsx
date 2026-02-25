@@ -156,11 +156,6 @@ const HeroSection = () => {
                         text="Book your Spot"
                         textClassName={baiJamjuree.className}
                     />
-                    <HomeButton
-                        href="/pages/competition-bazaar"
-                        text="Enter the Street"
-                        textClassName={baiJamjuree.className}
-                    />
                 </div>
             </div>
         </section>
