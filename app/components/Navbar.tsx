@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useState } from "react";
 import HomeButton from "./HomeButton";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -44,11 +43,9 @@ const Navbar = () => {
                                 <div key={link.name} className="relative group">
                                     {link.name === "Virtual Expedition" && (
                                         <motion.div
-                                            className="absolute -top-4 left-1/2 -translate-x-1/2 text-yellow-400 pointer-events-none"
+                                            className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-1.5 py-0.5 bg-amber-500/20 border border-amber-500/30 rounded-full pointer-events-none"
                                             animate={{
-                                                scale: [1, 1.2, 1],
-                                                opacity: [0.5, 1, 0.5],
-                                                filter: ["brightness(1)", "brightness(2)", "brightness(1)"],
+                                                opacity: [0.7, 1, 0.7],
                                             }}
                                             transition={{
                                                 duration: 2,
@@ -56,7 +53,9 @@ const Navbar = () => {
                                                 ease: "easeInOut",
                                             }}
                                         >
-                                            <Sparkles className="w-4 h-4" />
+                                            <span className="text-[7px] font-black text-amber-500 uppercase tracking-tighter whitespace-nowrap leading-none block">
+                                                live soon
+                                            </span>
                                         </motion.div>
                                     )}
                                     <Link
