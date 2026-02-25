@@ -35,7 +35,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Center: Desktop Menu */}
-                    <div className="hidden lg:flex ml-auto mr-12">
+                    <div className="hidden lg:flex ml-auto mr-24">
                         <div className="flex items-baseline space-x-6">
                             {navLinks.map((link) => (
                                 <Link
