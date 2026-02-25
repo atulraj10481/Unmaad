@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 
 interface ShutterCardProps {
     coverImage?: string;
@@ -9,7 +10,6 @@ interface ShutterCardProps {
     posterClassName?: string;
     posterImage?: string;
     redirectUrl?: string;
-    isOpen?: boolean;
 }
 
 const ShutterCard = ({
@@ -18,12 +18,14 @@ const ShutterCard = ({
     posterImage = "/unmaad-assets/hero-page/poster1.png",
     altText = "Event details",
     posterClassName = "",
-    redirectUrl,
-    isOpen = false
+    redirectUrl
 }: ShutterCardProps) => {
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleCardClick = () => {
-        if (isOpen && redirectUrl) {
+        if (!isOpen) {
+            setIsOpen(true);
+        } else if (redirectUrl) {
             window.open(redirectUrl, "_blank", "noopener,noreferrer");
         }
     };
@@ -48,7 +50,7 @@ const ShutterCard = ({
 
             {/* Shutter Cover (Middle) - Slides Up */}
             <div
-                className={`absolute inset-1 z-10 flex items-center justify-center transition-all duration-[2000ms] ease-in-out md:-translate-x-[3px] ${isOpen ? "-translate-y-[120%] opacity-0" : "translate-y-[10px] md:translate-y-[10px] opacity-100"
+                className={`absolute inset-1 z-10 flex items-center justify-center transition-all duration-1000 ease-in-out md:-translate-x-[3px] ${isOpen ? "-translate-y-[120%] opacity-0" : "translate-y-[10px] md:translate-y-[10px] opacity-100"
                     }`}
             >
                 <div className="w-[85%] h-[60%]">
