@@ -12,7 +12,6 @@ const Navbar = () => {
         { name: "Unmaad Junction", href: "/#unmaad-junction" },
         { name: "Events Street", href: "/pages/events-street" },
         { name: "Competition Bazaar", href: "/pages/competition-bazaar" },
-        { name: "Virtual Expedition", href: "/pages/virtual-expedition" },
         { name: "Merch Store", href: "/pages/merch-store" },
         { name: "Contact Us", href: "/#contact-us" },
     ];

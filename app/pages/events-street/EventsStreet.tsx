@@ -256,8 +256,8 @@ const EventsStreet = () => {
                         {activeTab === "Jam nights" && (
                             <div className="relative group transition-transform">
                                 <Image
-                                    src="/unmaad-assets/events-street/coming-soon.svg"
-                                    alt="Coming Soon"
+                                    src="/unmaad-assets/events-street/Jam.svg"
+                                    alt="Jam Night"
                                     width={300}
                                     height={400}
                                     className="w-[246px] md:w-80 h-auto object-contain"
