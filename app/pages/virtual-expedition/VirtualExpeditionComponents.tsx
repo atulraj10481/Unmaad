@@ -187,7 +187,7 @@ export const AuthSection = ({ onAuth }: { onAuth: (data: { name: string, email: 
     const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
     const [isLive, setIsLive] = useState(false);
 
-    const launchDate = new Date("2026-02-26T12:00:00+05:30").getTime();
+    const launchDate = new Date("2026-02-26T12:30:00+05:30").getTime();
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -317,7 +317,7 @@ export const AuthSection = ({ onAuth }: { onAuth: (data: { name: string, email: 
                     </div>
                     {!isLive && (
                         <p className="text-amber-200/40 text-[9px] font-bold uppercase tracking-widest text-center mt-2">
-                            Expedition goes live on February 26th, 12:00 PM
+                            Expedition goes live on February 26th, 12:30 PM
                         </p>
                     )}
                 </div>
