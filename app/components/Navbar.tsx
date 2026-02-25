@@ -12,7 +12,6 @@ const Navbar = () => {
         { name: "Unmaad Junction", href: "/#unmaad-junction" },
         { name: "Events Street", href: "/pages/events-street" },
         { name: "Competition Bazaar", href: "/pages/competition-bazaar" },
-        { name: "Virtual Expedition", href: "/pages/virtual-expedition" },
         { name: "Merch Store", href: "/pages/merch-store" },
         { name: "Contact Us", href: "/#contact-us" },
     ];
@@ -36,7 +35,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Center: Desktop Menu */}
-                    <div className="hidden lg:flex ml-auto mr-12">
+                    <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2">
                         <div className="flex items-baseline space-x-6">
                             {navLinks.map((link) => (
                                 <Link

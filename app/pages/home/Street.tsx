@@ -16,9 +16,7 @@ import ShutterCard from "./ShutterCard";
 const Street = () => {
     const [scrollOffset, setScrollOffset] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
-    const [openShutters, setOpenShutters] = useState([false, false, false]);
     const sectionRef = useRef<HTMLElement>(null);
-    const shuttersTriggered = useRef(false);
 
     useEffect(() => {
         const checkMobile = () => {
@@ -33,27 +31,12 @@ const Street = () => {
                 const windowHeight = window.innerHeight;
 
                 // Calculate how far we've scrolled into the section
+                // Start increasing when section enters viewport from bottom
                 const relativeScroll = scrollY + windowHeight - sectionTop;
 
+                // Only update if we are near or in the section to avoid unnecessary updates
                 if (relativeScroll > 0) {
                     setScrollOffset(relativeScroll);
-                }
-
-                // Trigger shutters when 75% of the viewport height has passed the section top
-                if (relativeScroll > windowHeight * 0.75 && !shuttersTriggered.current) {
-                    shuttersTriggered.current = true;
-
-                    // Staggered opening
-                    const delays = [0, 400, 800];
-                    delays.forEach((delay, index) => {
-                        setTimeout(() => {
-                            setOpenShutters(prev => {
-                                const next = [...prev];
-                                next[index] = true;
-                                return next;
-                            });
-                        }, delay);
-                    });
                 }
             }
         };
@@ -121,21 +104,18 @@ const Street = () => {
                                 posterImage="/unmaad-assets/hero-page/show4.svg"
                                 contentImage="/unmaad-assets/hero-page/shutter2.svg"
                                 redirectUrl="https://forms.gle/d3B3C25SsQ5hDWWz7"
-                                isOpen={openShutters[0]}
                             />
                         </div>
                         <div className="md:order-1 lg:order-none md:col-span-2 md:mb-0 lg:mb-0 z-10">
                             <ShutterCard
                                 posterImage="/unmaad-assets/hero-page/post2.svg"
                                 redirectUrl="https://www.skillboxes.com/events/seedhe-maut-unmaad-iim-s-annual-cultural-fest"
-                                isOpen={openShutters[1]}
                             />
                         </div>
                         <div className="md:order-3 lg:order-none">
                             <ShutterCard
                                 posterImage="/unmaad-assets/hero-page/post1.svg"
                                 redirectUrl="https://www.skillboxes.com/events/seedhe-maut-unmaad-iim-s-annual-cultural-fest"
-                                isOpen={openShutters[2]}
                             />
                         </div>
                     </div>

@@ -135,7 +135,7 @@ const MerchStore = () => {
                 <div className="relative z-20 flex-grow flex flex-col items-center justify-center py-8 px-4">
                     <div className="relative w-full max-w-7xl flex justify-center items-center">
                         <Image
-                            src="/unmaad-assets/merch-store/merch.svg"
+                            src="/unmaad-assets/merch-store/merch-update.svg"
                             alt="Merch"
                             width={1800}
                             height={1800}
