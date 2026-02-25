@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import HomeButton from "./HomeButton";
+import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +14,7 @@ const Navbar = () => {
         { name: "Unmaad Junction", href: "/#unmaad-junction" },
         { name: "Events Street", href: "/pages/events-street" },
         { name: "Competition Bazaar", href: "/pages/competition-bazaar" },
+        { name: "Virtual Expedition", href: "/pages/virtual-expedition" },
         { name: "Merch Store", href: "/pages/merch-store" },
         { name: "Contact Us", href: "/#contact-us" },
     ];
@@ -35,16 +38,34 @@ const Navbar = () => {
                     </div>
 
                     {/* Center: Desktop Menu */}
-                    <div className="hidden lg:flex ml-auto mr-24">
+                    <div className="hidden lg:flex ml-auto mr-12">
                         <div className="flex items-baseline space-x-6">
                             {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    href={link.href}
-                                    className="text-white hover:text-yellow-300 px-2 py-2 rounded-md text-sm font-normal transition-colors duration-200 font-century-gothic whitespace-nowrap"
-                                >
-                                    {link.name}
-                                </Link>
+                                <div key={link.name} className="relative group">
+                                    {link.name === "Virtual Expedition" && (
+                                        <motion.div
+                                            className="absolute -top-4 left-1/2 -translate-x-1/2 text-yellow-400 pointer-events-none"
+                                            animate={{
+                                                scale: [1, 1.2, 1],
+                                                opacity: [0.5, 1, 0.5],
+                                                filter: ["brightness(1)", "brightness(2)", "brightness(1)"],
+                                            }}
+                                            transition={{
+                                                duration: 2,
+                                                repeat: Infinity,
+                                                ease: "easeInOut",
+                                            }}
+                                        >
+                                            <Sparkles className="w-4 h-4" />
+                                        </motion.div>
+                                    )}
+                                    <Link
+                                        href={link.href}
+                                        className="text-white hover:text-yellow-300 px-2 py-2 rounded-md text-sm font-normal transition-colors duration-200 font-century-gothic whitespace-nowrap"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </div>
                             ))}
                         </div>
                     </div>
