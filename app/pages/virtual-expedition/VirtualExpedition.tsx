@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Footer from "../../components/Footer";
 import { Bai_Jamjuree } from 'next/font/google';
-import { Timer } from "lucide-react";
+import { Timer, ArrowRight } from "lucide-react";
 import { RulesSection, LeaderboardSection } from "./VirtualExpeditionComponents";
 
 const baiJamjuree = Bai_Jamjuree({
@@ -75,9 +76,9 @@ const ComingSoonSection = () => {
                 </div>
             </div>
 
-            <button disabled className="relative z-10 px-8 py-4 font-bold text-[#1b110b] bg-[#D4A847] shadow-[0_0_20px_rgba(212,168,71,0.4)] rounded-full text-[10px] tracking-[0.3em] uppercase transition-all">
-                Coming Soon
-            </button>
+            <Link href="/auth" className="flex items-center gap-2 relative z-10 px-8 py-4 font-bold text-[#1b110b] bg-[#D4A847] shadow-[0_0_20px_rgba(212,168,71,0.4)] rounded-full text-[10px] tracking-[0.3em] uppercase transition-all hover:scale-105 active:scale-95">
+                Enter The Quest <ArrowRight className="w-4 h-4" />
+            </Link>
         </div>
     );
 };

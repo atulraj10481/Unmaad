@@ -113,7 +113,7 @@ DECLARE
   v_session public.game_sessions;
 BEGIN
   -- Strict validation
-  SELECT current_question_no, status INTO v_session FROM public.game_sessions WHERE user_id = auth.uid();
+  SELECT * INTO v_session FROM public.game_sessions WHERE user_id = auth.uid();
   IF NOT FOUND OR v_session.status != 'active' OR v_session.current_question_no != p_question_no THEN
     RAISE EXCEPTION 'Invalid session state or question number.';
   END IF;
@@ -127,8 +127,8 @@ BEGIN
   v_is_correct := (lower(trim(p_answer_text)) = lower(trim(v_correct_answer)));
 
   -- Log answer
-  INSERT INTO public.answers (user_id, question_no, submitted_answer, is_correct)
-  VALUES (auth.uid(), p_question_no, p_answer_text, v_is_correct);
+  INSERT INTO public.answers (id, user_id, question_no, submitted_answer, is_correct)
+  VALUES (gen_random_uuid(), auth.uid(), p_question_no, p_answer_text, v_is_correct);
 
   -- Update session on correct
   IF v_is_correct THEN

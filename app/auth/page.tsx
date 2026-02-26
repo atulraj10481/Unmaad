@@ -22,44 +22,18 @@ export default function AuthPage() {
     const [identifier, setIdentifier] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
 
-    const [isOtpSent, setIsOtpSent] = useState(false);
-    const [sessionId, setSessionId] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
-
-    const handleVerify = async () => {
-        if (phone.length >= 10) {
-            setLoading(true);
-            setError("");
-            try {
-                const res = await fetch('/api/auth/send-otp', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ phone }),
-                });
-                const data = await res.json();
-                if (!res.ok) throw new Error(data.error);
-                setSessionId(data.sessionId);
-                setIsOtpSent(true);
-            } catch (err: any) {
-                setError(err.message);
-            } finally {
-                setLoading(false);
-            }
-        }
-    };
 
     const handleRegisterSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
         setError("");
         try {
-            const res = await fetch('/api/auth/verify-otp', {
+            const res = await fetch('/api/auth/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    sessionId,
-                    otp,
                     phone,
                     password,
                     fullName: name,
@@ -70,6 +44,7 @@ export default function AuthPage() {
             const data = await res.json();
             if (!res.ok) throw new Error(data.error);
             router.push('/game');
+            router.refresh();
         } catch (err: any) {
             setError(err.message);
         } finally {
@@ -126,51 +101,33 @@ export default function AuthPage() {
 
                 {tab === 'register' ? (
                     <form onSubmit={handleRegisterSubmit} className="space-y-4">
-                        {!isOtpSent ? (
-                            <>
-                                <div className="space-y-1.5">
-                                    <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">Full Name *</label>
-                                    <input type="text" required value={name} onChange={(e) => setName(e.target.value)} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/20 text-sm" placeholder="John Doe" />
-                                </div>
-                                <div className="space-y-1.5">
-                                    <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">Email *</label>
-                                    <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/20 text-sm" placeholder="explorer@unmaad.co.in" />
-                                </div>
-                                <div className="space-y-1.5">
-                                    <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">College (Optional)</label>
-                                    <input type="text" value={college} onChange={(e) => setCollege(e.target.value)} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/20 text-sm" placeholder="IIM Bangalore" />
-                                </div>
-                                <div className="space-y-1.5">
-                                    <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">Password *</label>
-                                    <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/20 text-sm" placeholder="••••••••" />
-                                </div>
-                                <div className="space-y-1.5">
-                                    <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">Phone Number *</label>
-                                    <div className="relative flex items-center">
-                                        <input type="tel" required value={phone} onChange={(e) => setPhone(e.target.value.replace(/\D/g, '').slice(0, 10))} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 pr-20 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/20 text-sm" placeholder="9876543210" />
-                                        <button type="button" onClick={handleVerify} disabled={phone.length < 10 || loading} className="absolute right-1 px-3 py-1 bg-amber-600/20 hover:bg-amber-600/40 text-amber-500 text-[10px] font-bold uppercase rounded-lg border border-amber-600/30 transition-all disabled:opacity-50">
-                                            {loading ? '...' : 'Verify'}
-                                        </button>
-                                    </div>
-                                </div>
-                            </>
-                        ) : (
-                            <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
-                                <div className="text-center">
-                                    <p className="text-xs text-amber-200/60">OTP sent to {phone}</p>
-                                    <button type="button" onClick={() => setIsOtpSent(false)} className="text-[10px] text-amber-500 hover:text-amber-400 mt-1 uppercase tracking-widest font-bold">Change Number</button>
-                                </div>
-                                <div className="space-y-1.5">
-                                    <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em] text-center">Enter OTP</label>
-                                    <input type="text" required autoFocus value={otp} onChange={(e) => setOtp(e.target.value)} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-amber-500/50 outline-none transition-all text-center tracking-[0.5em] font-mono text-lg placeholder:text-white/10" placeholder="XXXX" maxLength={4} />
-                                </div>
-                                <div className="flex justify-center pt-2">
-                                    <button type="submit" disabled={loading || !otp} className="relative z-10 px-8 py-3 font-bold text-white bg-amber-600 shadow-[0_0_15px_rgba(217,119,6,0.5)] rounded text-[10px] tracking-[0.3em] uppercase transition-transform active:translate-y-1 disabled:opacity-50">
-                                        {loading ? 'Verifying...' : 'Complete Registration'}
-                                    </button>
-                                </div>
-                            </motion.div>
-                        )}
+                        <div className="space-y-1.5">
+                            <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">Full Name *</label>
+                            <input type="text" required value={name} onChange={(e) => setName(e.target.value)} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/20 text-sm" placeholder="John Doe" />
+                        </div>
+                        <div className="space-y-1.5">
+                            <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">Email *</label>
+                            <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/20 text-sm" placeholder="explorer@unmaad.co.in" />
+                        </div>
+                        <div className="space-y-1.5">
+                            <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">College (Optional)</label>
+                            <input type="text" value={college} onChange={(e) => setCollege(e.target.value)} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/20 text-sm" placeholder="IIM Bangalore" />
+                        </div>
+                        <div className="space-y-1.5">
+                            <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">Password *</label>
+                            <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/20 text-sm" placeholder="••••••••" />
+                        </div>
+                        <div className="space-y-1.5">
+                            <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">Phone Number *</label>
+                            <div className="relative flex items-center">
+                                <input type="tel" required value={phone} onChange={(e) => setPhone(e.target.value.replace(/\D/g, '').slice(0, 10))} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/20 text-sm" placeholder="9876543210" />
+                            </div>
+                        </div>
+                        <div className="flex justify-center pt-2">
+                            <button type="submit" disabled={loading || phone.length < 10} className="relative z-10 px-8 py-3 font-bold text-white bg-amber-600 shadow-[0_0_15px_rgba(217,119,6,0.5)] rounded text-[10px] tracking-[0.3em] uppercase transition-transform active:translate-y-1 disabled:opacity-50 w-full">
+                                {loading ? 'Registering...' : 'Register and Play'}
+                            </button>
+                        </div>
                     </form>
                 ) : (
                     <form onSubmit={handleLoginSubmit} className="space-y-4">
