@@ -3,11 +3,21 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import HomeButton from "./HomeButton";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
+
+    const isActive = (href: string, name: string) => {
+        if (name === "Virtual Expedition") {
+            const expRoutes = ['/pages/virtual-expedition', '/auth', '/game', '/winner', '/leaderboard'];
+            return expRoutes.includes(pathname);
+        }
+        return pathname === href;
+    };
 
     const navLinks = [
         { name: "Unmaad Junction", href: "/#unmaad-junction" },
@@ -54,13 +64,13 @@ const Navbar = () => {
                                             }}
                                         >
                                             <span className="text-[7px] font-black text-amber-500 uppercase tracking-tighter whitespace-nowrap leading-none block">
-                                                live soon
+                                                live
                                             </span>
                                         </motion.div>
                                     )}
                                     <Link
                                         href={link.href}
-                                        className="text-white hover:text-yellow-300 px-2 py-2 rounded-md text-sm font-normal transition-colors duration-200 font-century-gothic whitespace-nowrap"
+                                        className={`px-2 py-2 rounded-md text-sm font-normal transition-colors duration-200 font-century-gothic whitespace-nowrap ${isActive(link.href, link.name) ? 'text-yellow-300 font-bold' : 'text-white hover:text-yellow-300'}`}
                                     >
                                         {link.name}
                                     </Link>
