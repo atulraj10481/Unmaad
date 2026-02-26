@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 export default function GamePage() {
     const router = useRouter();
     const [currentQ, setCurrentQ] = useState(1);
+    const [title, setTitle] = useState("");
     const [imageUrl, setImageUrl] = useState("");
     const [answer, setAnswer] = useState("");
     const [timer, setTimer] = useState(0);
@@ -31,6 +32,7 @@ export default function GamePage() {
                     throw new Error(data.error);
                 }
             } else {
+                setTitle(data.title || "");
                 setImageUrl(data.image_url);
                 setCurrentQ(data.serial_no);
             }
@@ -264,9 +266,13 @@ export default function GamePage() {
                             <span className="text-[#8c603e]/50 font-bold uppercase tracking-[0.2em] animate-pulse">Fetching Next Trial...</span>
                         </div>
                     ) : (
-                        <div className="md:bg-[#d8d0c2] md:rounded-[2.5rem] md:border-4 md:border-[#8c603e]/40 md:shadow-[0_40px_80px_rgba(0,0,0,0.25)] relative overflow-hidden md:p-8 p-0">
+                        <div className="md:bg-[#d8d0c2] md:rounded-[2.5rem] md:border-4 md:border-[#8c603e]/40 md:shadow-[0_40px_80px_rgba(0,0,0,0.25)] relative flex flex-col items-center overflow-hidden md:p-8 p-0">
                             <div className="hidden md:block absolute top-0 left-0 right-0 h-2 bg-[url('/unmaad-assets/events-street/mandala-strip.svg')] bg-repeat-x opacity-30 grayscale" />
                             <div className="hidden md:block absolute bottom-0 left-0 right-0 h-2 bg-[url('/unmaad-assets/events-street/mandala-strip.svg')] bg-repeat-x opacity-30 grayscale rotate-180" />
+
+                            {title && (
+                                <h2 className="text-xl md:text-3xl font-century-gothic font-black text-[#8c603e] mb-4 text-center tracking-wider">{title}</h2>
+                            )}
 
                             <div className="relative aspect-[4/3] lg:aspect-[16/9] w-full rounded-xl lg:rounded-2xl overflow-hidden shadow-2xl border-4 border-[#8c603e]/20">
                                 {imageUrl ? (

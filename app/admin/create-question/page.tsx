@@ -7,6 +7,7 @@ import { createClient } from '@/lib/supabase/client';
 export default function CreateQuestionPage() {
     const router = useRouter();
     const [serialNo, setSerialNo] = useState<number | ''>('');
+    const [title, setTitle] = useState('');
     const [answer, setAnswer] = useState('');
     const [file, setFile] = useState<File | null>(null);
     const [loading, setLoading] = useState(false);
@@ -48,6 +49,7 @@ export default function CreateQuestionPage() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     serial_no: Number(serialNo),
+                    title: title,
                     image_url: imageUrl,
                     answer: answer
                 })
@@ -59,6 +61,7 @@ export default function CreateQuestionPage() {
             setSuccess(`Question ${serialNo} saved successfully!`);
             // Reset form
             setSerialNo('');
+            setTitle('');
             setAnswer('');
             setFile(null);
             (document.getElementById('file-upload') as HTMLInputElement).value = '';
@@ -91,6 +94,18 @@ export default function CreateQuestionPage() {
                                 max="40"
                                 value={serialNo}
                                 onChange={e => setSerialNo(e.target.value ? Number(e.target.value) : '')}
+                                className="w-full bg-black/30 border border-white/20 rounded-lg p-3 text-white focus:outline-none focus:border-[#E05C8A]"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-sm mb-2 text-white/80">Question Title</label>
+                            <input
+                                type="text"
+                                value={title}
+                                onChange={e => setTitle(e.target.value)}
+                                placeholder="e.g. Identify this location..."
                                 className="w-full bg-black/30 border border-white/20 rounded-lg p-3 text-white focus:outline-none focus:border-[#E05C8A]"
                                 required
                             />

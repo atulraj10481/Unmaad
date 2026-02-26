@@ -40,7 +40,7 @@ export async function POST(request: Request) {
         if (!profile?.is_admin) return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
 
         const body = await request.json();
-        const { serial_no, image_url, answer, is_active } = body;
+        const { serial_no, title, image_url, answer, is_active } = body;
 
         // Normalise answer: lowercase, no spaces, no special characters
         const normalisedAnswer = answer.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -49,6 +49,7 @@ export async function POST(request: Request) {
             .from('questions')
             .upsert({
                 serial_no,
+                title,
                 image_url,
                 correct_answer: normalisedAnswer,
                 is_active: is_active ?? true

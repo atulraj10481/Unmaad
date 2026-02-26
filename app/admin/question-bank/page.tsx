@@ -6,6 +6,7 @@ import Link from 'next/link';
 interface Question {
     id?: string;
     serial_no: number;
+    title?: string;
     image_url: string;
     answer?: string;
     correct_answer?: string;
@@ -85,9 +86,10 @@ export default function QuestionBankPage() {
                     ) : (
                         <div className="overflow-x-auto">
                             <table className="w-full text-left text-sm border-collapse">
-                                <thead>
+                                <thead className="text-white/60">
                                     <tr className="border-b border-white/10 text-white/60">
                                         <th className="p-3">No.</th>
+                                        <th className="p-3">Title</th>
                                         <th className="p-3">Image Path</th>
                                         <th className="p-3">Normalized Answer</th>
                                         <th className="p-3 text-center">Active</th>
@@ -96,11 +98,12 @@ export default function QuestionBankPage() {
                                 </thead>
                                 <tbody>
                                     {questions.length === 0 ? (
-                                        <tr><td colSpan={5} className="p-6 text-center text-white/50">No questions found.</td></tr>
+                                        <tr><td colSpan={6} className="p-6 text-center text-white/50">No questions found.</td></tr>
                                     ) : (
                                         questions.map((q) => (
                                             <tr key={q.serial_no} className="border-b border-white/5 hover:bg-white/5 transition-colors">
                                                 <td className="p-3 font-semibold text-[#D4A847]">Q{q.serial_no}</td>
+                                                <td className="p-3 text-white/90 font-medium">{q.title || '-'}</td>
                                                 <td className="p-3 text-white/70 truncate max-w-[200px]">{q.image_url}</td>
                                                 <td className="p-3 font-mono text-[#E05C8A]">{q.correct_answer || q.answer}</td>
                                                 <td className="p-3 text-center">

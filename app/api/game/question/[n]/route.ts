@@ -19,7 +19,7 @@ export async function GET(request: Request, context: { params: Promise<{ n: stri
         // However, the PRD relies heavily on Postgres functions or an admin client for standard fetching, let's use the standard client since questions are public to authenticated users (PRD 9.3)
         const { data: question, error } = await supabase
             .from('questions')
-            .select('image_url')
+            .select('title, image_url')
             .eq('serial_no', n)
             .eq('is_active', true)
             .single();
@@ -42,6 +42,7 @@ export async function GET(request: Request, context: { params: Promise<{ n: stri
 
         return NextResponse.json({
             serial_no: n,
+            title: question.title,
             image_url: signedUrlData.signedUrl,
             total: 40
         });
