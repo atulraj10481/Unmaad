@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 // Define the order of pages for directional logic
 const pageOrder = [
@@ -13,7 +13,13 @@ const pageOrder = [
 
 const PageTransition = ({ children }: { children: React.ReactNode }) => {
     const pathname = usePathname();
-    const prevPathname = useRef(pathname);
+    const [prevPathname, setPrevPathname] = useState(pathname);
+
+    useEffect(() => {
+        if (pathname !== prevPathname) {
+            setPrevPathname(pathname);
+        }
+    }, [pathname, prevPathname]);
 
     // Scroll to top on route change, but respect hash links
     useEffect(() => {
@@ -25,18 +31,13 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
 
     // Get indices to determine direction
     const currentIndex = pageOrder.indexOf(pathname);
-    const prevIndex = pageOrder.indexOf(prevPathname.current);
+    const prevIndex = pageOrder.indexOf(prevPathname);
 
     // Determine direction: 1 for Right-to-Left (Next), -1 for Left-to-Right (Prev)
     // If route is not in map (e.g. 404), default to 0 or maintain direction
     let direction = 0;
     if (currentIndex !== -1 && prevIndex !== -1 && currentIndex !== prevIndex) {
         direction = currentIndex > prevIndex ? 1 : -1;
-    }
-
-    // Update ref for next render
-    if (pathname !== prevPathname.current) {
-        prevPathname.current = pathname;
     }
 
     // Variants for the animation
