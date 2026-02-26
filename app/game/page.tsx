@@ -59,19 +59,13 @@ export default function GamePage() {
         } catch (e) { }
     };
 
-    const handlePause = async () => {
+    const handleLogout = async () => {
         try {
             await fetch('/api/game/pause', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ action: 'pause', seconds_elapsed: timer })
             });
-            router.push('/pages/virtual-expedition');
-        } catch (e) { }
-    };
-
-    const handleLogout = async () => {
-        try {
             await fetch('/api/auth/logout', { method: 'POST' });
             router.push('/pages/virtual-expedition');
         } catch (e) { }
@@ -247,13 +241,9 @@ export default function GamePage() {
 
                         {/* Control Buttons */}
                         <div className="flex flex-row lg:flex-col gap-2 md:gap-3 relative z-10">
-                            <button onClick={handlePause} className="flex items-center justify-center lg:justify-start gap-2 px-3 py-2 bg-[#8c603e]/10 hover:bg-[#8c603e]/20 border border-[#8c603e]/30 rounded-lg text-[#8c603e] transition-all group">
-                                <PauseCircle className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                                <span className="text-[9px] font-bold uppercase tracking-widest hidden sm:block">Pause</span>
-                            </button>
                             <button onClick={handleLogout} className="flex items-center justify-center lg:justify-start gap-2 px-3 py-2 bg-red-900/10 hover:bg-red-900/20 border border-red-900/30 rounded-lg text-red-700 transition-all group">
                                 <LogOut className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                                <span className="text-[9px] font-bold uppercase tracking-widest hidden sm:block">Logout</span>
+                                <span className="text-[9px] font-bold uppercase tracking-widest hidden sm:block">Logout to Pause</span>
                             </button>
                         </div>
                     </div>
@@ -266,20 +256,23 @@ export default function GamePage() {
                             <span className="text-[#8c603e]/50 font-bold uppercase tracking-[0.2em] animate-pulse">Fetching Next Trial...</span>
                         </div>
                     ) : (
-                        <div className="md:bg-[#d8d0c2] md:rounded-[2.5rem] md:border-4 md:border-[#8c603e]/40 md:shadow-[0_40px_80px_rgba(0,0,0,0.25)] relative flex flex-col items-center overflow-hidden md:p-8 p-0">
-                            <div className="hidden md:block absolute top-0 left-0 right-0 h-2 bg-[url('/unmaad-assets/events-street/mandala-strip.svg')] bg-repeat-x opacity-30 grayscale" />
-                            <div className="hidden md:block absolute bottom-0 left-0 right-0 h-2 bg-[url('/unmaad-assets/events-street/mandala-strip.svg')] bg-repeat-x opacity-30 grayscale rotate-180" />
+                        <div className="bg-[#d8d0c2] rounded-xl sm:rounded-[2.5rem] border-4 border-[#8c603e]/40 shadow-[0_20px_40px_rgba(0,0,0,0.2)] relative flex flex-col items-center overflow-hidden p-4 sm:p-6 md:p-8">
+                            <div className="absolute top-0 left-0 right-0 h-2 bg-[url('/unmaad-assets/events-street/mandala-strip.svg')] bg-repeat-x opacity-20 grayscale" />
+                            <div className="absolute bottom-0 left-0 right-0 h-2 bg-[url('/unmaad-assets/events-street/mandala-strip.svg')] bg-repeat-x opacity-20 grayscale rotate-180" />
 
                             {title && (
-                                <h2 className="text-xl md:text-3xl font-century-gothic font-black text-[#8c603e] mb-4 text-center tracking-wider">{title}</h2>
+                                <div className="relative mb-6 z-10 text-center w-full px-4">
+                                    <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[80%] max-w-md h-[1px] bg-gradient-to-r from-transparent via-[#8c603e]/40 to-transparent -z-10" />
+                                    <h2 className="text-xl md:text-3xl font-century-gothic font-black text-[#8c603e] bg-[#d8d0c2] inline-block px-6 py-1 tracking-widest uppercase shadow-sm border border-[#8c603e]/10 rounded-full">{title}</h2>
+                                </div>
                             )}
 
-                            <div className="relative aspect-[4/3] lg:aspect-[16/9] w-full rounded-xl lg:rounded-2xl overflow-hidden shadow-2xl border-4 border-[#8c603e]/20">
+                            <div className="relative w-full max-w-4xl max-h-[60vh] min-h-[300px] h-[50vh] rounded-xl lg:rounded-2xl overflow-hidden shadow-inner border-2 md:border-4 border-[#8c603e]/30 bg-[#1a1412]">
                                 {imageUrl ? (
-                                    <Image src={imageUrl} alt="Quest Subject" fill className="object-cover" />
+                                    <Image src={imageUrl} alt="Quest Subject" fill className="object-contain p-2" unoptimized />
                                 ) : (
-                                    <div className="w-full h-full bg-[#8c603e]/10 flex items-center justify-center">
-                                        <span className="text-[#8c603e]/50 uppercase text-xs tracking-[0.3em]">No Image Found</span>
+                                    <div className="w-full h-full bg-[#8c603e]/5 flex items-center justify-center">
+                                        <span className="text-[#8c603e]/50 uppercase text-xs tracking-[0.3em] font-bold">No Image Found</span>
                                     </div>
                                 )}
                             </div>
