@@ -182,42 +182,50 @@ export const AuthSection = ({ onAuth }: { onAuth: (data: { name: string, email: 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
-    const [otp, setOtp] = useState("");
-    const [isOtpSent, setIsOtpSent] = useState(false);
-    const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
-    const [isLive, setIsLive] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isRegistered, setIsRegistered] = useState(false);
 
-    const launchDate = new Date("2026-02-26T12:30:00+05:30").getTime();
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            const now = new Date().getTime();
-            const distance = launchDate - now;
-
-            if (distance < 0) {
-                setIsLive(true);
-                clearInterval(timer);
-            } else {
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                setTimeLeft({ hours, minutes, seconds });
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (name && email && phone) {
+            setIsSubmitting(true);
+            try {
+                await fetch("https://nocodeform.io/f/699fee5095ec224ea5a291a5", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                    },
+                    body: JSON.stringify({ name, email, phone })
+                });
+                setIsRegistered(true);
+            } catch (error) {
+                console.error("Error submitting form", error);
             }
-        }, 1000);
-
-        return () => clearInterval(timer);
-    }, [launchDate]);
-
-    const handleVerify = () => {
-        if (phone.length >= 10) {
-            setIsOtpSent(true);
+            setIsSubmitting(false);
         }
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (name && email && phone && otp && isOtpSent && isLive) onAuth({ name, email, phone, otp });
-    };
+    if (isRegistered) {
+        return (
+            <div className="w-full max-w-sm mx-auto p-5 sm:p-6 md:p-10 bg-[#2D3B2F]/80 backdrop-blur-2xl rounded-[2.5rem] sm:rounded-[3rem] border-2 border-amber-500/20 shadow-[0_20px_60px_rgba(0,0,0,0.5)] relative overflow-hidden flex flex-col items-center justify-center min-h-[400px]">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-500/40 to-transparent" />
+                <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mb-6 border border-green-500/30">
+                    <CheckCircle2 className="w-8 h-8 text-green-500" />
+                </div>
+                <h3 className="text-2xl md:text-3xl text-white font-samarkan mb-3 text-center">Thank You!</h3>
+                <p className="text-amber-200/60 text-center font-century-gothic text-sm leading-relaxed mb-6 px-4">
+                    Your registration for the Virtual Expedition was successful.
+                </p>
+                <div className="p-4 bg-black/20 rounded-xl border border-white/5 w-full text-center">
+                    <p className="text-amber-500 font-bold text-[11px] uppercase tracking-widest mb-1">Reminder</p>
+                    <p className="text-white/60 text-[10px] uppercase tracking-wider">
+                        Expedition goes live at 1:30 PM
+                    </p>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="w-full max-w-sm mx-auto p-5 sm:p-6 md:p-10 bg-[#2D3B2F]/80 backdrop-blur-2xl rounded-[2.5rem] sm:rounded-[3rem] border-2 border-amber-500/20 shadow-[0_20px_60px_rgba(0,0,0,0.5)] relative overflow-hidden">
@@ -236,6 +244,7 @@ export const AuthSection = ({ onAuth }: { onAuth: (data: { name: string, email: 
                     <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">Full Name</label>
                     <input
                         type="text"
+                        name="name"
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
@@ -247,6 +256,7 @@ export const AuthSection = ({ onAuth }: { onAuth: (data: { name: string, email: 
                     <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">Email ID</label>
                     <input
                         type="email"
+                        name="email"
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -259,46 +269,15 @@ export const AuthSection = ({ onAuth }: { onAuth: (data: { name: string, email: 
                     <div className="relative flex items-center">
                         <input
                             type="tel"
+                            name="phone"
                             required
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
-                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 pr-20 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/5 text-sm"
+                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/5 text-sm"
                             placeholder="+91 XXXXX XXXXX"
                         />
-                        {!isOtpSent && (
-                            <button
-                                type="button"
-                                onClick={handleVerify}
-                                disabled={phone.length < 10}
-                                className="absolute right-1 px-3 py-1 bg-amber-600/20 hover:bg-amber-600/40 text-amber-500 text-[10px] font-bold uppercase rounded-lg border border-amber-600/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                                Verify
-                            </button>
-                        )}
-                        {isOtpSent && (
-                            <div className="absolute right-3 text-green-500">
-                                <CheckCircle2 className="w-4 h-4" />
-                            </div>
-                        )}
                     </div>
                 </div>
-                {isOtpSent && (
-                    <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="space-y-1.5"
-                    >
-                        <label className="block text-amber-200/60 font-bold ml-1 text-[9px] uppercase tracking-[0.2em]">OTP</label>
-                        <input
-                            type="text"
-                            required
-                            value={otp}
-                            onChange={(e) => setOtp(e.target.value)}
-                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-white focus:border-amber-500/50 outline-none transition-all placeholder:text-white/5 text-sm"
-                            placeholder="XXXXXX"
-                        />
-                    </motion.div>
-                )}
                 <div className="flex flex-col items-center pt-6 gap-3">
                     <div className="relative group">
                         {/* Physical Shadow */}
@@ -306,20 +285,19 @@ export const AuthSection = ({ onAuth }: { onAuth: (data: { name: string, email: 
 
                         <button
                             type="submit"
-                            disabled={!isLive}
+                            disabled={isSubmitting}
                             className="relative z-10 inline-flex items-center justify-center px-8 py-3 font-bold text-white bg-amber-600 rounded-none text-[10px] tracking-[0.3em] uppercase transition-transform active:translate-x-1 active:translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:active:translate-x-0 disabled:active:translate-y-0"
                         >
                             <span className="relative z-20">
-                                {isLive ? "Start Expedition" : `Starts in ${timeLeft.hours.toString().padStart(2, '0')}:${timeLeft.minutes.toString().padStart(2, '0')}:${timeLeft.seconds.toString().padStart(2, '0')}`}
+                                {isSubmitting ? "Submitting..." : "Start Expedition"}
                             </span>
                             <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-yellow-500 opacity-0 group-hover:opacity-10 transition-opacity rounded-none" />
                         </button>
                     </div>
-                    {!isLive && (
-                        <p className="text-amber-200/40 text-[9px] font-bold uppercase tracking-widest text-center mt-2">
-                            Expedition goes live on February 26th, 12:30 PM
-                        </p>
-                    )}
+                    <p className="text-amber-200/60 text-[10px] font-bold tracking-[0.1em] text-center mt-2">
+                        Expedition goes live at 1:30 PM.<br />
+                        <span className="text-amber-500 uppercase">Don't miss to be the winner.</span>
+                    </p>
                 </div>
             </form>
         </div>
