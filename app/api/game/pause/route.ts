@@ -11,9 +11,9 @@ export async function POST(request: Request) {
         const { action, seconds_elapsed } = await request.json();
 
         if (action === 'resume') {
-            const { error } = await supabase.rpc('start_or_resume_session');
+            const { data, error } = await supabase.rpc('start_or_resume_session');
             if (error) throw error;
-            return NextResponse.json({ success: true, status: 'in_progress' });
+            return NextResponse.json({ success: true, status: 'in_progress', session: data });
         }
 
         if (action === 'pause') {

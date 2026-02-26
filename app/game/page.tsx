@@ -51,12 +51,17 @@ export default function GamePage() {
                 setUserName(meData.user.full_name);
             }
 
-            await fetch('/api/game/pause', {
+            const pauseRes = await fetch('/api/game/pause', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ action: 'resume' })
             });
+            const sessionData = await pauseRes.json();
+            if (sessionData.session?.current_question_no) {
+                return sessionData.session.current_question_no;
+            }
         } catch (e) { }
+        return 1;
     };
 
     const handleLogout = async () => {
@@ -72,7 +77,7 @@ export default function GamePage() {
     };
 
     useEffect(() => {
-        fetchSession().then(() => fetchQuestion(1));
+        fetchSession().then((qNum) => fetchQuestion(qNum));
     }, []);
 
     useEffect(() => {
