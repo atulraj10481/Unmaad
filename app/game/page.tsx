@@ -267,9 +267,9 @@ export default function GamePage() {
                                 </div>
                             )}
 
-                            <div className="relative w-full max-w-4xl max-h-[60vh] min-h-[300px] h-[50vh] rounded-xl lg:rounded-2xl overflow-hidden shadow-inner border-2 md:border-4 border-[#8c603e]/30 bg-[#1a1412]">
+                            <div className="relative w-full aspect-[4/3] sm:aspect-video md:aspect-[2/1] rounded-xl lg:rounded-2xl overflow-hidden shadow-inner border-2 md:border-4 border-[#8c603e]/30 bg-transparent flex items-center justify-center">
                                 {imageUrl ? (
-                                    <Image src={imageUrl} alt="Quest Subject" fill className="object-contain p-2" unoptimized />
+                                    <Image src={imageUrl} alt="Quest Subject" fill className="object-contain p-2 md:p-4" unoptimized priority />
                                 ) : (
                                     <div className="w-full h-full bg-[#8c603e]/5 flex items-center justify-center">
                                         <span className="text-[#8c603e]/50 uppercase text-xs tracking-[0.3em] font-bold">No Image Found</span>
