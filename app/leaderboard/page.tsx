@@ -90,7 +90,7 @@ export default function LeaderboardPage() {
                                         </td>
                                         <td className="py-3 px-1 md:py-6 md:px-8 text-center">
                                             <div className="inline-flex items-center justify-center px-1.5 py-1 md:px-3 md:py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 group-hover:border-amber-500/40 transition-all">
-                                                <span className="text-[10px] sm:text-sm md:text-lg font-black text-amber-500 tabular-nums font-century-gothic">{player.stage}/40</span>
+                                                <span className="text-[10px] sm:text-sm md:text-lg font-black text-amber-500 tabular-nums font-century-gothic">{player.stage}{typeof player.stage === 'number' ? '/40' : ''}</span>
                                             </div>
                                         </td>
                                         <td className="py-3 px-1 md:py-6 md:px-8 text-center">

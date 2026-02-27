@@ -28,7 +28,7 @@ const ScheduleModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
                     >
                         <div className="flex items-center justify-between p-4 border-b border-white/5 bg-black/20">
                             <h3 className="text-white font-samarkan text-xl tracking-wider">Unmaad '26 Schedule</h3>
-                            <button 
+                            <button
                                 onClick={onClose}
                                 className="p-2 hover:bg-white/5 rounded-full transition-colors group"
                             >
@@ -36,8 +36,8 @@ const ScheduleModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
                             </button>
                         </div>
                         <div className="flex-grow bg-white/5">
-                            <iframe 
-                                src="/unmaad-assets/Schedule.pdf#toolbar=0" 
+                            <iframe
+                                src="/unmaad-assets/Schedule.pdf#toolbar=0"
                                 className="w-full h-full border-none"
                                 title="Unmaad Schedule"
                             />
@@ -96,7 +96,7 @@ const Navbar = () => {
                                         {link.name === "Virtual Expedition" && (
                                             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-amber-500/20 border border-amber-500/50 rounded-full pointer-events-none shadow-[0_0_10px_rgba(245,158,11,0.2)]">
                                                 <span className="text-[7px] font-black text-amber-400 uppercase tracking-tighter whitespace-nowrap leading-none block">
-                                                    winners out
+                                                    winners soon
                                                 </span>
                                             </div>
                                         )}
@@ -209,7 +209,7 @@ const Navbar = () => {
                                     {link.name === "Virtual Expedition" && (
                                         <div className="inline-block ml-2 px-2 py-0.5 bg-amber-500/20 border border-amber-400/50 rounded-full shadow-[0_0_10px_rgba(245,158,11,0.1)]">
                                             <span className="text-[9px] font-black text-amber-500 uppercase tracking-tighter">
-                                                winners out
+                                                winners soon
                                             </span>
                                         </div>
                                     )}
@@ -230,9 +230,9 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            <ScheduleModal 
-                isOpen={isScheduleOpen} 
-                onClose={() => setIsScheduleOpen(false)} 
+            <ScheduleModal
+                isOpen={isScheduleOpen}
+                onClose={() => setIsScheduleOpen(false)}
             />
         </>
     );
