@@ -155,7 +155,7 @@ export default function GamePage() {
                     <div className="absolute bottom-0 left-0 right-0 h-4 bg-[url('/unmaad-assets/events-street/mandala-strip.svg')] bg-repeat-x opacity-30 grayscale rotate-180" />
                     <div className="relative z-10 space-y-6 md:space-y-10">
                         <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }}>
-                            <h2 className="text-3xl md:text-5xl font-century-gothic font-black text-[#8c603e] mb-2 md:mb-4 uppercase tracking-[0.1em]">Quest Successfully Completed!</h2>
+                            <h2 className="text-3xl md:text-5xl font-century-gothic font-black text-[#8c603e] mb-2 md:mb-4 uppercase tracking-[0.1em]">Expedition Successfully Completed!</h2>
                             <p className="text-[#8c603e]/60 uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold text-[10px] md:text-sm">You have weathered the storm and found the truth.</p>
                         </motion.div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 py-4 md:py-8">

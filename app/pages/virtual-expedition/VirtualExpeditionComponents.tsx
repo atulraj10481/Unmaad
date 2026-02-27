@@ -96,7 +96,7 @@ const ScrollHandle = ({ isBottom = false }: { isBottom?: boolean }) => (
 
 export const RulesSection = () => {
     return (
-        <div className="w-full max-w-none relative px-4 md:px-10 lg:px-12">
+        <div className="w-full max-w-4xl mx-auto relative px-4 md:px-10 lg:px-12">
             <motion.div
                 initial={{ opacity: 0, height: 0 }}
                 whileInView={{ opacity: 1, height: "auto" }}
@@ -505,115 +505,91 @@ export const GameSection = () => {
     );
 };
 
+const LEADERBOARD_DATA = [
+    { rank: 1, name: "Akanksha Rohit", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 02:39:96 pm" },
+    { rank: 2, name: "Cheshta singh", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 02:40:74 pm" },
+    { rank: 3, name: "saksham sharma", college: "IIMB", stage: 40, timestamp: "26 Feb, 02:40:09 pm" },
+    { rank: 4, name: "Udvas B", college: "--", stage: 40, timestamp: "26 Feb, 02:43:87 pm" },
+    { rank: 5, name: "Shashank", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 02:48:87 pm" },
+    { rank: 6, name: "Bhavik Dhodi", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 02:51:82 pm" },
+    { rank: 7, name: "Sarthak Bindal", college: "--", stage: 40, timestamp: "26 Feb, 02:55:20 pm" },
+    { rank: 8, name: "Prateek Agarwal", college: "IIMB", stage: 40, timestamp: "26 Feb, 02:56:51 pm" },
+    { rank: 9, name: "Riya", college: "--", stage: 40, timestamp: "26 Feb, 02:56:87 pm" },
+    { rank: 10, name: "Mahesh Mannam", college: "welingkar", stage: 40, timestamp: "26 Feb, 02:56:27 pm" },
+    { rank: 11, name: "Palak Shab", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 02:57:78 pm" },
+    { rank: 12, name: "Sagar Y", college: "--", stage: 40, timestamp: "26 Feb, 03:00:00 pm" },
+    { rank: 13, name: "Ayush Kumar Shaw", college: "IIM Banglaore", stage: 40, timestamp: "26 Feb, 03:00:53 pm" },
+    { rank: 14, name: "gd", college: "--", stage: 40, timestamp: "26 Feb, 03:02:07 pm" },
+    { rank: 15, name: "Aditya Bhardwaj", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 03:17:37 pm" }
+];
+
 export const LeaderboardSection = () => {
-    const [isVisible, setIsVisible] = useState(true);
-    const [showContent, setShowContent] = useState(true);
-
-    const dummyData = [
-        { rank: 1, name: "-", status: "-" },
-        { rank: 2, name: "-", status: "-" },
-        { rank: 3, name: "-", status: "-" },
-    ];
-
-    if (!showContent) return (
-        <div className="w-full max-w-5xl mx-auto my-16 px-4 flex justify-center">
-            <button
-                onClick={() => setShowContent(true)}
-                className="group flex flex-col items-center gap-3 transition-all duration-500"
-            >
-                <div className="w-12 h-12 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 group-hover:border-amber-500/40 transition-all">
-                    <Eye className="w-5 h-5 text-amber-500" />
-                </div>
-                <span className="text-[10px] font-bold text-amber-200/40 uppercase tracking-[0.4em] group-hover:text-amber-500">Reveal Leaderboard</span>
-            </button>
-        </div>
-    );
+    const data = LEADERBOARD_DATA;
 
     return (
-        <div className="w-full max-w-5xl mx-auto my-16 px-4">
+        <div className="w-full max-w-5xl mx-auto my-16 px-4 leaderboard-section">
             <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-10 gap-6">
                 <div className="text-center md:text-left">
                     <h3 className="text-3xl md:text-5xl lg:text-6xl text-white font-samarkan tracking-wider">leaderboard</h3>
-                    <p className="text-amber-200/20 text-[10px] uppercase tracking-[0.5em] mt-3 font-century-gothic font-bold">The Vanguard of Unmaad • Live Rankings</p>
-                </div>
-                <div className="flex items-center gap-6">
-                    <button
-                        onClick={() => setIsVisible(!isVisible)}
-                        className="text-[10px] font-bold text-amber-200/30 uppercase tracking-[0.3em] hover:text-amber-500 transition-colors py-2 px-4 rounded-lg border border-white/5 bg-white/5"
-                    >
-                        {isVisible ? "COLLAPSE" : "EXPAND"}
-                    </button>
-                    <button
-                        onClick={() => setShowContent(false)}
-                        className="group flex items-center gap-2 text-[10px] font-bold text-rose-500/40 uppercase tracking-[0.3em] hover:text-rose-500 transition-all"
-                    >
-                        <EyeOff className="w-4 h-4" />
-                        <span>Hide</span>
-                    </button>
+                    <p className="text-amber-200/20 text-[10px] uppercase tracking-[0.5em] mt-3 font-century-gothic font-bold">The Vanguard of Unmaad</p>
                 </div>
             </div>
 
-            <AnimatePresence>
-                {isVisible && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        className="bg-[#1a241c]/80 backdrop-blur-3xl rounded-none border-2 border-amber-500/10 shadow-[0_40px_100px_rgba(0,0,0,0.6)] overflow-hidden"
-                    >
-                        <div className="overflow-x-auto">
-                            <table className="w-full border-collapse">
-                                <thead>
-                                    <tr className="bg-amber-500/[0.03] border-b border-amber-500/10">
-                                        <th className="py-3 pl-4 pr-1 md:py-6 md:px-8 text-left text-amber-200/20 uppercase text-[9px] sm:text-[10px] tracking-[0.4em] font-black">Rank</th>
-                                        <th className="py-3 px-1 md:py-6 md:px-8 text-left text-amber-200/20 uppercase text-[9px] sm:text-[10px] tracking-[0.4em] font-black">Explorer</th>
-                                        <th className="py-3 px-1 md:py-6 md:px-8 text-center text-amber-200/20 uppercase text-[9px] sm:text-[10px] tracking-[0.4em] font-black">Stage</th>
-                                        <th className="py-3 px-1 md:py-6 md:px-8 text-center text-amber-200/20 uppercase text-[9px] sm:text-[10px] tracking-[0.4em] font-black">Timestamp</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-white/[0.03]">
-                                    {dummyData.map((player, i) => (
-                                        <tr key={i} className={`hover:bg-amber-500/[0.02] transition-colors group ${player.rank <= 3 ? 'bg-amber-500/[0.01]' : ''}`}>
-                                            <td className="py-3 pl-4 pr-1 md:py-6 md:px-8">
-                                                <div className="flex items-center gap-1.5 md:gap-4">
-                                                    {player.rank === 1 && <Trophy className="w-4 h-4 md:w-5 md:h-5 text-yellow-500 drop-shadow-[0_0_8px_rgba(234,179,8,0.5)]" />}
-                                                    {player.rank === 2 && <Medal className="w-4 h-4 md:w-5 md:h-5 text-gray-400 opacity-80" />}
-                                                    {player.rank === 3 && <Medal className="w-4 h-4 md:w-5 md:h-5 text-amber-700 opacity-80" />}
-                                                    <span className={`font-samarkan text-base md:text-xl ${player.rank <= 3 ? 'text-amber-500' : 'text-white/20'}`}>
-                                                        {player.rank < 10 ? `0${player.rank}` : player.rank}
-                                                    </span>
-                                                </div>
-                                            </td>
-                                            <td className="py-3 px-1 md:py-6 md:px-8">
-                                                <div className="flex flex-col">
-                                                    <span className="font-bold text-white/90 group-hover:text-amber-400 transition-colors uppercase tracking-[0.1em] text-[10px] md:text-sm font-century-gothic">
-                                                        {player.name}
-                                                    </span>
-                                                    <span className="text-[8px] sm:text-[9px] text-amber-500/30 uppercase tracking-[0.2em] mt-1 font-bold italic hidden sm:block">{player.status}</span>
-                                                </div>
-                                            </td>
-                                            <td className="py-3 px-1 md:py-6 md:px-8 text-center">
-                                                <div className="inline-flex items-center justify-center px-1.5 py-1 md:px-3 md:py-1.5 rounded-full bg-amber-500/5 border border-amber-500/10 group-hover:border-amber-500/30 transition-all">
-                                                    <span className="text-[10px] sm:text-sm md:text-lg font-black text-amber-500/90 tabular-nums font-century-gothic">--</span>
-                                                </div>
-                                            </td>
-                                            <td className="py-3 px-1 md:py-6 md:px-8 text-center">
-                                                <div className="flex items-center justify-center text-white/40 font-bold font-century-gothic text-xs tracking-widest tabular-nums">
-                                                    --
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                        {/* Footer Info */}
-                        <div className="p-6 bg-black/20 border-t border-white/5 flex justify-center">
-                            <p className="text-[9px] text-white/10 uppercase tracking-[0.4em] font-bold">Updates every hour • Season of Quest 2026</p>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            <div className="bg-[#1a241c]/80 backdrop-blur-3xl rounded-none border-2 border-amber-500/10 shadow-[0_40px_100px_rgba(0,0,0,0.6)] overflow-hidden">
+                <div className="overflow-x-auto custom-scrollbar">
+                    <table className="w-full border-collapse">
+                        <thead>
+                            <tr className="bg-amber-500/[0.03] border-b border-amber-500/10">
+                                <th className="py-3 pl-4 pr-1 md:py-6 md:px-8 text-left text-amber-200/20 uppercase text-[9px] sm:text-[10px] tracking-[0.4em] font-black w-24">Sr.</th>
+                                <th className="py-3 px-1 md:py-6 md:px-8 text-left text-amber-200/20 uppercase text-[9px] sm:text-[10px] tracking-[0.4em] font-black">Explorer</th>
+                                <th className="py-3 px-1 md:py-6 md:px-8 text-left text-amber-200/20 uppercase text-[9px] sm:text-[10px] tracking-[0.4em] font-black hidden lg:table-cell">College</th>
+                                <th className="py-3 px-1 md:py-6 md:px-8 text-center text-amber-200/20 uppercase text-[9px] sm:text-[10px] tracking-[0.4em] font-black">Quest Progress</th>
+                                <th className="py-3 px-1 md:py-6 md:px-8 text-center text-amber-200/20 uppercase text-[9px] sm:text-[10px] tracking-[0.4em] font-black">Completion Time</th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-white/[0.03]">
+                            {data.map((player, i) => (
+                                <tr key={i} className={`hover:bg-amber-500/[0.02] transition-colors group ${i === 0 ? 'bg-amber-500/[0.01]' : ''}`}>
+                                    <td className="py-3 pl-4 pr-1 md:py-6 md:px-8">
+                                        <div className="flex items-center gap-1.5 md:gap-4">
+                                            {i === 0 && <Trophy className="w-4 h-4 md:w-5 md:h-5 text-yellow-500 drop-shadow-[0_0_8px_rgba(234,179,8,0.5)]" />}
+                                            {i === 1 && <Medal className="w-4 h-4 md:w-5 md:h-5 text-gray-400 opacity-80" />}
+                                            <span className={`font-samarkan text-base md:text-xl ${i === 0 ? 'text-amber-500' : 'text-white/20'}`}>
+                                                {i + 1 < 10 ? `0${i + 1}` : i + 1}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td className="py-3 px-1 md:py-6 md:px-8">
+                                        <div className="flex flex-col">
+                                            <span className="font-bold text-white/90 group-hover:text-amber-400 transition-colors uppercase tracking-[0.1em] text-[10px] md:text-sm font-century-gothic">
+                                                {player.name}
+                                            </span>
+                                            <span className="text-[8px] sm:text-[9px] text-amber-500/30 uppercase tracking-[0.2em] mt-1 font-bold italic lg:hidden">{player.college}</span>
+                                        </div>
+                                    </td>
+                                    <td className="py-3 px-1 md:py-6 md:px-8 hidden lg:table-cell">
+                                        <span className="text-white/40 text-[10px] font-bold uppercase tracking-wider">{player.college}</span>
+                                    </td>
+                                    <td className="py-3 px-1 md:py-6 md:px-8 text-center">
+                                        <div className="inline-flex items-center justify-center px-1.5 py-1 md:px-3 md:py-1.5 rounded-full bg-amber-500/5 border border-amber-500/10 group-hover:border-amber-500/30 transition-all">
+                                            <span className="text-[10px] sm:text-sm md:text-lg font-black text-amber-500/90 tabular-nums font-century-gothic">{player.stage}/40</span>
+                                        </div>
+                                    </td>
+                                    <td className="py-3 px-1 md:py-6 md:px-8 text-center">
+                                        <div className="flex items-center justify-center text-white/40 font-bold font-century-gothic text-xs tracking-widest tabular-nums">
+                                            {player.timestamp}
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                {/* Footer Info */}
+                <div className="p-6 bg-black/20 border-t border-white/5 flex justify-center">
+                    <p className="text-[9px] text-white/10 uppercase tracking-[0.4em] font-bold">Season of Quest 2026</p>
+                </div>
+            </div>
         </div>
     );
 };
