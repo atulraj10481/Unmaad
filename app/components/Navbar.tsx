@@ -5,17 +5,56 @@ import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import HomeButton from "./HomeButton";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
+
+const ScheduleModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
+    return (
+        <AnimatePresence>
+            {isOpen && (
+                <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={onClose}
+                        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                    />
+                    <motion.div
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ scale: 0.9, opacity: 0 }}
+                        className="relative w-full max-w-5xl h-[90vh] bg-[#233126] rounded-3xl border border-white/10 overflow-hidden flex flex-col shadow-2xl"
+                    >
+                        <div className="flex items-center justify-between p-4 border-b border-white/5 bg-black/20">
+                            <h3 className="text-white font-samarkan text-xl tracking-wider">Unmaad '26 Schedule</h3>
+                            <button 
+                                onClick={onClose}
+                                className="p-2 hover:bg-white/5 rounded-full transition-colors group"
+                            >
+                                <X className="w-6 h-6 text-white/40 group-hover:text-white" />
+                            </button>
+                        </div>
+                        <div className="flex-grow bg-white/5">
+                            <iframe 
+                                src="/unmaad-assets/Schedule.pdf#toolbar=0" 
+                                className="w-full h-full border-none"
+                                title="Unmaad Schedule"
+                            />
+                        </div>
+                    </motion.div>
+                </div>
+            )}
+        </AnimatePresence>
+    );
+};
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isScheduleOpen, setIsScheduleOpen] = useState(false);
     const pathname = usePathname();
 
-    const isActive = (href: string, name: string) => {
-        if (name === "Virtual Expedition") {
-            const expRoutes = ['/pages/virtual-expedition', '/auth', '/game', '/winner', '/leaderboard'];
-            return expRoutes.includes(pathname);
-        }
+    const isActive = (href: string) => {
         return pathname === href;
     };
 
@@ -25,150 +64,177 @@ const Navbar = () => {
         { name: "Competition Bazaar", href: "/pages/competition-bazaar" },
         { name: "Virtual Expedition", href: "/pages/virtual-expedition" },
         { name: "Merch Store", href: "/pages/merch-store" },
+        { name: "Schedule", href: "#" },
+        { name: "Sponsor Alley", href: "/pages/sponsor-alley" },
         { name: "Contact Us", href: "/#contact-us" },
     ];
 
     return (
-        <nav className="fixed top-0 w-full z-[100] bg-white/10 backdrop-blur-md transition-all duration-300">
+        <>
+            <nav className="fixed top-0 w-full z-[100] bg-white/10 backdrop-blur-md transition-all duration-300">
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16 lg:h-20 relative">
-                    {/* Left: Logo */}
-                    <div className="shrink-0 flex items-center">
-                        <Link href="/">
-                            <Image
-                                src="/unmaad-assets/unm.svg"
-                                alt="Unmaad Logo"
-                                width={150}
-                                height={50}
-                                className="h-5 lg:h-7 w-auto object-contain"
+                <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
+                    <div className="flex items-center justify-between h-16 lg:h-20 relative">
+                        {/* Left: Logo */}
+                        <div className="shrink-0 flex items-center -ml-2.5">
+                            <Link href="/">
+                                <Image
+                                    src="/unmaad-assets/unm.svg"
+                                    alt="Unmaad Logo"
+                                    width={150}
+                                    height={50}
+                                    className="h-5 lg:h-7 w-auto object-contain"
+                                />
+                            </Link>
+                        </div>
+
+                        {/* Center: Desktop Menu */}
+                        <div className="hidden lg:flex ml-auto mr-6">
+                            <div className="flex items-baseline space-x-4">
+                                {navLinks.map((link) => (
+                                    <div key={link.name} className="relative group">
+                                        {link.name === "Virtual Expedition" && (
+                                            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-amber-500/20 border border-amber-500/50 rounded-full pointer-events-none shadow-[0_0_10px_rgba(245,158,11,0.2)]">
+                                                <span className="text-[7px] font-black text-amber-400 uppercase tracking-tighter whitespace-nowrap leading-none block">
+                                                    winners out
+                                                </span>
+                                            </div>
+                                        )}
+                                        {link.name === "Schedule" ? (
+                                            <button
+                                                onClick={() => setIsScheduleOpen(true)}
+                                                className="px-2 py-2 rounded-md text-sm font-normal transition-colors duration-200 font-century-gothic whitespace-nowrap text-white hover:text-yellow-300"
+                                            >
+                                                {link.name}
+                                            </button>
+                                        ) : (
+                                            <Link
+                                                href={link.href}
+                                                className="px-2 py-2 rounded-md text-sm font-normal transition-colors duration-200 font-century-gothic whitespace-nowrap text-white hover:text-yellow-300"
+                                            >
+                                                {link.name}
+                                            </Link>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Right: Ticket Button */}
+                        <div className="hidden lg:block shrink-0">
+                            <HomeButton
+                                href="https://www.skillboxes.com/events/seedhe-maut-unmaad-iim-s-annual-cultural-fest"
+                                imageSrc="/unmaad-assets/tic-button.svg"
+                                imgClassName="h-8 w-auto"
+                                imgWidth={120}
+                                imgHeight={40}
                             />
-                        </Link>
-                    </div>
+                        </div>
 
-                    {/* Center: Desktop Menu */}
-                    <div className="hidden lg:flex ml-auto mr-12">
-                        <div className="flex items-baseline space-x-6">
-                            {navLinks.map((link) => (
-                                <div key={link.name} className="relative group">
-                                    {link.name === "Virtual Expedition" && (
-                                        <motion.div
-                                            className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-emerald-500/20 border border-emerald-500/30 rounded-full pointer-events-none"
-                                            animate={{
-                                                scale: [1, 1.05, 1],
-                                                opacity: [0.8, 1, 0.8],
-                                            }}
-                                            transition={{
-                                                duration: 3,
-                                                repeat: Infinity,
-                                                ease: "linear",
-                                            }}
-                                        >
-                                            <span className="text-[7px] font-black text-emerald-400 uppercase tracking-tighter whitespace-nowrap leading-none block">
-                                                quest ended
-                                            </span>
-                                        </motion.div>
-                                    )}
-                                    <Link
-                                        href={link.href}
-                                        className={`px-2 py-2 rounded-md text-sm font-normal transition-colors duration-200 font-century-gothic whitespace-nowrap ${isActive(link.href, link.name) ? 'text-yellow-300 font-bold' : 'text-white hover:text-yellow-300'}`}
+                        {/* Mobile Menu Button */}
+                        <div className="-mr-2 flex lg:hidden">
+                            <button
+                                onClick={() => setIsOpen(!isOpen)}
+                                type="button"
+                                className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-white/20 focus:outline-none"
+                                aria-controls="mobile-menu"
+                                aria-expanded="false"
+                            >
+                                <span className="sr-only">Open main menu</span>
+                                {!isOpen ? (
+                                    <svg
+                                        className="block h-6 w-6"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        aria-hidden="true"
                                     >
-                                        {link.name}
-                                    </Link>
-                                </div>
-                            ))}
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M4 6h16M4 12h16M4 18h16"
+                                        />
+                                    </svg>
+                                ) : (
+                                    <svg
+                                        className="block h-6 w-6"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M6 18L18 6M6 6l12 12"
+                                        />
+                                    </svg>
+                                )}
+                            </button>
                         </div>
                     </div>
+                </div>
 
-                    {/* Right: Ticket Button */}
-                    <div className="hidden lg:block shrink-0">
-                        <HomeButton
-                            href="https://www.skillboxes.com/events/seedhe-maut-unmaad-iim-s-annual-cultural-fest"
-                            imageSrc="/unmaad-assets/tic-button.svg"
-                            imgClassName="h-8 w-auto"
-                            imgWidth={120}
-                            imgHeight={40}
-                        />
-                    </div>
-
-                    {/* Mobile Menu Button */}
-                    <div className="-mr-2 flex lg:hidden">
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            type="button"
-                            className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-white/20 focus:outline-none"
-                            aria-controls="mobile-menu"
-                            aria-expanded="false"
-                        >
-                            <span className="sr-only">Open main menu</span>
-                            {!isOpen ? (
-                                <svg
-                                    className="block h-6 w-6"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
+                {/* Mobile Menu - Sliding Overlay */}
+                <div
+                    className={`lg:hidden absolute top-full left-0 w-full overflow-hidden transition-all duration-500 ease-in-out bg-white/[0.85] ${isOpen ? 'max-h-[600px] opacity-100 shadow-xl' : 'max-h-0 opacity-0 pointer-events-none'
+                        }`}
+                    id="mobile-menu"
+                >
+                    <div className="relative z-10 px-4 pt-2 pb-6 space-y-1 sm:px-6 border-t border-gray-100">
+                        {navLinks.map((link) => (
+                            link.name === "Schedule" ? (
+                                <button
+                                    key={link.name}
+                                    onClick={() => {
+                                        setIsScheduleOpen(true);
+                                        setIsOpen(false);
+                                    }}
+                                    className="w-full text-left text-indigo-900 hover:text-amber-400 block px-3 py-3 rounded-md text-sm font-normal font-century-gothic transition-colors border-b border-gray-300"
                                 >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M4 6h16M4 12h16M4 18h16"
-                                    />
-                                </svg>
+                                    {link.name}
+                                </button>
                             ) : (
-                                <svg
-                                    className="block h-6 w-6"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
+                                <Link
+                                    key={link.name}
+                                    href={link.href}
+                                    className="text-indigo-900 hover:text-amber-400 block px-3 py-3 rounded-md text-sm font-normal font-century-gothic transition-colors border-b border-gray-300"
+                                    onClick={() => setIsOpen(false)}
                                 >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M6 18L18 6M6 6l12 12"
-                                    />
-                                </svg>
-                            )}
-                        </button>
+                                    {link.name}
+                                    {link.name === "Virtual Expedition" && (
+                                        <div className="inline-block ml-2 px-2 py-0.5 bg-amber-500/20 border border-amber-400/50 rounded-full shadow-[0_0_10px_rgba(245,158,11,0.1)]">
+                                            <span className="text-[9px] font-black text-amber-500 uppercase tracking-tighter">
+                                                winners out
+                                            </span>
+                                        </div>
+                                    )}
+                                </Link>
+                            )
+                        ))}
+                        <div className="mt-6 px-3 flex justify-center">
+                            <HomeButton
+                                href="https://www.skillboxes.com/events/seedhe-maut-unmaad-iim-s-annual-cultural-fest"
+                                imageSrc="/unmaad-assets/tic-button.svg"
+                                imgClassName="h-8 w-auto"
+                                imgWidth={120}
+                                imgHeight={40}
+                                onClick={() => setIsOpen(false)}
+                            />
+                        </div>
                     </div>
                 </div>
-            </div>
+            </nav>
 
-            {/* Mobile Menu - Sliding Overlay */}
-            <div
-                className={`lg:hidden absolute top-full left-0 w-full overflow-hidden transition-all duration-500 ease-in-out bg-white/[0.85] ${isOpen ? 'max-h-[500px] opacity-100 shadow-xl' : 'max-h-0 opacity-0 pointer-events-none'
-                    }`}
-                id="mobile-menu"
-            >
-                <div className="relative z-10 px-4 pt-2 pb-6 space-y-1 sm:px-6 border-t border-gray-100">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            className="text-indigo-900 hover:text-amber-400 block px-3 py-3 rounded-md text-sm font-normal font-century-gothic transition-colors border-b border-gray-300"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
-                    <div className="mt-6 px-3 flex justify-center">
-                        <HomeButton
-                            href="https://www.skillboxes.com/events/seedhe-maut-unmaad-iim-s-annual-cultural-fest"
-                            imageSrc="/unmaad-assets/tic-button.svg"
-                            imgClassName="h-8 w-auto"
-                            imgWidth={120}
-                            imgHeight={40}
-                            onClick={() => setIsOpen(false)}
-                        />
-                    </div>
-                </div>
-            </div>
-        </nav>
+            <ScheduleModal 
+                isOpen={isScheduleOpen} 
+                onClose={() => setIsScheduleOpen(false)} 
+            />
+        </>
     );
 };
 

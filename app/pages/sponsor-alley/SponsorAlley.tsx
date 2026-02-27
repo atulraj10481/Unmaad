@@ -53,9 +53,9 @@ const SponsorAlley = () => {
                     />
                 </div>
 
-                {/* Title Partner Section */}
+                {/* Travel Partner Section */}
                 <div className="relative w-full py-10 px-4">
-                    {/* Background & Overlay for Title Partner */}
+                    {/* Background & Overlay for Travel Partner */}
                     <div className="absolute inset-0 z-0 bg-[#E6E6FA]">
                         <div
                             className="absolute inset-0 z-0 opacity-100"
@@ -78,22 +78,19 @@ const SponsorAlley = () => {
                     {/* Content */}
                     <div className="relative z-20 flex flex-col items-center max-w-6xl mx-auto">
                         <h2 className="text-4xl md:text-6xl text-white font-samarkan mb-12 text-center">
-                            Title Partner
+                            travel partner
                         </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 w-full place-items-center mb-16">
-                            {[1, 2, 3].map((cardId) => (
-                                <div key={cardId} className="relative w-72 h-72 md:w-80 md:h-80 flex items-center justify-center">
-                                    <Image
-                                        src="/unmaad-assets/sponsor-alley/green-frame.svg"
-                                        alt="Sponsor Frame"
-                                        fill
-                                        className="object-contain"
-                                    />
-                                    <div className="absolute inset-0 flex items-center justify-center p-12">
-                                        <span className={`text-black opacity-50 ${baiJamjuree.className}`}>Sponsor Logo</span>
-                                    </div>
-                                </div>
-                            ))}
+                        <div className="flex justify-center w-full mb-16 px-4">
+                            <div className="relative w-full max-w-xs flex items-center justify-center">
+                                <Image
+                                    src="/unmaad-assets/sponsor-alley/klook.svg"
+                                    alt="Klook Logo"
+                                    width={280}
+                                    height={140}
+                                    className="object-contain w-full h-auto"
+                                    priority
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,31 +120,139 @@ const SponsorAlley = () => {
                     {/* Content */}
                     <div className="relative z-20 flex flex-col items-center max-w-6xl mx-auto">
                         <h2 className="text-4xl md:text-6xl text-white font-samarkan mb-12 text-center">
-                            Associate Partner
+                            associate partner
                         </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 w-full place-items-center mb-16">
-                            {[1, 2, 3].map((cardId) => (
-                                <div key={cardId} className="relative w-72 h-72 md:w-80 md:h-80 flex items-center justify-center">
-                                    <Image
-                                        src="/unmaad-assets/sponsor-alley/green-frame.svg"
-                                        alt="Sponsor Frame"
-                                        fill
-                                        className="object-contain"
-                                    />
-                                    <div className="absolute inset-0 flex items-center justify-center p-12">
-                                        <span className={`text-black opacity-50 ${baiJamjuree.className}`}>Sponsor Logo</span>
-                                    </div>
-                                </div>
-                            ))}
+                        <div className="flex justify-center w-full mb-16 px-4">
+                            <div className="relative w-full max-w-xs flex items-center justify-center">
+                                <Image
+                                    src="/unmaad-assets/sponsor-alley/cbi.svg"
+                                    alt="CBI Logo"
+                                    width={280}
+                                    height={140}
+                                    className="object-contain w-full h-auto"
+                                    priority
+                                />
+                            </div>
                         </div>
+                    </div>
+                </div>
 
-                        {/* Enter the Street Button */}
-                        <div className="mt-8 mb-8">
-                            <HomeButton
-                                href="/pages/events-street"
-                                text="Enter the Street"
-                                textClassName={baiJamjuree.className}
-                            />
+                {/* Technical Partner Section */}
+                <div className="relative w-full py-10 px-4">
+                    {/* Background & Overlay for Technical Partner */}
+                    <div className="absolute inset-0 z-0 bg-[#E6E6FA]">
+                        <div
+                            className="absolute inset-0 z-0 opacity-100"
+                            style={{
+                                backgroundImage: "url('/unmaad-assets/sponsor-alley/lavender-bg.svg')",
+                                backgroundRepeat: "repeat",
+                                backgroundSize: "100% auto",
+                            }}
+                        />
+                        <div
+                            className="absolute inset-0 z-10 opacity-50 pointer-events-none"
+                            style={{
+                                backgroundImage: "url('/unmaad-assets/pattern.svg')",
+                                backgroundRepeat: "repeat",
+                                backgroundSize: "auto"
+                            }}
+                        />
+                    </div>
+
+                    {/* Content */}
+                    <div className="relative z-20 flex flex-col items-center max-w-6xl mx-auto">
+                        <h2 className="text-4xl md:text-6xl text-white font-samarkan mb-12 text-center">
+                            technical partner
+                        </h2>
+                        <div className="flex justify-center w-full mb-16 px-4">
+                            <div className="relative w-full max-w-xs flex items-center justify-center">
+                                <Image
+                                    src="/unmaad-assets/sponsor-alley/wx.svg"
+                                    alt="WX Logo"
+                                    width={200}
+                                    height={100}
+                                    className="object-contain w-full h-auto"
+                                    priority
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Sustainable Gifting Partner Section */}
+                <div className="relative w-full py-10 px-4">
+                    <div className="absolute inset-0 z-0 bg-[#E6E6FA]">
+                        <div
+                            className="absolute inset-0 z-0 opacity-100"
+                            style={{
+                                backgroundImage: "url('/unmaad-assets/sponsor-alley/lavender-bg.svg')",
+                                backgroundRepeat: "repeat",
+                                backgroundSize: "100% auto",
+                            }}
+                        />
+                        <div
+                            className="absolute inset-0 z-10 opacity-50 pointer-events-none"
+                            style={{
+                                backgroundImage: "url('/unmaad-assets/pattern.svg')",
+                                backgroundRepeat: "repeat",
+                                backgroundSize: "auto"
+                            }}
+                        />
+                    </div>
+                    <div className="relative z-20 flex flex-col items-center max-w-6xl mx-auto">
+                        <h2 className="text-4xl md:text-6xl text-white font-samarkan mb-12 text-center">
+                            sustainable gifting partner
+                        </h2>
+                        <div className="flex justify-center w-full mb-16 px-4">
+                            <div className="relative w-full max-w-xs flex items-center justify-center">
+                                <Image
+                                    src="/unmaad-assets/sponsor-alley/cherrysh.svg"
+                                    alt="Cherrysh Logo"
+                                    width={280}
+                                    height={140}
+                                    className="object-contain w-full h-auto"
+                                    priority
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Logistics Partner Section */}
+                <div className="relative w-full py-10 px-4">
+                    <div className="absolute inset-0 z-0 bg-[#E6E6FA]">
+                        <div
+                            className="absolute inset-0 z-0 opacity-100"
+                            style={{
+                                backgroundImage: "url('/unmaad-assets/sponsor-alley/lavender-bg.svg')",
+                                backgroundRepeat: "repeat",
+                                backgroundSize: "100% auto",
+                            }}
+                        />
+                        <div
+                            className="absolute inset-0 z-10 opacity-50 pointer-events-none"
+                            style={{
+                                backgroundImage: "url('/unmaad-assets/pattern.svg')",
+                                backgroundRepeat: "repeat",
+                                backgroundSize: "auto"
+                            }}
+                        />
+                    </div>
+                    <div className="relative z-20 flex flex-col items-center max-w-6xl mx-auto">
+                        <h2 className="text-4xl md:text-6xl text-white font-samarkan mb-12 text-center">
+                            logistics partner
+                        </h2>
+                        <div className="flex justify-center w-full mb-16 px-4">
+                            <div className="relative w-full max-w-xs flex items-center justify-center">
+                                <Image
+                                    src="/unmaad-assets/sponsor-alley/delhivery.svg"
+                                    alt="Delhivery Logo"
+                                    width={280}
+                                    height={140}
+                                    className="object-contain w-full h-auto"
+                                    priority
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

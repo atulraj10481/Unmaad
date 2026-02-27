@@ -6,7 +6,8 @@ html {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 1.5px;
+    width: 3px;
+    height: 3px;
 }
 
 ::-webkit-scrollbar-track {
@@ -14,12 +15,26 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: white;
+    background: #D4A847;
     border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #e0e0e0;
+    background: #F59E0B;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    height: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(212, 168, 71, 0.05);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(212, 168, 71, 0.3);
+    border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 168, 71, 0.5);
 }
 
 @layer utilities {
