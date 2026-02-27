@@ -53,18 +53,19 @@ const Navbar = () => {
                                 <div key={link.name} className="relative group">
                                     {link.name === "Virtual Expedition" && (
                                         <motion.div
-                                            className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-1.5 py-0.5 bg-amber-500/20 border border-amber-500/30 rounded-full pointer-events-none"
+                                            className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-emerald-500/20 border border-emerald-500/30 rounded-full pointer-events-none"
                                             animate={{
-                                                opacity: [0.7, 1, 0.7],
+                                                scale: [1, 1.05, 1],
+                                                opacity: [0.8, 1, 0.8],
                                             }}
                                             transition={{
-                                                duration: 2,
+                                                duration: 3,
                                                 repeat: Infinity,
-                                                ease: "easeInOut",
+                                                ease: "linear",
                                             }}
                                         >
-                                            <span className="text-[7px] font-black text-amber-500 uppercase tracking-tighter whitespace-nowrap leading-none block">
-                                                live
+                                            <span className="text-[7px] font-black text-emerald-400 uppercase tracking-tighter whitespace-nowrap leading-none block">
+                                                quest ended
                                             </span>
                                         </motion.div>
                                     )}
