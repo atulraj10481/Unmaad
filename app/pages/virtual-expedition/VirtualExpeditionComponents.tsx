@@ -506,21 +506,21 @@ export const GameSection = () => {
 };
 
 const LEADERBOARD_DATA = [
-    { rank: 1, name: "Akanksha Rohit", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 02:39:96 pm" },
-    { rank: 2, name: "Cheshta singh", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 02:40:74 pm" },
-    { rank: 3, name: "saksham sharma", college: "IIMB", stage: 40, timestamp: "26 Feb, 02:40:09 pm" },
-    { rank: 4, name: "Udvas B", college: "--", stage: 40, timestamp: "26 Feb, 02:43:87 pm" },
-    { rank: 5, name: "Shashank", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 02:48:87 pm" },
-    { rank: 6, name: "Bhavik Dhodi", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 02:51:82 pm" },
-    { rank: 7, name: "Sarthak Bindal", college: "--", stage: 40, timestamp: "26 Feb, 02:55:20 pm" },
-    { rank: 8, name: "Prateek Agarwal", college: "IIMB", stage: 40, timestamp: "26 Feb, 02:56:51 pm" },
-    { rank: 9, name: "Riya", college: "--", stage: 40, timestamp: "26 Feb, 02:56:87 pm" },
-    { rank: 10, name: "Mahesh Mannam", college: "welingkar", stage: 40, timestamp: "26 Feb, 02:56:27 pm" },
-    { rank: 11, name: "Palak Shab", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 02:57:78 pm" },
-    { rank: 12, name: "Sagar Y", college: "--", stage: 40, timestamp: "26 Feb, 03:00:00 pm" },
-    { rank: 13, name: "Ayush Kumar Shaw", college: "IIM Banglaore", stage: 40, timestamp: "26 Feb, 03:00:53 pm" },
-    { rank: 14, name: "gd", college: "--", stage: 40, timestamp: "26 Feb, 03:02:07 pm" },
-    { rank: 15, name: "Aditya Bhardwaj", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 03:17:37 pm" }
+    { rank: 1, name: "Akanksha Rohit", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 02:39:57.96 pm" },
+    { rank: 2, name: "Cheshta singh", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 02:40:02.74 pm" },
+    { rank: 3, name: "saksham sharma", college: "IIMB", stage: 40, timestamp: "26 Feb, 02:40:17.09 pm" },
+    { rank: 4, name: "Udvas B", college: "--", stage: 40, timestamp: "26 Feb, 02:43:02.87 pm" },
+    { rank: 5, name: "Shashank", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 02:48:26.87 pm" },
+    { rank: 6, name: "Bhavik Dhodi", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 02:51:12.82 pm" },
+    { rank: 7, name: "Sarthak Bindal", college: "--", stage: 40, timestamp: "26 Feb, 02:55:48.20 pm" },
+    { rank: 8, name: "Prateek Agarwal", college: "IIMB", stage: 40, timestamp: "26 Feb, 02:56:01.51 pm" },
+    { rank: 9, name: "Riya", college: "--", stage: 40, timestamp: "26 Feb, 02:56:03.87 pm" },
+    { rank: 10, name: "Mahesh Mannam", college: "welingkar", stage: 40, timestamp: "26 Feb, 02:56:18.27 pm" },
+    { rank: 11, name: "Palak Shab", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 02:57:08.78 pm" },
+    { rank: 12, name: "Sagar Y", college: "--", stage: 40, timestamp: "26 Feb, 03:00:37.00 pm" },
+    { rank: 13, name: "Ayush Kumar Shaw", college: "IIM Banglaore", stage: 40, timestamp: "26 Feb, 03:00:51.53 pm" },
+    { rank: 14, name: "gd", college: "--", stage: 40, timestamp: "26 Feb, 03:02:59.07 pm" },
+    { rank: 15, name: "Aditya Bhardwaj", college: "IIM Bangalore", stage: 40, timestamp: "26 Feb, 03:17:53.37 pm" }
 ];
 
 export const LeaderboardSection = () => {

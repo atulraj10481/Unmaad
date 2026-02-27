@@ -46,9 +46,10 @@ export async function GET() {
                 const month = date.toLocaleString('en-IN', { month: 'short' });
                 const hours = (date.getHours() % 12 || 12).toString().padStart(2, '0');
                 const minutes = date.getMinutes().toString().padStart(2, '0');
+                const seconds = date.getSeconds().toString().padStart(2, '0');
                 const ms = Math.floor(date.getMilliseconds() / 10).toString().padStart(2, '0');
                 const ampm = date.getHours() >= 12 ? 'pm' : 'am';
-                return `${day} ${month}, ${hours}:${minutes}:${ms} ${ampm}`;
+                return `${day} ${month}, ${hours}:${minutes}:${seconds}.${ms} ${ampm}`;
             })() : (p.status === 'completed' ? 'Just now' : '--'),
             rawCompletedAt: p.completed_at
         }));
