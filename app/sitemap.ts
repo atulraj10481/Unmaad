@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/pages/competition-bazaar",
         "/pages/merch-store",
         "/pages/sponsor-alley",
+        "/pages/virtual-expedition",
     ];
 
     return routes.map((route) => ({
