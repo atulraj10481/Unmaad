@@ -47,7 +47,7 @@ const StatsMatrix = () => {
                 <div key={i} className="bg-black/40 backdrop-blur-md rounded-2xl border border-white/5 p-3 sm:p-4 flex flex-col items-center justify-center text-center group hover:border-[#D4A847]/30 transition-all duration-300">
                     <item.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${item.color} mb-2 group-hover:scale-110 transition-transform`} />
                     <div className="text-xl sm:text-2xl font-bold text-white font-century-gothic truncate w-full">
-                        -
+                        <CountUp end={item.value} suffix={item.suffix} />
                     </div>
                     <div className="text-[8px] sm:text-[9px] uppercase tracking-widest text-white/30 font-bold mt-1">{item.label}</div>
                 </div>
@@ -68,7 +68,7 @@ const QuestStatusContent = () => (
             <Megaphone className="w-5 h-5 text-[#D4A847] animate-bounce" />
             <div className="text-left">
                 <p className="text-[#D4A847] font-bold text-[10px] uppercase tracking-widest mb-1 font-century-gothic">Current Status</p>
-                <p className="text-white font-century-gothic text-base font-bold">Winners will be announced soon</p>
+                <p className="text-white font-century-gothic text-base font-bold">Winners are announced!</p>
             </div>
         </div>
     </div>

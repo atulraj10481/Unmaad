@@ -96,7 +96,7 @@ const Navbar = () => {
                                         {link.name === "Virtual Expedition" && (
                                             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-amber-500/20 border border-amber-500/50 rounded-full pointer-events-none shadow-[0_0_10px_rgba(245,158,11,0.2)]">
                                                 <span className="text-[7px] font-black text-amber-400 uppercase tracking-tighter whitespace-nowrap leading-none block">
-                                                    winners soon
+                                                    winners announced
                                                 </span>
                                             </div>
                                         )}
@@ -209,7 +209,7 @@ const Navbar = () => {
                                     {link.name === "Virtual Expedition" && (
                                         <div className="inline-block ml-2 px-2 py-0.5 bg-amber-500/20 border border-amber-400/50 rounded-full shadow-[0_0_10px_rgba(245,158,11,0.1)]">
                                             <span className="text-[9px] font-black text-amber-500 uppercase tracking-tighter">
-                                                winners soon
+                                                winners announced
                                             </span>
                                         </div>
                                     )}
