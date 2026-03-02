@@ -1,7 +1,7 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
     let supabaseResponse = NextResponse.next({
         request,
     })
@@ -76,7 +76,7 @@ export async function middleware(request: NextRequest) {
                 return NextResponse.redirect(url)
             }
         } catch (error) {
-            console.error('Supabase middleware error:', error);
+            console.error('Supabase proxy error:', error);
             // If it's a critical route, we might still want to redirect to login
             // but for now we'll just allow the request to proceed to avoid the 33s hang
         }
